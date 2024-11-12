@@ -43,38 +43,52 @@
         }
 
         header {
-            background: rgba(255, 255, 255, 0.3);
-            backdrop-filter: blur(15px);
-            box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
-            position: fixed;
-            width: 100%;
-            max-width: 135px;
-            height: auto;
-            top: 50%;
-            left: 0.5%;
-            transform: translateY(-50%);
-            z-index: 1000;
-            display: flex;
-            flex-direction: column;
-            align-items: center;
-            padding: 0.5rem;
-            border-radius: 25px;
-        }
+    background: rgba(255, 255, 255, 0.3);
+    backdrop-filter: blur(15px);
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
+    position: fixed;
+    width: 100%;
+    max-width: 135px; /* Allows for a fixed sidebar width */
+    height: auto;
+    top: 50%;
+    left: 0.5%;
+    transform: translateY(-50%);
+    z-index: 1000;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    padding: 0.5rem;
+    border-radius: 25px;
+}
 
-        nav ul {
-            width: fit-content;
+/* Adjustments for mobile */
+@media (max-width: 768px) {
+    header {
+        position: fixed;
+        bottom: 0; /* Position at the bottom for mobile */
+        left: 0;   /* Align to left on mobile */
+        transform: translateX(50%); /* Center horizontally */
+        flex-direction: row; /* Horizontal layout */
+        justify-content: center; /* Center items horizontally */
+        max-width: 100%; /* Full width on mobile */
+        padding: 1rem 0; /* Add more padding for touch targets */
+        border-radius: 0; /* Remove border radius for flat design */
+        background: rgba(255, 255, 255, 0.9); /* Slightly opaque for mobile */
+    }
+
+    nav ul {
+        display: flex;
+        flex-direction: row; /* Horizontal layout on mobile */
+        gap: 15px; /* Adjust gap for better appearance */
+        margin-left: 0; /* Remove left margin */
+        width: fit-content;
             height: fit-content;
             background-color: transparent;
             list-style: none;
-            display: flex;
-            flex-direction: column;
-            gap: 25px;
-            margin-left: 18px;
-            padding: 0;
-        }
+    }
 
-        nav a {
-            background-color: transparent;
+    nav a {
+        background-color: transparent;
             font-family: 'Franklin Gothic Medium', 'Arial Narrow', Arial, sans-serif;
             color: rgb(153, 151, 151);
             border: none;
@@ -83,14 +97,91 @@
             padding: 10px 30px;
             cursor: pointer;
             position: relative;
+            padding-left: 11px;
             text-align: center;
             transition: 0.1s;
             z-index: 1;
-        }
+    }
+}
 
-        nav a:hover {
-            color: rgb(172, 40, 0);
-        }
+nav ul {
+    width: fit-content;
+    height: fit-content;
+    background-color: transparent;
+    list-style: none;
+    display: flex;
+    flex-direction: column; /* Vertical layout by default */
+    gap: 25px; /* Gap between items */
+    margin-left: 18px;
+    padding: 0;
+}
+
+nav a {
+    background-color: transparent;
+    font-family: 'Franklin Gothic Medium', 'Arial Narrow', Arial, sans-serif;
+    color: rgb(153, 151, 151);
+    border: none;
+    font-size: 10px; /* Adjust for desktop */
+    font-weight: 500;
+    padding: 10px 30px;
+    cursor: pointer;
+    position: relative;
+    text-align: center;
+    transition: 0.1s;
+    z-index: 1;
+}
+
+nav a:hover {
+    color: rgb(172, 40, 0);
+}
+
+nav a:hover::before {
+    transform: rotate(0deg);
+    width: 100%;
+    height: 40px;
+    top: -2px;
+    border-radius: 3px;
+    background-color: rgb(255, 83, 53);
+}
+
+nav a::before {
+    content: "";
+    border-radius: 2px;
+    position: absolute;
+    width: 6px;
+    height: 6px;
+    background-color: tomato;
+    left: -10px;
+    top: 19px;
+    cursor: pointer;
+    transform: rotate(225deg);
+    transition: 0.3s;
+    z-index: -1;
+}
+
+nav a:active::before {
+    background-color: rgb(255, 38, 0);
+}
+
+nav .imgandbtn {
+    margin-bottom: 10px; /* Add margin at the bottom of the logo */
+    align-self: center; /* Center the logo */
+}
+
+section {
+    padding: 20px 20px;
+    height: 100vh;
+    margin-left: 150px; /* Adjust as needed */
+}
+
+body.dark-mode {
+    background-color: #121212;
+    color: #ffffff;
+}
+
+body.dark-mode header {
+    background: rgba(6, 55, 78, 0.8);
+}
 
         nav a:hover::before {
             transform: rotate(0deg);
