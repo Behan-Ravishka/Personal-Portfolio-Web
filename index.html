@@ -146,50 +146,53 @@
 
         /* Responsive styles */
         @media (max-width: 768px) {
+
+            /* Mobile styles */
             header {
                 position: fixed;
+                /* Fix the header at the bottom */
                 bottom: 0;
-                /* Position at the bottom */
                 left: 0;
                 right: 0;
-                /* Take full width on mobile */
                 top: auto;
                 /* Reset top positioning */
-                transform: translateY(0);
-                /* Remove the vertical centering */
+                transform: none;
+                /* Reset transformation */
                 justify-content: center;
-                /* Center content */
+                /* Center horizontally */
                 flex-direction: row;
-                /* Set flex direction to row for mobile */
+                /* Horizontal layout for mobile */
                 padding: 10px 0;
-                /* Adjust padding for bottom nav */
                 border-radius: 0;
                 /* Remove rounded corners */
                 max-width: none;
-                /* Remove max-width */
+                /* Remove max-width for mobile */
                 box-shadow: 0 -4px 8px rgba(0, 0, 0, 0.2);
-                /* Optional shadow for depth */
+                /* Optional shadow */
             }
 
             nav ul {
                 flex-direction: row;
-                /* Display navigation items horizontally */
-                gap: 15px;
-                /* Space between items */
+                /* Change to horizontal layout */
+                gap: 10px;
+                /* Adjust spacing between items */
+                margin: 0;
+                /* Center the UL without left margin */
                 padding: 0;
                 /* Reset padding */
-                margin: auto;
-                /* Center the UL */
+                width: 100%;
+                /* Adjust width to ensure it takes full space */
+                justify-content: center;
+                /* Center UL contents */
             }
 
             nav a {
-                font-size: 12px;
+                font-size: 14px;
                 /* Adjust font size for mobile readability */
                 padding: 10px 15px;
-                /* Adjust padding for mobile */
+                /* Adjust padding for better touch targets */
             }
         }
-
 
 
         body.dark-mode {
