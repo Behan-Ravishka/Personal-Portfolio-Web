@@ -51,7 +51,7 @@
             max-width: 135px;
             height: auto;
             top: 50%;
-            left: 1%;
+            left: 0.5%;
             transform: translateY(-50%);
             z-index: 1000;
             display: flex;
@@ -93,6 +93,7 @@
         }
 
         nav a:hover::before {
+            transform: rotate(0deg);
             width: 100%;
             height: 40px;
             top: -2px;
@@ -119,8 +120,12 @@
             background-color: rgb(255, 38, 0);
         }
 
+        nav .imgandbtn {
+            margin-left: 0px;
+        }
+
         section {
-            padding: 20px;
+            padding: 20px 20px;
             height: 100vh;
             margin-left: 150px;
             transition: margin-left 0.3s;
@@ -154,7 +159,7 @@
             text-align: left;
             animation: textSlideIn 1.5s ease-in-out;
             background: linear-gradient(to right, #FDD017, #ff9eef);
-            background-clip: text;
+            background-clip: initial;
             -webkit-background-clip: text;
             -webkit-text-fill-color: transparent;
             transition: background 0.3s ease-in-out;
@@ -183,6 +188,7 @@
             box-shadow: 0 10px 20px rgba(0, 0, 0, 0.2);
             position: relative;
             opacity: 0.65;
+            background-blend-mode: overlay;
             margin: 0 auto;
             z-index: 2;
         }
@@ -258,6 +264,30 @@
             display: none;
         }
 
+        @keyframes ghostSwallow {
+            0% {
+                opacity: 1;
+                transform: translateY(0);
+            }
+
+            100% {
+                opacity: 0;
+                transform: translateY(100%);
+            }
+        }
+
+        @keyframes ghostSwallowReverse {
+            0% {
+                opacity: 1;
+                transform: translateY(0);
+            }
+
+            100% {
+                opacity: 0;
+                transform: translateY(-100%);
+            }
+        }
+
         /* Cursor Effect */
         .cursor-effect {
             position: fixed;
@@ -285,6 +315,9 @@
             box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
             transition: transform 0.3s ease;
             z-index: 1000;
+            transform-style: preserve-3d;
+            perspective: 500px;
+            animation: toggle__animation 3s infinite;
         }
 
         #chatbot:hover {
@@ -306,6 +339,134 @@
             z-index: 999;
             transition: width 0.3s ease;
         }
+
+        /* The switch - the box around the slider */
+.switch {
+    font-size: 1.2rem; /* Adjusted font size for better scaling */
+    position: relative;
+    display: inline-block;
+    width: 3.5em; /* Maintain toggle width */
+    height: 2em; /* Maintain toggle height */
+    transform-style: preserve-3d;
+    perspective: 500px;
+    animation: toggle__animation 3s infinite;
+    margin-left: 10px;
+    margin-top: 30px;
+}
+
+/* Before styling for the switch */
+.switch::before {
+    content: "";
+    position: absolute;
+    width: 100%;
+    height: 100%;
+    left: 0;
+    top: 0;
+    filter: blur(20px);
+    z-index: -1;
+    border-radius: 50px;
+    background-color: #d8ff99;
+    background-image: radial-gradient(at 21% 46%, hsla(183, 65%, 60%, 1) 0px, transparent 50%),
+        radial-gradient(at 23% 25%, hsla(359, 74%, 70%, 1) 0px, transparent 50%),
+        radial-gradient(at 20% 1%, hsla(267, 83%, 75%, 1) 0px, transparent 50%),
+        radial-gradient(at 86% 87%, hsla(204, 69%, 68%, 1) 0px, transparent 50%),
+        radial-gradient(at 99% 41%, hsla(171, 72%, 77%, 1) 0px, transparent 50%),
+        radial-gradient(at 55% 24%, hsla(138, 60%, 62%, 1) 0px, transparent 50%);
+}
+
+/* Hide default HTML checkbox */
+.switch input {
+    opacity: 0;
+    width: 0;
+    height: 0;
+}
+
+/* The slider */
+.slider {
+    position: absolute;
+    cursor: pointer;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    background-color: #fdfefedc;
+    transition: .4s;
+    border-radius: 30px;
+}
+
+.slider:before {
+    position: absolute;
+    content: "";
+    height: 1.4em;
+    width: 1.4em;
+    left: 0.3em;
+    bottom: 0.35em;
+    transition: .4s;
+    border-radius: 50%;
+    box-shadow: rgba(0, 0, 0, 0.17) 0px -10px 10px 0px inset,
+        rgba(0, 0, 0, 0.09) 0px -1px 15px -8px;
+    background-color: #ff99fd;
+    background-image: radial-gradient(at 81% 39%, hsla(327, 79%, 79%, 1) 0px, transparent 50%),
+        radial-gradient(at 11% 72%, hsla(264, 64%, 79%, 1) 0px, transparent 50%),
+        radial-gradient(at 23% 20%, hsla(75, 98%, 71%, 1) 0px, transparent 50%);
+}
+
+.input__check:checked + .slider {
+    background-color: #17202A;
+}
+
+.input__check:checked + .slider:before {
+    transform: translateX(1.5em);
+}
+
+@keyframes toggle__animation {
+    0%,
+    100% {
+        transform: translateY(-10px) rotateX(15deg) rotateY(-20deg);
+    }
+
+    50% {
+        transform: translateY(0px) rotateX(15deg) rotateY(-20deg);
+    }
+}
+
+.relative h2 {
+    font-family: Impact, 'Haettenschweiler', 'Arial Narrow Bold', sans-serif;
+    font-size: 2.5rem; /* Base font size */
+}
+
+/* Media queries for responsiveness */
+@media (max-width: 768px) {
+    .switch {
+        width: 2.5em; /* Smaller toggle width */
+        height: 1.5em; /* Smaller toggle height */
+    }
+
+    .slider:before {
+        height: 1.2em; /* Smaller circle */
+        width: 1.2em; /* Smaller circle */
+    }
+    
+    .relative h2 {
+        font-size: 2rem; /* Adjusted font size for smaller devices */
+    }
+}
+
+@media (max-width: 480px) {
+    .switch {
+        width: 2em; /* Further reduced toggle width */
+        height: 1.2em; /* Further reduced toggle height */
+    }
+
+    .slider:before {
+        height: 1em; /* Further decrease in circle size */
+        width: 1em; /* Further decrease in circle size */
+    }
+
+    .relative h2 {
+        font-size: 1.5rem; /* Smaller font size for mobile */
+    }
+}
 
         /* Horizontal Scroll Container Styling */
         .horizontal-scroll {
@@ -334,6 +495,106 @@
             padding: 0;
             box-sizing: border-box;
         }
+
+        .arrow-container {
+    display: flex;
+    align-items: center;
+    justify-content: center; /* Center align for better appearance */
+    margin: 0 auto; /* Center the container */
+    margin-top: 20px; /* Space from other elements */
+}
+
+.arrow {
+    width: 30px; /* Default size */
+    height: 30px; /* Default size */
+    border-right: 5px solid #7de6ee;
+    border-bottom: 5px solid #7de6ee;
+    transform: rotate(45deg);
+    margin: 0 5px;
+    animation: arrow-animation 1s infinite ease-in-out;
+    z-index: 2;
+}
+
+.arrow:nth-child(2) {
+    animation-delay: 0.2s;
+}
+
+.arrow:nth-child(3) {
+    animation-delay: 0.4s;
+}
+
+@keyframes arrow-animation {
+    0%,
+    100% {
+        opacity: 1;
+        transform: rotate(-45deg) translateX(0);
+    }
+
+    50% {
+        opacity: 0;
+        transform: rotate(-45deg) translateX(10px);
+    }
+}
+
+section p {
+    align-items: right; /* Align text to the right if needed */
+    text-align: left; /* Better text alignment on mobile */
+}
+
+/* Global styles */
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+#matrix {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    z-index: 1;
+    pointer-events: none; /* Allow clicks through the canvas */
+}
+
+/* Matrix font and color */
+.matrix-text {
+    font-family: monospace;
+    color: rgba(58, 204, 58, 0.1);
+    font-size: 10px; /* Default font size */
+}
+
+/* Responsive adjustments */
+@media (max-width: 768px) {
+    .arrow-container {
+        margin-top: 10px; /* Adjust margin for smaller screens */
+    }
+
+    .arrow {
+        width: 25px; /* Slightly smaller arrows */
+        height: 25px; /* Slightly smaller arrows */
+    }
+
+    .matrix-text {
+        font-size: 8px; /* Reduce font size for smaller devices */
+    }
+}
+
+@media (max-width: 480px) {
+    .arrow-container {
+        flex-direction: column; /* Stack arrows vertically on smaller devices */
+    }
+
+    .arrow {
+        width: 20px; /* Further reduce arrow size */
+        height: 20px; /* Further reduce arrow size */
+    }
+
+    .matrix-text {
+        font-size: 6px; /* Further reduce font size for extra small devices */
+    }
+}
 
         /* Media Queries to adjust content size for different screens */
         @media (max-width: 1024px) {
