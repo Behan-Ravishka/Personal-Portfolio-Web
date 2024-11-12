@@ -573,6 +573,42 @@
             color: rgba(58, 204, 58, 0.1);
             font-size: 10px;
         }
+
+        /* Media Queries to adjust content size for different screens */
+        @media (max-width: 640px) {
+            .section h2 {
+                font-size: 1.5rem;
+            }
+        }
+
+        @media (min-width: 640px) {
+            .section h2 {
+                font-size: 2rem;
+            }
+        }
+
+        @media (min-width: 768px) {
+            .section h2 {
+                font-size: 2.5rem;
+            }
+        }
+
+        @media (min-width: 1024px) {
+            .section h2 {
+                font-size: 3rem;
+            }
+        }
+
+        @media (min-width: 1280px) {
+            .section h2 {
+                font-size: 3.5rem;
+            }
+        }
+        @media (max-width: 600px) {
+    .section {
+        padding: 10px; /* Adjust padding for smaller screens */
+    }
+}
     </style>
 </head>
 
@@ -833,69 +869,69 @@
         });
 
         let startX;
-let startY;
-let endX;
-let endY;
+        let startY;
+        let endX;
+        let endY;
 
-// Track touch start
-document.addEventListener("touchstart", function(e) {
-  const touch = e.touches[0];
-  startX = touch.pageX;
-  startY = touch.pageY;
-}, false);
+        // Track touch start
+        document.addEventListener("touchstart", function (e) {
+            const touch = e.touches[0];
+            startX = touch.pageX;
+            startY = touch.pageY;
+        }, false);
 
-// Track touch end and calculate swipe direction
-document.addEventListener("touchend", function(e) {
-  const touch = e.changedTouches[0];
-  endX = touch.pageX;
-  endY = touch.pageY;
+        // Track touch end and calculate swipe direction
+        document.addEventListener("touchend", function (e) {
+            const touch = e.changedTouches[0];
+            endX = touch.pageX;
+            endY = touch.pageY;
 
-  // Determine the swipe direction
-  const diffX = endX - startX;
-  const diffY = endY - startY;
+            // Determine the swipe direction
+            const diffX = endX - startX;
+            const diffY = endY - startY;
 
-  if (Math.abs(diffX) > Math.abs(diffY)) {
-    if (diffX > 50) {
-      // Swipe Right (Next Section)
-      navigateSections('right');
-    } else if (diffX < -50) {
-      // Swipe Left (Previous Section)
-      navigateSections('left');
-    }
-  } else {
-    if (diffY > 50) {
-      // Swipe Down (Next Section)
-      navigateSections('down');
-    } else if (diffY < -50) {
-      // Swipe Up (Previous Section)
-      navigateSections('up');
-    }
-  }
-}, false);
+            if (Math.abs(diffX) > Math.abs(diffY)) {
+                if (diffX > 50) {
+                    // Swipe Right (Next Section)
+                    navigateSections('right');
+                } else if (diffX < -50) {
+                    // Swipe Left (Previous Section)
+                    navigateSections('left');
+                }
+            } else {
+                if (diffY > 50) {
+                    // Swipe Down (Next Section)
+                    navigateSections('down');
+                } else if (diffY < -50) {
+                    // Swipe Up (Previous Section)
+                    navigateSections('up');
+                }
+            }
+        }, false);
 
-// Function to navigate sections
-function navigateSections(direction) {
-  const sections = document.querySelectorAll('.section');
-  let currentSection = document.querySelector('.section.active');
-  let currentIndex = Array.from(sections).indexOf(currentSection);
+        // Function to navigate sections
+        function navigateSections(direction) {
+            const sections = document.querySelectorAll('.section');
+            let currentSection = document.querySelector('.section.active');
+            let currentIndex = Array.from(sections).indexOf(currentSection);
 
-  if (direction === 'right' || direction === 'down') {
-    currentIndex = Math.min(currentIndex + 1, sections.length - 1);
-  } else if (direction === 'left' || direction === 'up') {
-    currentIndex = Math.max(currentIndex - 1, 0);
-  }
+            if (direction === 'right' || direction === 'down') {
+                currentIndex = Math.min(currentIndex + 1, sections.length - 1);
+            } else if (direction === 'left' || direction === 'up') {
+                currentIndex = Math.max(currentIndex - 1, 0);
+            }
 
-  sections.forEach((section, index) => {
-    section.classList.remove('active');
-    if (index === currentIndex) {
-      section.classList.add('active');
-      section.scrollIntoView({ behavior: 'smooth' });
-    }
-  });
-}
+            sections.forEach((section, index) => {
+                section.classList.remove('active');
+                if (index === currentIndex) {
+                    section.classList.add('active');
+                    section.scrollIntoView({ behavior: 'smooth' });
+                }
+            });
+        }
 
-// Add initial active class to first section
-document.querySelector('.section').classList.add('active');
+        // Add initial active class to first section
+        document.querySelector('.section').classList.add('active');
 
 
     </script>
