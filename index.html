@@ -47,13 +47,11 @@
             backdrop-filter: blur(15px);
             box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
             position: fixed;
-            width: 100px;
             width: 135px;
             height: 400px;
             top: 50%;
             left: 0.5%;
             transform: translateY(-50%);
-            /* Center vertically */
             z-index: 1000;
             display: flex;
             flex-direction: column;
@@ -67,12 +65,9 @@
             height: fit-content;
             background-color: transparent;
             list-style: none;
-            list-style: none;
             display: flex;
             flex-direction: column;
-            /* Stack vertically */
             gap: 25px;
-            margin-left: 18px;
             padding: 0;
         }
 
@@ -94,7 +89,6 @@
 
         nav a:hover {
             color: rgb(172, 40, 0);
-
         }
 
         nav a:hover::before {
@@ -121,22 +115,13 @@
             z-index: -1;
         }
 
-        nav a:active::before {
-            background-color: rgb(255, 38, 0);
-        }
-
-        nav .imgandbtn {
-            margin-left: 0px;
-        }
-
         section {
             padding: 20px 20px;
             min-height: 100vh;
-            margin-left: 150px;
-            /* Leave space for the fixed header */
             transition: margin-left 0.3s;
-            /* Smooth transition */
-            ;
+            display: flex;
+            flex-direction: column;
+            align-items: center;
         }
 
         body.dark-mode {
@@ -148,7 +133,7 @@
             background: rgba(6, 55, 78, 0.8);
         }
 
-        /* Hero Section */
+        /* HERO */
         .hero {
             display: flex;
             justify-content: center;
@@ -158,83 +143,27 @@
             background: linear-gradient(to right, #608a9e, #6e883e);
             color: #fff;
             text-align: center;
-            position: relative;
             overflow: hidden;
-            background: #2d6b81;
-            background: -webkit-linear-gradient(120deg, #2d6b81 0%, #63eab3 100%);
-            background: linear-gradient(120deg, #2d6b81 0%, #63eab3 100%);
             height: 100vh;
-            z-index: 1;
-        }
-
-        .hero h1 {
-            font-family: 'Gill Sans', 'Gill Sans MT', 'Calibri', 'Trebuchet MS', sans-serif;
-            margin-left: 0%;
-            margin-top: 5%;
-            text-align: left;
-            animation: textSlideIn 1.5s ease-in-out;
-            background: linear-gradient(to right, #FDD017, #ff9eef);
-            background-clip: initial;
-            -webkit-background-clip: text;
-            -webkit-text-fill-color: transparent;
-            transition: background 0.3s ease-in-out;
-            position: relative;
-            z-index: 2;
-        }
-
-        @keyframes textSlideIn {
-            0% {
-                opacity: 0;
-                transform: translateY(-100%);
-            }
-
-            100% {
-                opacity: 1;
-                transform: translateY(0);
-            }
         }
 
         .hero img {
-            width: 100%;
-            max-width: 33vw;
-            /* Scales with viewport width */
+            width: 80%;
+            max-width: 600px;
             margin-top: -28.8%;
-            /* Adjusted for better scaling */
-            background-attachment: scroll;
             border-radius: 25% 0% 25% 0% / 22% 25% 25% 21%;
-            transition: transform 0.3s, box-shadow 0.3s;
             box-shadow: 0 10px 20px rgba(0, 0, 0, 0.2);
-            position: relative;
             opacity: 0.65;
-            background-blend-mode: overlay;
-            margin-left: auto;
-            margin-right: 10%;
             z-index: 2;
+            transition: transform 0.3s, box-shadow 0.3s;
         }
 
-        .hero img:hover {
-            transform: scale(1.1);
-            box-shadow: 0 15px 25px rgba(255, 255, 255, 0.8);
-        }
-
-        body.dark-mode .hero {
-            background: linear-gradient(to right, #0f2027, #203a43, #2c5364);
-        }
-
-        .about_img img {
-            width: 100%;
+        .about_img img, .card-3d img {
+            width: 80%;
             max-width: 300px;
-            margin-top: 0;
-            background-attachment: scroll;
             border-radius: 25% 0% 25% 0% / 22% 25% 25% 21%;
             transition: transform 0.3s, box-shadow 0.3s;
             box-shadow: 0 10px 20px rgba(0, 0, 0, 0.2);
-            margin-left: 60%;
-        }
-
-        .about_img img:hover {
-            transform: scale(1.1);
-            box-shadow: 0 15px 25px rgba(0, 0, 0, 0.3);
         }
 
         /* Meteors */
@@ -248,378 +177,72 @@
             overflow: hidden;
         }
 
-        .meteor {
-            position: absolute;
-            top: 0;
-            background: linear-gradient(45deg, #fff, rgba(255, 255, 255, 0));
-            width: 2px;
-            height: 80px;
-            opacity: 0.6;
-            filter: blur(1px);
-            animation: meteor 1.5s linear infinite;
-        }
-
-        @keyframes meteor {
-            0% {
-                transform: translateY(0) rotate(45deg);
-            }
-
-            100% {
-                transform: translateY(100vh) rotate(45deg);
-            }
-        }
-
-        body.dark-mode .meteor {
-            background: linear-gradient(45deg, #ccc, rgba(204, 204, 204, 0));
-        }
-
-        #ghost-swallow {
-            position: fixed;
-            top: 0;
-            left: 0;
-            width: 100%;
-            height: 100%;
-            background: rgba(0, 0, 0, 0.8);
-            z-index: 9999;
-            display: none;
-        }
-
-        @keyframes ghostSwallow {
-            0% {
-                opacity: 1;
-                transform: translateY(0);
-            }
-
-            100% {
-                opacity: 0;
-                transform: translateY(100%);
-            }
-        }
-
-        @keyframes ghostSwallowReverse {
-            0% {
-                opacity: 1;
-                transform: translateY(0);
-            }
-
-            100% {
-                opacity: 0;
-                transform: translateY(-100%);
-            }
-        }
-
-        /* Cursor Effect */
-        .cursor-effect {
-            position: fixed;
-            pointer-events: none;
-            width: 30px;
-            height: 30px;
-            border-radius: 50%;
-            background: rgb(233, 229, 229);
-            transition: transform 0.2s ease;
-        }
-
-        /* WhatsApp Chatbot */
-        #chatbot {
-            position: fixed;
-            bottom: 20px;
-            right: 20px;
-            background: #25D366;
-            color: #fff;
-            padding: 10px 20px;
-            border-radius: 50px;
-            cursor: pointer;
-            display: flex;
-            align-items: center;
-            justify-content: center;
-            box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
-            transition: transform 0.3s ease;
-            z-index: 1000;
-            transform-style: preserve-3d;
-            perspective: 500px;
-            animation: toggle__animation 3s infinite;
-        }
-
-        #chatbot:hover {
-            transform: scale(1.1);
-        }
-
-        .chatbot-icon {
-            margin-right: 10px;
-        }
-
-        .card-3d {
-            perspective: 1000px;
-        }
-
-        .card-3d img {
-            width: 100%;
-            max-width: 300px;
-            border-radius: 15px;
-            transition: transform 0.3s;
-        }
-
-        .card-3d:hover img {
-            transform: rotateY(15deg) rotateX(15deg);
-        }
-
-        /* Progress Bar */
-        #progress-bar {
-            position: fixed;
-            top: 0;
-            /* Or move it to the left for a vertical indicator */
-            left: 0;
-            height: 5px;
-            /* Keep it thin for a horizontal bar */
-            background: #007BFF;
-            width: 0;
-            z-index: 999;
-            transition: width 0.3s ease;
-        }
-
-
-        /* The switch - the box around the slider */
-        .switch {
-            font-size: 17px;
-            position: relative;
-            display: inline-block;
-            width: 3.5em;
-            height: 2em;
-            transform-style: preserve-3d;
-            perspective: 500px;
-            animation: toggle__animation 3s infinite;
-            margin-left: 10px;
-            margin-top: 30px;
-        }
-
-        .switch::before {
-            content: "";
-            position: absolute;
-            width: 100%;
-            height: 100%;
-            left: 0;
-            top: 0;
-            filter: blur(20px);
-            z-index: -1;
-            border-radius: 50px;
-            background-color: #d8ff99;
-            background-image: radial-gradient(at 21% 46%, hsla(183, 65%, 60%, 1) 0px, transparent 50%),
-                radial-gradient(at 23% 25%, hsla(359, 74%, 70%, 1) 0px, transparent 50%),
-                radial-gradient(at 20% 1%, hsla(267, 83%, 75%, 1) 0px, transparent 50%),
-                radial-gradient(at 86% 87%, hsla(204, 69%, 68%, 1) 0px, transparent 50%),
-                radial-gradient(at 99% 41%, hsla(171, 72%, 77%, 1) 0px, transparent 50%),
-                radial-gradient(at 55% 24%, hsla(138, 60%, 62%, 1) 0px, transparent 50%);
-        }
-
-        /* Hide default HTML checkbox */
-        .switch input {
-            opacity: 0;
-            width: 0;
-            height: 0;
-        }
-
-        /* The slider */
-        .slider {
-            position: absolute;
-            cursor: pointer;
-            top: 0;
-            left: 0;
-            right: 0;
-            bottom: 0;
-            background-color: #fdfefedc;
-            transition: .4s;
-            border-radius: 30px;
-        }
-
-        .slider:before {
-            position: absolute;
-            content: "";
-            height: 1.4em;
-            width: 1.4em;
-            left: 0.3em;
-            bottom: 0.35em;
-            transition: .4s;
-            border-radius: 50%;
-            box-shadow: rgba(0, 0, 0, 0.17) 0px -10px 10px 0px inset,
-                rgba(0, 0, 0, 0.09) 0px -1px 15px -8px;
-            background-color: #ff99fd;
-            background-image: radial-gradient(at 81% 39%, hsla(327, 79%, 79%, 1) 0px, transparent 50%),
-                radial-gradient(at 11% 72%, hsla(264, 64%, 79%, 1) 0px, transparent 50%),
-                radial-gradient(at 23% 20%, hsla(75, 98%, 71%, 1) 0px, transparent 50%);
-        }
-
-        .input__check:checked+.slider {
-            background-color: #17202A;
-        }
-
-        .input__check:checked+.slider:before {
-            transform: translateX(1.5em);
-        }
-
-        @keyframes toggle__animation {
-
-            0%,
-            100% {
-                transform: translateY(-10px) rotateX(15deg) rotateY(-20deg);
-            }
-
-            50% {
-                transform: translateY(0px) rotateX(15deg) rotateY(-20deg);
-            }
-        }
-
-        .relative h2 {
-            font-family: Impact, 'Haettenschweiler', 'Arial Narrow Bold', sans-serif;
-            font-size: 40px;
-        }
-
-        .absolute {
-            height: 3px;
-        }
-
-        /* Horizontal Scroll Container Styling */
+        /* Styles for sections */
         .horizontal-scroll {
             display: flex;
             overflow-x: hidden;
-            /* Hide the scrollbar */
-            scroll-behavior: smooth;
             height: 100vh;
             width: 100vw;
         }
 
-        /* Optional: Style for hiding the horizontal scrollbar on Chrome, Edge, and Safari */
-        .horizontal-scroll::-webkit-scrollbar {
-            display: none;
-        }
-
         /* Ensure each section takes up the full viewport width */
-        .horizontal-scroll>* {
+        .horizontal-scroll > * {
             flex: 0 0 100vw;
             height: 100vh;
             scroll-snap-align: start;
-            /* Snaps sections to viewport when scrolling stops */
             transition: transform 0.3s ease-in-out;
         }
 
-        * {
-            margin: 0;
-            padding: 0;
-            box-sizing: border-box;
-        }
-
-        .arrow-container {
-            display: flex;
-            align-items: center;
-            margin-left: 600px;
-        }
-
-        .arrow {
-            width: 30px;
-            height: 30px;
-            border-right: 5px solid #7de6ee;
-            border-bottom: 5px solid #7de6ee;
-            transform: rotate(45deg);
-            margin: 0 5px;
-            animation: arrow-animation 1s infinite ease-in-out;
-            z-index: 2;
-        }
-
-        .arrow:nth-child(2) {
-            animation-delay: 0.2s;
-        }
-
-        .arrow:nth-child(3) {
-            animation-delay: 0.4s;
-        }
-
-        @keyframes arrow-animation {
-
-            0%,
-            100% {
-                opacity: 1;
-                transform: rotate(-45deg) translateX(0);
-            }
-
-            50% {
-                opacity: 0;
-                transform: rotate(-45deg) translateX(10px);
-            }
-        }
-
-        section p {
-            align-items: right;
-        }
-
-        * {
-            margin: 0;
-            padding: 0;
-            box-sizing: border-box;
-        }
-
-        #matrix {
-            position: absolute;
-            top: 0;
-            left: 0;
-            width: 100%;
-            height: 100%;
-            z-index: 1;
-            pointer-events: none;
-            /* Allow clicks through the canvas */
-        }
-
-        /* Matrix font and color */
-        .matrix-text {
-            font-family: monospace;
-            color: rgba(58, 204, 58, 0.1);
-            font-size: 10px;
-        }
-
-        /* Media Queries to adjust content size for different screens */
-        @media (max-width: 640px) {
-            .section h2 {
-                font-size: 1.5rem;
-            }
-        }
-
-        @media (min-width: 640px) {
-            .section h2 {
-                font-size: 2rem;
-            }
-        }
-
-        @media (min-width: 768px) {
-            .section h2 {
-                font-size: 2.5rem;
-            }
-        }
-
-        @media (min-width: 1024px) {
-            .section h2 {
-                font-size: 3rem;
-            }
-        }
-
-        @media (min-width: 1280px) {
-            .section h2 {
-                font-size: 3.5rem;
-            }
-        }
+        /* Add responsive styles */
         @media (max-width: 600px) {
-    .section {
-        padding: 10px; /* Adjust padding for smaller screens */
-    }
-}
+            header {
+                width: 100px;
+            }
+
+            .hero img, .about_img img {
+                max-width: 80%;
+            }
+
+            section {
+                padding: 10px;
+            }
+
+            .card-3d img {
+                max-width: 80%;
+            }
+        }
+
+        @media (min-width: 601px) {
+            header {
+                width: 135px;
+            }
+
+            section {
+                padding: 20px;
+            }
+
+            .hero img, .about_img img {
+                max-width: 600px;
+            }
+
+            .card-3d img {
+                max-width: 300px;
+            }
+        }
+
+        /* Custom scrollbar styles */
+        .horizontal-scroll::-webkit-scrollbar {
+            display: none; /* Hide the scrollbar */
+        }
     </style>
 </head>
 
 <body>
     <div id="ghost-swallow"></div>
-    <header class="glass"
-        class="fixed top-0 left-0 w-full flex justify-center items-center transition-all duration-500 ease-in-out">
+    <header class="glass">
         <nav>
             <ul>
-                <img src="Images/logo.png" alt="LOGO" style="width: 80px; height: 80px; margin-bottom: 10px;"
-                    class="imgandbtn">
+                <img src="Images/logo.png" alt="LOGO" style="width: 80px; height: 80px; margin-bottom: 10px;" class="imgandbtn">
                 <li><a href="#home">Home</a></li>
                 <li><a href="#about">About</a></li>
                 <li><a href="#projects">Projects</a></li>
@@ -634,17 +257,11 @@
         </nav>
     </header>
     <div id="progress-bar"></div>
-    <div class="horizontal-scroll" style="overflow-y: auto; white-space: nowrap; width: 100vw; height: 100vh;"
-        loading="lazy">
-        <section id="home" class="hero" style="display: inline-block; width: 100vw;">
-            <h1 class="font-sans font-bold text-sm sm:text-2xl md:text-3xl lg:text-4xl" style="font-family: 'Poppins'">
-                Hi, I'm</h1>
-            <h1 id="changingText" class="font-bold text-2xl sm:text-3xl md:text-4xl lg:text-5xl xl:text-6xl"
-                style="font-family: 'Doto', sans-serif;">
-                M P Behan Ravishka Perera
-            </h1>
-            <h1 class="font-mono font-bold text-sm sm:text-2xl md:text-3xl lg:text-4xl" style="font-family: 'Poppins'">
-                Welcome to My Portfolio!</h1>
+    <div class="horizontal-scroll">
+        <section id="home" class="hero">
+            <h1 class="font-sans font-bold text-sm sm:text-2xl md:text-3xl lg:text-4xl" style="font-family: 'Poppins'">Hi, I'm</h1>
+            <h1 id="changingText" class="font-bold text-2xl sm:text-3xl md:text-4xl lg:text-5xl xl:text-6xl" style="font-family: 'Doto', sans-serif;">M P Behan Ravishka Perera</h1>
+            <h1 class="font-mono font-bold text-sm sm:text-2xl md:text-3xl lg:text-4xl" style="font-family: 'Poppins'">Welcome to My Portfolio!</h1>
             <canvas id="matrix"></canvas>
             <div class="arrow-container">
                 <div class="arrow"></div>
@@ -653,27 +270,19 @@
             </div>
             <img src="Images/hanthana.jpg" alt="Intro">
         </section>
-        <section id="about" class="about_img" style="display: inline-block; width: 100vw;">
+        <section id="about" class="about_img">
             <span class="relative flex justify-center">
-                <div
-                    class="absolute inset-x-0 top-1/2 h-px -translate-y-1/2 bg-transparent bg-gradient-to-r from-transparent via-gray-500 to-transparent opacity-100">
-                </div>
+                <div class="absolute inset-x-0 top-1/2 h-px -translate-y-1/2 bg-gradient-to-r from-transparent via-gray-500 to-transparent opacity-100"></div>
                 <span class="relative z-10 bg-white glass px-6">
                     <h2>About Me</h2>
                 </span>
             </span>
             <img src="Images/behan.jpg" alt="Your Photo">
-            <p>
-                I am a passionate developer with experience in creating dynamic and responsive web applications. My
-                skills
-                include HTML, CSS, JavaScript, and various frameworks.
-            </p>
+            <p>I am a passionate developer with experience in creating dynamic and responsive web applications. My skills include HTML, CSS, JavaScript, and various frameworks.</p>
         </section>
-        <section id="projects" style="display: inline-block; width: 100vw;">
+        <section id="projects">
             <span class="relative flex justify-center">
-                <div
-                    class="absolute inset-x-0 top-1/2 h-px -translate-y-1/2 bg-transparent bg-gradient-to-r from-transparent via-gray-500 to-transparent opacity-75">
-                </div>
+                <div class="absolute inset-x-0 top-1/2 h-px -translate-y-1/2 bg-gradient-to-r from-transparent via-gray-500 to-transparent opacity-75"></div>
                 <span class="relative z-10 bg-white glass px-6">
                     <h2>Projects</h2>
                 </span>
@@ -687,22 +296,21 @@
                 <p>Project 2 Description</p>
             </div>
         </section>
-        <section id="contact" style="display: inline-block; width: 100vw;">
+        <section id="contact">
             <span class="relative flex justify-center">
-                <div
-                    class="absolute inset-x-0 top-1/2 h-px -translate-y-1/2 bg-transparent bg-gradient-to-r from-transparent via-gray-500 to-transparent opacity-75">
-                </div>
+                <div class="absolute inset-x-0 top-1/2 h-px -translate-y-1/2 bg-gradient-to-r from-transparent via-gray-500 to-transparent opacity-75"></div>
                 <span class="relative z-10 bg-white glass px-6">
                     <h2>Contact Me</h2>
                 </span>
             </span>
-            <p>If you would like to get in touch, feel free to reach out via email or through my social media channels.
-            </p>
+            <p>If you would like to get in touch, feel free to reach out via email or through my social media channels.</p>
         </section>
     </div>
+    
     <div id="chatbot">
         <span class="chatbot-icon">💬 Chat with me!</span>
     </div>
+
     <script>
         document.getElementById('theme').addEventListener('change', () => {
             document.body.classList.toggle('dark-mode');
@@ -726,98 +334,37 @@
             window.open('https://wa.me/yourwhatsapplink', '_blank'); // Replace with your WhatsApp link
         });
 
-        document.addEventListener('mousemove', (e) => {
-            const cursor = document.createElement('div');
-            cursor.classList.add('cursor-effect');
-            document.body.appendChild(cursor);
-            cursor.style.left = `${e.clientX}px`;
-            cursor.style.top = `${e.clientY}px`;
-            setTimeout(() => cursor.remove(), 200);
-        });
-
-        // Progress bar functionality for horizontal scrolling
-        const progressBar = document.getElementById('progress-bar');
+        // Horizontal Scroll Behavior
         const horizontalScrollContainer = document.querySelector('.horizontal-scroll');
 
-        horizontalScrollContainer.addEventListener('scroll', () => {
-            const scrollLeft = horizontalScrollContainer.scrollLeft;
-            const scrollWidth = horizontalScrollContainer.scrollWidth - horizontalScrollContainer.clientWidth;
-            const scrollPercent = (scrollLeft / scrollWidth) * 100;
-            progressBar.style.width = scrollPercent + '%';
-        });
-
-        // Create meteors dynamically
-        const createMeteor = () => {
-            const meteor = document.createElement('div');
-            meteor.classList.add('meteor');
-            meteor.style.left = `${Math.random() * 100}vw`;
-            meteor.style.animationDuration = `${Math.random() * 2 + 1.5}s`;
-            document.querySelector('.meteors').appendChild(meteor);
-            setTimeout(() => {
-                meteor.remove();
-            }, 1500);
-        };
-
-        setInterval(createMeteor, 500);
-
-        // Add an event listener to detect mouse wheel scrolling
         horizontalScrollContainer.addEventListener('wheel', (event) => {
             event.preventDefault(); // Prevent vertical scroll
-
-            // Scroll horizontally by the vertical scroll delta, creating a smooth effect
-            horizontalScrollContainer.scrollLeft += event.deltaY * 3.5; // Adjust multiplier for speed
+            horizontalScrollContainer.scrollLeft += event.deltaY; // Scroll horizontally
         });
 
-        let throttleTimeout;
-        document.addEventListener('mousemove', (e) => {
-            if (throttleTimeout) return;
-            throttleTimeout = setTimeout(() => {
-                const cursor = document.createElement('div');
-                cursor.classList.add('cursor-effect');
-                cursor.style.left = `${e.clientX}px`;
-                cursor.style.top = `${e.clientY}px`;
-                document.body.appendChild(cursor);
-                setTimeout(() => cursor.remove(), 200);
-                throttleTimeout = null;
-            }, 50); // Adjust timeout as needed
+        // Touch Swiping
+        let startX;
+
+        document.addEventListener("touchstart", function (e) {
+            startX = e.touches[0].pageX;
         });
 
-        const changingText = document.getElementById('changingText');
-        const textArray = [
-            'M P Behan Ravishka Perera',
-            'Undergraduate',
-            'Tech Enthusiast',
-            'Volunteer in Technology',
-            'Solo Learner',
-            'Nature Lover'
-        ];
+        document.addEventListener("touchend", function (e) {
+            const endX = e.changedTouches[0].pageX;
+            const diffX = endX - startX;
 
-        let currentIndex = 0;
-        let typingIndex = 0;
-        let isDeleting = false;
-        let speed = 100;
-
-        function changeText() {
-            let currentText = textArray[currentIndex];
-            if (isDeleting) {
-                changingText.textContent = currentText.substring(0, typingIndex - 0);
-                typingIndex--;
-                if (typingIndex === 0) {
-                    isDeleting = false;
-                    currentIndex = (currentIndex + 1) % textArray.length;
-                    speed = 600;
-                }
-            } else {
-                changingText.textContent = currentText.substring(0, typingIndex + 1);
-                typingIndex++;
-                if (typingIndex === currentText.length) {
-                    isDeleting = true;
-                    speed = 100;
+            if (Math.abs(diffX) > 50) {
+                if (diffX > 0) {
+                    // Swipe Right
+                    horizontalScrollContainer.scrollLeft -= 150; // Adjust value as needed
+                } else {
+                    // Swipe Left
+                    horizontalScrollContainer.scrollLeft += 150; // Adjust value as needed
                 }
             }
-        }
-        setInterval(changeText, speed);
+        });
 
+        // Canvas for Matrix effect
         const canvas = document.getElementById("matrix");
         const ctx = canvas.getContext("2d");
 
@@ -825,7 +372,7 @@
         canvas.width = window.innerWidth;
         canvas.height = window.innerHeight;
 
-        // Matrix characters and font size
+        // Matrix character settings
         const matrixCharacters = "ABCDEFGHIJKLMNOPQRSTUVWXYZ123456789@#$%^&*()*&^%";
         const fontSize = 16;
         const columns = canvas.width / fontSize;
@@ -845,21 +392,14 @@
             // Loop through each drop
             for (let i = 0; i < drops.length; i++) {
                 const text = matrixCharacters[Math.floor(Math.random() * matrixCharacters.length)];
-
-                // Draw the character
                 ctx.fillText(text, i * fontSize, drops[i] * fontSize);
-
-                // Randomly reset the drop to the top after it falls off the screen
                 if (drops[i] * fontSize > canvas.height && Math.random() > 0.975) {
                     drops[i] = 0;
                 }
-
-                // Increment the Y position of the drop
                 drops[i]++;
             }
         }
 
-        // Call drawMatrixRain at an interval to animate
         setInterval(drawMatrixRain, 50);
 
         // Update canvas size on window resize
@@ -867,73 +407,6 @@
             canvas.width = window.innerWidth;
             canvas.height = window.innerHeight;
         });
-
-        let startX;
-        let startY;
-        let endX;
-        let endY;
-
-        // Track touch start
-        document.addEventListener("touchstart", function (e) {
-            const touch = e.touches[0];
-            startX = touch.pageX;
-            startY = touch.pageY;
-        }, false);
-
-        // Track touch end and calculate swipe direction
-        document.addEventListener("touchend", function (e) {
-            const touch = e.changedTouches[0];
-            endX = touch.pageX;
-            endY = touch.pageY;
-
-            // Determine the swipe direction
-            const diffX = endX - startX;
-            const diffY = endY - startY;
-
-            if (Math.abs(diffX) > Math.abs(diffY)) {
-                if (diffX > 50) {
-                    // Swipe Right (Next Section)
-                    navigateSections('right');
-                } else if (diffX < -50) {
-                    // Swipe Left (Previous Section)
-                    navigateSections('left');
-                }
-            } else {
-                if (diffY > 50) {
-                    // Swipe Down (Next Section)
-                    navigateSections('down');
-                } else if (diffY < -50) {
-                    // Swipe Up (Previous Section)
-                    navigateSections('up');
-                }
-            }
-        }, false);
-
-        // Function to navigate sections
-        function navigateSections(direction) {
-            const sections = document.querySelectorAll('.section');
-            let currentSection = document.querySelector('.section.active');
-            let currentIndex = Array.from(sections).indexOf(currentSection);
-
-            if (direction === 'right' || direction === 'down') {
-                currentIndex = Math.min(currentIndex + 1, sections.length - 1);
-            } else if (direction === 'left' || direction === 'up') {
-                currentIndex = Math.max(currentIndex - 1, 0);
-            }
-
-            sections.forEach((section, index) => {
-                section.classList.remove('active');
-                if (index === currentIndex) {
-                    section.classList.add('active');
-                    section.scrollIntoView({ behavior: 'smooth' });
-                }
-            });
-        }
-
-        // Add initial active class to first section
-        document.querySelector('.section').classList.add('active');
-
-
     </script>
 </body>
 
