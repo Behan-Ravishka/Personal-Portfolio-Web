@@ -169,21 +169,31 @@
                 /* Remove max-width for mobile */
                 box-shadow: 0 -4px 8px rgba(0, 0, 0, 0.2);
                 /* Optional shadow */
+                max-height: 50px;
             }
 
             nav ul {
                 flex-direction: row;
                 /* Change to horizontal layout */
-                gap: 10px;
+                gap: 5px;
                 /* Adjust spacing between items */
                 margin: 0;
                 /* Center the UL without left margin */
                 padding: 0;
                 /* Reset padding */
-                width: 100%;
+                width: 20%;
                 /* Adjust width to ensure it takes full space */
+                height: 5%;
                 justify-content: center;
                 /* Center UL contents */
+                background-color: transparent;
+                margin-top: 30px;
+
+            }
+
+            nav ul li {
+                list-style: none;
+                /* Remove default list bullets */
             }
 
             nav a {
@@ -192,6 +202,59 @@
                 padding: 10px 15px;
                 /* Adjust padding for better touch targets */
             }
+
+            nav .imgandbtn {
+    display: flex; /* Use flexbox for layout */
+    flex-direction: column; /* Arrange items vertically or use row to arrange items horizontally */
+    align-items: center; /* Center items horizontally */
+    max-width: 90%; /* Use a percentage for responsive sizing */
+    max-height: auto; /* Allow height to adjust based on content */
+    margin: 0 auto; /* Center the container */
+}
+
+nav .imgandbtn img {
+    width: 50%; /* Adjust image size as needed */
+    height: auto; /* Maintain aspect ratio */
+}
+
+nav .imgandbtn button {
+    padding: 5px 10px; /* Small button size */
+    font-size: 0.8rem; /* Smaller font size for buttons */
+}
+
+@media (max-width: 768px) {
+    nav .imgandbtn img {
+        width: 70%; /* Adjust size for smaller screens */
+    }
+    
+    nav .imgandbtn button {
+        padding: 4px 8px; /* Smaller padding for buttons on mobile */
+        font-size: 0.7rem; /* Smaller font size on mobile */
+    }
+}
+
+
+            .navigation {
+                position: relative;
+                /* Change positioning method if it's absolute */
+                top: 0;
+                /* Adjust depending on your layout  */
+                left: 0;
+                /* Adjust for your needs */
+                display: flex;
+                /* Ensure it’s displayed */
+                display: flex;
+                /* Use flexbox in the nav */
+                justify-content: center;
+                /* Center items horizontally */
+                align-items: center;
+                /* Center items vertically */
+                flex-direction: column;
+                /* Optional: change if you want a vertical nav on mobile */
+                margin-top: 0;
+                /* Adjust as needed */
+            }
+
         }
 
 
@@ -802,7 +865,7 @@
 <body>
     <div id="ghost-swallow"></div>
     <header class="glass">
-        <nav>
+        <nav class="navigation">
             <ul>
                 <img src="Images/logo.png" alt="LOGO" style="width: 80px; height: 80px; margin-bottom: 10px;"
                     class="imgandbtn">
