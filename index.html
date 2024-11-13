@@ -175,7 +175,7 @@
             nav ul {
                 flex-direction: row;
                 /* Change to horizontal layout */
-                gap: 5px;
+                word-spacing: initial;
                 /* Adjust spacing between items */
                 margin: 0;
                 /* Center the UL without left margin */
@@ -197,7 +197,7 @@
             }
 
             nav a {
-                font-size: 14px;
+                font-size: 10px;
                 /* Adjust font size for mobile readability */
                 padding: 10px 15px;
                 /* Adjust padding for better touch targets */
@@ -207,42 +207,58 @@
                 display: flex;
                 /* Use flexbox for layout */
                 flex-direction: column;
-                /* Arrange items vertically or use row to arrange items horizontally */
-                align-items: center;
-                /* Center items horizontally */
-                max-width: 90%;
-                /* Use a percentage for responsive sizing */
-                max-height: auto;
-                /* Allow height to adjust based on content */
-                margin: 0 auto;
+                /* Arrange items vertically */
+                max-width: 50%;
+                /* Reduced max-width for smaller items */
+                margin: 0 10px;
                 /* Center the container */
             }
 
             nav .imgandbtn img {
-                width: 50%;
-                /* Adjust image size as needed */
-                height: auto;
+                width: 40%;
+                /* Reduced image size */
+                height: 40%;
                 /* Maintain aspect ratio */
+
             }
 
             nav .imgandbtn button {
-                padding: 5px 10px;
-                /* Small button size */
-                font-size: 0.8rem;
+                padding: 1px 3px;
+                /* Reduced padding for button size */
+                font-size: 0.5rem;
                 /* Smaller font size for buttons */
             }
 
             @media (max-width: 768px) {
                 nav .imgandbtn img {
-                    width: 70%;
-                    /* Adjust size for smaller screens */
+                    width: 5%;
+                    /* Further reduced width for mobile screens */
+                    height: 5%;
+                    /* Maintain aspect ratio */
                 }
 
                 nav .imgandbtn button {
-                    padding: 4px 8px;
+                    padding: 3px 5px;
                     /* Smaller padding for buttons on mobile */
-                    font-size: 0.7rem;
-                    /* Smaller font size on mobile */
+                    font-size: 0.6rem;
+                    /* Even smaller font size on mobile */
+                }
+            }
+
+            @media (max-width: 480px) {
+                nav .imgandbtn img {
+                    width: 5%;
+                    /* Further reduce size for extra small screens */
+                    height: 5%;
+                    /* Maintain aspect ratio */
+
+                }
+
+                nav .imgandbtn button {
+                    padding: 2px 4px;
+                    /* Even smaller padding for extra small screens */
+                    font-size: 0.5rem;
+                    /* Keep small font size */
                 }
             }
 
@@ -488,61 +504,89 @@
         }
 
         /* WhatsApp Chatbot */
-#chatbot {
-    position: fixed;
-    bottom: 20px; /* Distance from the bottom */
-    right: 20px; /* Distance from the right */
-    background: #25D366; /* WhatsApp green */
-    color: #fff; /* Text color */
-    padding: 10px 20px; /* Padding around the button */
-    border-radius: 50px; /* Rounded corners */
-    cursor: pointer; /* Pointer cursor on hover */
-    display: flex; /* Flex layout for the icon and text */
-    align-items: center; /* Center items vertically */
-    justify-content: center; /* Center items horizontally */
-    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1); /* Shadow effect */
-    transition: transform 0.3s ease; /* Animation for scaling */
-    z-index: 1000; /* Stack above other elements */
-    transform-style: preserve-3d; /* 3D effect for animation */
-    perspective: 500px; /* Perspective for 3D effect */
-    animation: toggle__animation 3s infinite; /* Continuous animation */
-}
+        #chatbot {
+            position: fixed;
+            bottom: 20px;
+            /* Distance from the bottom */
+            right: 20px;
+            /* Distance from the right */
+            background: #25D366;
+            /* WhatsApp green */
+            color: #fff;
+            /* Text color */
+            padding: 10px 20px;
+            /* Padding around the button */
+            border-radius: 50px;
+            /* Rounded corners */
+            cursor: pointer;
+            /* Pointer cursor on hover */
+            display: flex;
+            /* Flex layout for the icon and text */
+            align-items: center;
+            /* Center items vertically */
+            justify-content: center;
+            /* Center items horizontally */
+            box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+            /* Shadow effect */
+            transition: transform 0.3s ease;
+            /* Animation for scaling */
+            z-index: 1000;
+            /* Stack above other elements */
+            transform-style: preserve-3d;
+            /* 3D effect for animation */
+            perspective: 500px;
+            /* Perspective for 3D effect */
+            animation: toggle__animation 3s infinite;
+            /* Continuous animation */
+        }
 
-/* Scale on hover */
-#chatbot:hover {
-    transform: scale(1.1); /* Slightly increase the size on hover */
-}
+        /* Scale on hover */
+        #chatbot:hover {
+            transform: scale(1.1);
+            /* Slightly increase the size on hover */
+        }
 
-.chatbot-icon {
-    margin-right: 10px; /* Space between icon and text */
-}
+        .chatbot-icon {
+            margin-right: 10px;
+            /* Space between icon and text */
+        }
 
-/* Responsive adjustments */
-@media (max-width: 768px) {
-    #chatbot {
-        padding: 8px 16px; /* Smaller padding on mobile */
-        font-size: 0.9rem; /* Smaller font size for mobile */
-        bottom: 60px; /* Adjust position if needed */
-        right: 5px; /* Adjust position if needed */
-    }
+        /* Responsive adjustments */
+        @media (max-width: 768px) {
+            #chatbot {
+                padding: 8px 16px;
+                /* Smaller padding on mobile */
+                font-size: 0.9rem;
+                /* Smaller font size for mobile */
+                bottom: 60px;
+                /* Adjust position if needed */
+                right: 5px;
+                /* Adjust position if needed */
+            }
 
-    .chatbot-icon {
-        margin-right: 8px; /* Reduce space between icon and text */
-    }
-}
+            .chatbot-icon {
+                margin-right: 8px;
+                /* Reduce space between icon and text */
+            }
+        }
 
-@media (max-width: 480px) {
-    #chatbot {
-        padding: 5px 10px; /* Even smaller padding on extra small screens */
-        font-size: 0.8rem; /* Further reduce font size */
-        bottom: 60px; /* Adjust position if needed */
-        right: 5px; /* Adjust position if needed */
-    }
+        @media (max-width: 480px) {
+            #chatbot {
+                padding: 5px 10px;
+                /* Even smaller padding on extra small screens */
+                font-size: 0.8rem;
+                /* Further reduce font size */
+                bottom: 60px;
+                /* Adjust position if needed */
+                right: 5px;
+                /* Adjust position if needed */
+            }
 
-    .chatbot-icon {
-        margin-right: 5px; /* Further reduce space between icon and text */
-    }
-}
+            .chatbot-icon {
+                margin-right: 5px;
+                /* Further reduce space between icon and text */
+            }
+        }
 
         /* Progress Bar */
         #progress-bar {
@@ -662,14 +706,21 @@
                 /* Smaller toggle width */
                 height: 1.5em;
                 /* Smaller toggle height */
+                bottom: 6px;
             }
 
             .slider:before {
-                height: 1.2em;
+                height: 1em;
                 /* Smaller circle */
-                width: 1.2em;
+                width: 1em;
                 /* Smaller circle */
+                left: 0.3em;
+                bottom: 0.28em;
             }
+
+            .input__check:checked+.slider:before {
+            transform: translateX(0.8em);
+        }
 
             .relative h2 {
                 font-size: 2rem;
@@ -683,13 +734,17 @@
                 /* Further reduced toggle width */
                 height: 1.2em;
                 /* Further reduced toggle height */
+                bottom: 6px;
+                right: 30px;
             }
 
             .slider:before {
-                height: 1em;
+                height: 0.8em;
                 /* Further decrease in circle size */
-                width: 1em;
+                width: 0.8em;
                 /* Further decrease in circle size */
+                left: 0.2em;
+                bottom: 0.20em;
             }
 
             .relative h2 {
