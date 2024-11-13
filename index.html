@@ -81,14 +81,15 @@
             font-family: 'Franklin Gothic Medium', 'Arial Narrow', Arial, sans-serif;
             color: rgb(153, 151, 151);
             border: none;
-            font-size: 10px;
-            font-weight: 500;
-            padding: 10px 30px;
+            font-size: 18px;
+            font-weight: 700;
+            padding: 10px 15px;
             cursor: pointer;
             position: relative;
             text-align: center;
             transition: 0.1s;
             z-index: 1;
+            text-decoration: none;
         }
 
         nav a:hover {
@@ -102,14 +103,15 @@
             top: -2px;
             border-radius: 3px;
             background-color: rgb(255, 83, 53);
+            transform: rotate(0deg);
         }
 
         nav a::before {
             content: "";
             border-radius: 2px;
             position: absolute;
-            width: 6px;
-            height: 6px;
+            width: 8px;
+            height: 8px;
             background-color: tomato;
             left: -10px;
             top: 19px;
@@ -121,6 +123,107 @@
 
         nav a:active::before {
             background-color: rgb(255, 38, 0);
+        }
+
+        /* Responsive adjustments */
+        @media (max-width: 768px) {
+
+            /* Base styles for navigation links */
+            nav a {
+                background-color: transparent;
+                font-family: 'Franklin Gothic Medium', 'Arial Narrow', Arial, sans-serif;
+                color: rgb(153, 151, 151);
+                border: none;
+                font-size: 18px;
+                /* Default font size */
+                font-weight: 700;
+                padding: 10px 25px;
+                cursor: pointer;
+                position: relative;
+                text-align: center;
+                transition: color 0.1s;
+                /* Transition example for link color */
+                z-index: 1;
+                text-decoration: none;
+            }
+
+            /* Pseudo-element styling */
+            nav a::before {
+                content: "";
+                /* Essential for the pseudo-element to work */
+                position: absolute;
+                /* Positioned relative to the link */
+                width: 2px;
+                /* Initial width */
+                height: 2px;
+                /* Initial height */
+                background-color: tomato;
+                /* Example background */
+                left: -8px;
+                /* Position of the dot */
+                top: calc(50% - 1px);
+                /* Center the dot */
+                transition: all 0.3s;
+                /* Transition effect */
+            }
+
+            /* Hover effect for navigation links */
+            nav a:hover {
+                color: rgb(172, 40, 0);
+                /* Change the text color on hover */
+            }
+
+            nav a:hover::before {
+                height: 30px;
+                /* Set height for hover effect */
+                top: 100%;
+                /* Position it below the link */
+            }
+
+            /* Responsive adjustments */
+            @media (max-width: 768px) {
+                nav a {
+                    font-size: 14px;
+                    /* Adjust font size for smaller screens */
+                    font-weight: 500;
+                    /* Change font weight for smaller screens */
+                    padding: 10px 25px;
+                    /* Set padding */
+                }
+
+                nav a::before {
+                    width: 2px;
+                    /* Adjust size for mobile view */
+                    height: 2px;
+                    /* Adjust size for mobile view */
+                    left: -6px;
+                    /* Move the dot closer for smaller screens */
+                    top: calc(50% - 1px);
+                    /* Center vertically */
+                }
+            }
+
+            @media (max-width: 480px) {
+                nav a {
+                    font-size: 10px;
+                    /* Adjust font size for smaller screens */
+                    font-weight: 300;
+                    /* Change font weight for smaller screens */
+                    padding: 10px 25px;
+                    /* Set padding */
+                }
+
+                nav a::before {
+                    width: 1px;
+                    /* Further reduce size for smaller screens */
+                    height: 1px;
+                    /* Further reduce size for smaller screens */
+                    left: -4px;
+                    /* Adjust position for very small screens */
+                    top: calc(50% - 0.5px);
+                    /* Adjust top position for very small screens */
+                }
+            }
         }
 
         nav .imgandbtn {
@@ -197,7 +300,7 @@
             }
 
             nav a {
-                font-size: 10px;
+                font-size: 14px;
                 /* Adjust font size for mobile readability */
                 padding: 10px 15px;
                 /* Adjust padding for better touch targets */
@@ -296,8 +399,15 @@
                     margin-bottom: 20px;
                     margin-left: 20px;
                 }
-            }
 
+                nav a {
+                    font-size: 10px;
+                    /* Adjust font size for mobile readability */
+                    padding: 10px 15px;
+                    /* Adjust padding for better touch targets */
+                }
+
+            }
 
             .navigation {
                 position: relative;
@@ -321,7 +431,6 @@
             }
 
         }
-
 
         body.dark-mode {
             background-color: #121212;
@@ -349,7 +458,7 @@
             height: 6px;
             background-color: tomato;
             left: -10px;
-            top: 19px;
+            top: 15px;
             cursor: pointer;
             transform: rotate(225deg);
             transition: 0.3s;
