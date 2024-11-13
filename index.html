@@ -262,8 +262,6 @@
                 }
             }
 
-            
-
             /* Optional: If you want to ensure responsiveness */
             @media (max-width: 768px) {
                 nav ul img {
@@ -271,6 +269,12 @@
                     /* Adjust max height for smaller screens */
                     margin-left: 15px;
                     /* Adjust margin for smaller screens */
+                    margin-top: -10px; /* Move the image up by 10 pixels */
+                }
+
+                nav ul {
+                    padding-bottom: 20px;
+                    /* Add padding to the left of the entire list, if needed */
                 }
             }
 
@@ -278,8 +282,14 @@
                 nav ul img {
                     max-height: 30px;
                     /* Further adjust max height for mobile */
-                    margin-left: 10px;
-                    /* Further adjust margin for mobile */
+                    margin-left: 20px;
+                    /* Increase margin to move image more to the right */
+                    /* Optionally, you can also add padding to the parent */
+                }
+
+                nav ul {
+                    padding-bottom: 5px;
+                    /* Add padding to the left of the entire list, if needed */
                 }
             }
 
