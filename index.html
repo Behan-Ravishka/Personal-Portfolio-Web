@@ -262,6 +262,27 @@
                 }
             }
 
+            
+
+            /* Optional: If you want to ensure responsiveness */
+            @media (max-width: 768px) {
+                nav ul img {
+                    max-height: 50px;
+                    /* Adjust max height for smaller screens */
+                    margin-left: 15px;
+                    /* Adjust margin for smaller screens */
+                }
+            }
+
+            @media (max-width: 480px) {
+                nav ul img {
+                    max-height: 30px;
+                    /* Further adjust max height for mobile */
+                    margin-left: 10px;
+                    /* Further adjust margin for mobile */
+                }
+            }
+
 
             .navigation {
                 position: relative;
@@ -719,8 +740,8 @@
             }
 
             .input__check:checked+.slider:before {
-            transform: translateX(0.8em);
-        }
+                transform: translateX(0.8em);
+            }
 
             .relative h2 {
                 font-size: 2rem;
