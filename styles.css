@@ -1,0 +1,1070 @@
+/* Glassmorphism */
+.glass {
+    background: rgba(255, 255, 255, 0.1);
+    -webkit-backdrop-filter: blur(10px);
+    backdrop-filter: blur(10px);
+    border-radius: 100px;
+    border: 1px solid rgba(255, 255, 255, 0.3);
+}
+
+body.dark-mode .glass {
+    background: rgba(77, 75, 75, 0.5);
+    border: 1px solid rgba(255, 255, 255, 0.3);
+}
+
+/* Smooth Scroll and Dark Mode Transition */
+html {
+    scroll-behavior: smooth;
+    transition: background-color 0.3s, color 0.3s;
+}
+
+body {
+    font-family: Arial, sans-serif;
+    margin: 0;
+    padding: 0;
+    transition: background-color 0.3s, color 0.3s;
+    overflow-y: hidden;
+}
+
+header {
+    background: rgba(255, 255, 255, 0.3);
+    backdrop-filter: blur(15px);
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
+    position: fixed;
+    width: 100%;
+    max-width: 135px;
+    /* Adjust max-width if needed */
+    height: auto;
+    top: 50%;
+    left: 0.5%;
+    transform: translateY(-50%);
+    z-index: 1000;
+    display: flex;
+    flex-direction: column;
+    /* Default to vertical for desktop */
+    align-items: center;
+    padding: 0.5rem;
+    border-radius: 25px;
+}
+
+nav ul {
+    width: fit-content;
+    height: fit-content;
+    background-color: transparent;
+    list-style: none;
+    display: flex;
+    flex-direction: column;
+    /* Stack items vertically for desktop */
+    gap: 25px;
+    margin-left: 18px;
+    padding: 0;
+}
+
+nav a {
+    background-color: transparent;
+    font-family: 'Franklin Gothic Medium', 'Arial Narrow', Arial, sans-serif;
+    color: rgb(153, 151, 151);
+    border: none;
+    font-size: 18px;
+    font-weight: 700;
+    padding: 10px 15px;
+    cursor: pointer;
+    position: relative;
+    text-align: center;
+    transition: 0.1s;
+    z-index: 1;
+    text-decoration: none;
+}
+
+nav a:hover {
+    color: rgb(172, 40, 0);
+}
+
+nav a:hover::before {
+    transform: rotate(0deg);
+    width: 100%;
+    height: 40px;
+    top: -2px;
+    border-radius: 3px;
+    background-color: rgb(255, 83, 53);
+    transform: rotate(0deg);
+}
+
+nav a::before {
+    content: "";
+    border-radius: 2px;
+    position: absolute;
+    width: 8px;
+    height: 8px;
+    background-color: tomato;
+    left: -10px;
+    top: 19px;
+    cursor: pointer;
+    transform: rotate(225deg);
+    transition: 0.3s;
+    z-index: -1;
+}
+
+nav a:active::before {
+    background-color: rgb(255, 38, 0);
+}
+
+/* Responsive adjustments */
+@media (max-width: 768px) {
+
+    /* Base styles for navigation links */
+    nav a {
+        background-color: transparent;
+        font-family: 'Franklin Gothic Medium', 'Arial Narrow', Arial, sans-serif;
+        color: rgb(153, 151, 151);
+        border: none;
+        font-size: 18px;
+        /* Default font size */
+        font-weight: 700;
+        padding: 10px 25px;
+        cursor: pointer;
+        position: relative;
+        text-align: center;
+        transition: color 0.1s;
+        /* Transition example for link color */
+        z-index: 1;
+        text-decoration: none;
+    }
+
+    nav a:hover {
+        color: rgb(172, 40, 0);
+    }
+
+    nav a:hover::before {
+        transform: rotate(0deg);
+        width: 100%;
+        height: 30px;
+        margin-top: 16px;
+        top: -2px;
+        border-radius: 3px;
+        background-color: rgb(255, 83, 53);
+        transform: rotate(0deg);
+    }
+
+}
+
+/* Responsive adjustments */
+@media (max-width: 480px) {
+
+    /* Base styles for navigation links */
+    nav a {
+        background-color: transparent;
+        font-family: 'Franklin Gothic Medium', 'Arial Narrow', Arial, sans-serif;
+        color: rgb(153, 151, 151);
+        border: none;
+        font-size: 14px;
+        /* Default font size */
+        font-weight: 700;
+        padding: 10px 25px;
+        cursor: pointer;
+        position: relative;
+        text-align: center;
+        transition: color 0.1s;
+        /* Transition example for link color */
+        z-index: 1;
+        text-decoration: none;
+    }
+
+    nav a:hover {
+        color: rgb(172, 40, 0);
+    }
+
+    nav a:hover::before {
+        transform: rotate(0deg);
+        width: 100%;
+        height: 20px;
+        margin-top: 14px;
+        top: -2px;
+        border-radius: 3px;
+        background-color: rgb(255, 83, 53);
+        transform: rotate(0deg);
+    }
+
+}
+
+nav .imgandbtn {
+    margin-left: 0px;
+}
+
+/* Section styles */
+section {
+    padding: 20px 20px;
+    height: 100vh;
+    margin-left: 150px;
+    transition: margin-left 0.3s;
+}
+
+@media (min-width: 768px) {  /* Targets desktop screens and above */
+    .content-wrapper {
+        margin-left: 150px; /* Change this value as needed */
+    }
+}
+
+
+body.dark-mode {
+    background-color: #121212;
+    color: #ffffff;
+}
+
+body.dark-mode header {
+    background: rgba(6, 55, 78, 0.8);
+}
+
+/* Responsive styles */
+@media (max-width: 768px) {
+
+    /* Mobile styles */
+    header {
+        position: fixed;
+        /* Fix the header at the bottom */
+        bottom: 0;
+        left: 0;
+        right: 0;
+        top: auto;
+        /* Reset top positioning */
+        transform: none;
+        /* Reset transformation */
+        justify-content: center;
+        /* Center horizontally */
+        flex-direction: row;
+        /* Horizontal layout for mobile */
+        padding: 10px 0;
+        border-radius: 0;
+        /* Remove rounded corners */
+        max-width: none;
+        /* Remove max-width for mobile */
+        box-shadow: 0 -4px 8px rgba(0, 0, 0, 0.2);
+        /* Optional shadow */
+        max-height: 50px;
+    }
+
+    nav ul {
+        flex-direction: row;
+        /* Change to horizontal layout */
+        word-spacing: initial;
+        /* Adjust spacing between items */
+        margin: 0;
+        /* Center the UL without left margin */
+        padding: 0;
+        /* Reset padding */
+        width: 20%;
+        /* Adjust width to ensure it takes full space */
+        height: 5%;
+        justify-content: center;
+        /* Center UL contents */
+        background-color: transparent;
+        margin-top: 30px;
+
+    }
+
+    nav ul li {
+        list-style: none;
+        /* Remove default list bullets */
+    }
+
+    nav a {
+        font-size: 14px;
+        /* Adjust font size for mobile readability */
+        padding: 10px 15px;
+        /* Adjust padding for better touch targets */
+    }
+
+    nav .imgandbtn {
+        display: flex;
+        /* Use flexbox for layout */
+        flex-direction: column;
+        /* Arrange items vertically */
+        max-width: 50%;
+        /* Reduced max-width for smaller items */
+        margin: 0 10px;
+        /* Center the container */
+    }
+
+    nav .imgandbtn img {
+        width: 40%;
+        /* Reduced image size */
+        height: 40%;
+        /* Maintain aspect ratio */
+
+    }
+
+    nav .imgandbtn button {
+        padding: 1px 3px;
+        /* Reduced padding for button size */
+        font-size: 0.5rem;
+        /* Smaller font size for buttons */
+    }
+
+    @media (max-width: 768px) {
+        nav .imgandbtn img {
+            width: 5%;
+            /* Further reduced width for mobile screens */
+            height: 5%;
+            /* Maintain aspect ratio */
+        }
+
+        nav .imgandbtn button {
+            padding: 3px 5px;
+            /* Smaller padding for buttons on mobile */
+            font-size: 0.6rem;
+            /* Even smaller font size on mobile */
+        }
+    }
+
+    @media (max-width: 480px) {
+        nav .imgandbtn img {
+            width: 5%;
+            /* Further reduce size for extra small screens */
+            height: 5%;
+            /* Maintain aspect ratio */
+
+        }
+
+        nav .imgandbtn button {
+            padding: 2px 4px;
+            /* Even smaller padding for extra small screens */
+            font-size: 0.5rem;
+            /* Keep small font size */
+        }
+    }
+
+    /* Optional: If you want to ensure responsiveness */
+    @media (max-width: 768px) {
+        nav ul img {
+            max-height: 50px;
+            /* Adjust max height for smaller screens */
+            margin-left: 15px;
+            /* Adjust margin for smaller screens */
+            margin-top: -10px;
+            /* Move the image up by 10 pixels */
+        }
+
+        nav ul {
+            padding-bottom: 20px;
+            /* Add padding to the left of the entire list, if needed */
+        }
+    }
+
+    @media (max-width: 480px) {
+        nav ul img {
+            max-height: 30px;
+            /* Further adjust max height for mobile */
+            margin-left: 50px;
+            /* Increase margin to move image more to the right */
+            left: 10px;
+            position: relative;
+            bottom: -10px;
+        }
+
+        nav ul {
+            padding-bottom: 5px;
+            /* Add padding to the left of the entire list, if needed */
+            margin-bottom: 20px;
+            margin-left: 20px;
+        }
+
+        nav a {
+            font-size: 10px;
+            /* Adjust font size for mobile readability */
+            padding: 10px 15px;
+            /* Adjust padding for better touch targets */
+        }
+
+    }
+
+    .navigation {
+        position: relative;
+        /* Change positioning method if it's absolute */
+        top: 0;
+        /* Adjust depending on your layout  */
+        left: 0;
+        /* Adjust for your needs */
+        display: flex;
+        /* Ensure it’s displayed */
+        display: flex;
+        /* Use flexbox in the nav */
+        justify-content: center;
+        /* Center items horizontally */
+        align-items: center;
+        /* Center items vertically */
+        flex-direction: column;
+        /* Optional: change if you want a vertical nav on mobile */
+        margin-top: 0;
+        /* Adjust as needed */
+    }
+
+}
+
+body.dark-mode {
+    background-color: #121212;
+    color: #ffffff;
+}
+
+body.dark-mode header {
+    background: rgba(6, 55, 78, 0.8);
+}
+
+nav a:hover::before {
+    transform: rotate(0deg);
+    width: 100%;
+    height: 40px;
+    top: -2px;
+    border-radius: 3px;
+    background-color: rgb(255, 83, 53);
+}
+
+nav a::before {
+    content: "";
+    border-radius: 2px;
+    position: absolute;
+    width: 6px;
+    height: 6px;
+    background-color: tomato;
+    left: -10px;
+    top: 15px;
+    cursor: pointer;
+    transform: rotate(225deg);
+    transition: 0.3s;
+    z-index: -1;
+}
+
+nav a:active::before {
+    background-color: rgb(255, 38, 0);
+}
+
+nav .imgandbtn {
+    margin-left: 0px;
+}
+
+section {
+    padding: 20px 20px;
+    height: 100vh;
+    margin-left: 150px;
+    transition: margin-left 0.3s;
+}
+
+body.dark-mode {
+    background-color: #121212;
+    color: #ffffff;
+}
+
+body.dark-mode header {
+    background: rgba(6, 55, 78, 0.8);
+}
+
+/* Hero Section */
+.hero {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-direction: column;
+    min-height: 100vh;
+    background: linear-gradient(to right, #608a9e, #6e883e);
+    color: #fff;
+    text-align: center;
+    position: relative;
+    overflow: hidden;
+}
+
+.hero h1 {
+    margin: 5% 0 0;
+    text-align: left;
+    animation: textSlideIn 1.5s ease-in-out;
+    background: linear-gradient(to right, #FDD017, #ff9eef);
+    background-clip: initial;
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+    transition: background 0.3s ease-in-out;
+    position: relative;
+    z-index: 2;
+}
+
+@keyframes textSlideIn {
+    0% {
+        opacity: 0;
+        transform: translateY(-100%);
+    }
+
+    100% {
+        opacity: 1;
+        transform: translateY(0);
+    }
+}
+
+.hero img {
+    width: 100%;
+    max-width: 33vw;
+    margin-top: -28.8%;
+    border-radius: 25% 0% 25% 0% / 22% 25% 25% 21%;
+    transition: transform 0.3s, box-shadow 0.3s;
+    box-shadow: 0 10px 20px rgba(0, 0, 0, 0.2);
+    position: relative;
+    opacity: 0.65;
+    background-blend-mode: overlay;
+    margin: 0 auto;
+    z-index: 2;
+}
+
+.hero img:hover {
+    transform: scale(1.1);
+    box-shadow: 0 15px 25px rgba(255, 255, 255, 0.8);
+}
+
+body.dark-mode .hero {
+    background: linear-gradient(to right, #0f2027, #203a43, #2c5364);
+}
+
+.about_img img {
+    width: 100%;
+    max-width: 300px;
+    margin-top: 0;
+    border-radius: 25% 0% 25% 0% / 22% 25% 25% 21%;
+    transition: transform 0.3s, box-shadow 0.3s;
+    box-shadow: 0 10px 20px rgba(0, 0, 0, 0.2);
+    margin-left: 60%;
+}
+
+.about_img img:hover {
+    transform: scale(1.1);
+    box-shadow: 0 15px 25px rgba(0, 0, 0, 0.3);
+}
+
+/* Meteors */
+.meteors {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    pointer-events: none;
+    overflow: hidden;
+}
+
+.meteor {
+    position: absolute;
+    top: 0;
+    background: linear-gradient(45deg, #fff, rgba(255, 255, 255, 0));
+    width: 2px;
+    height: 80px;
+    opacity: 0.6;
+    filter: blur(1px);
+    animation: meteor 1.5s linear infinite;
+}
+
+@keyframes meteor {
+    0% {
+        transform: translateY(0) rotate(45deg);
+    }
+
+    100% {
+        transform: translateY(100vh) rotate(45deg);
+    }
+}
+
+body.dark-mode .meteor {
+    background: linear-gradient(45deg, #ccc, rgba(204, 204, 204, 0));
+}
+
+#ghost-swallow {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background: rgba(0, 0, 0, 0.8);
+    z-index: 9999;
+    display: none;
+}
+
+@keyframes ghostSwallow {
+    0% {
+        opacity: 1;
+        transform: translateY(0);
+    }
+
+    100% {
+        opacity: 0;
+        transform: translateY(100%);
+    }
+}
+
+@keyframes ghostSwallowReverse {
+    0% {
+        opacity: 1;
+        transform: translateY(0);
+    }
+
+    100% {
+        opacity: 0;
+        transform: translateY(-100%);
+    }
+}
+
+/* Cursor Effect */
+.cursor-effect {
+    position: fixed;
+    pointer-events: none;
+    width: 30px;
+    height: 30px;
+    border-radius: 50%;
+    background: rgb(233, 229, 229);
+    transition: transform 0.2s ease;
+}
+
+/* WhatsApp Chatbot */
+#chatbot {
+    position: fixed;
+    bottom: 20px;
+    /* Distance from the bottom */
+    right: 20px;
+    /* Distance from the right */
+    background: #25D366;
+    /* WhatsApp green */
+    color: #fff;
+    /* Text color */
+    padding: 10px 20px;
+    /* Padding around the button */
+    border-radius: 50px;
+    /* Rounded corners */
+    cursor: pointer;
+    /* Pointer cursor on hover */
+    display: flex;
+    /* Flex layout for the icon and text */
+    align-items: center;
+    /* Center items vertically */
+    justify-content: center;
+    /* Center items horizontally */
+    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+    /* Shadow effect */
+    transition: transform 0.3s ease;
+    /* Animation for scaling */
+    z-index: 1000;
+    /* Stack above other elements */
+    transform-style: preserve-3d;
+    /* 3D effect for animation */
+    perspective: 500px;
+    /* Perspective for 3D effect */
+    animation: toggle__animation 3s infinite;
+    /* Continuous animation */
+}
+
+/* Scale on hover */
+#chatbot:hover {
+    transform: scale(1.1);
+    /* Slightly increase the size on hover */
+}
+
+.chatbot-icon {
+    margin-right: 10px;
+    /* Space between icon and text */
+}
+
+/* Responsive adjustments */
+@media (max-width: 768px) {
+    #chatbot {
+        padding: 8px 16px;
+        /* Smaller padding on mobile */
+        font-size: 0.9rem;
+        /* Smaller font size for mobile */
+        bottom: 60px;
+        /* Adjust position if needed */
+        right: 5px;
+        /* Adjust position if needed */
+    }
+
+    .chatbot-icon {
+        margin-right: 8px;
+        /* Reduce space between icon and text */
+    }
+}
+
+@media (max-width: 480px) {
+    #chatbot {
+        padding: 5px 10px;
+        /* Even smaller padding on extra small screens */
+        font-size: 0.8rem;
+        /* Further reduce font size */
+        bottom: 60px;
+        /* Adjust position if needed */
+        right: 5px;
+        /* Adjust position if needed */
+    }
+
+    .chatbot-icon {
+        margin-right: 5px;
+        /* Further reduce space between icon and text */
+    }
+}
+
+/* Progress Bar */
+#progress-bar {
+    position: fixed;
+    top: 0;
+    left: 0;
+    height: 5px;
+    background: #007BFF;
+    width: 0;
+    z-index: 999;
+    transition: width 0.3s ease;
+}
+
+/* The switch - the box around the slider */
+.switch {
+    font-size: 1.2rem;
+    /* Adjusted font size for better scaling */
+    position: relative;
+    display: inline-block;
+    width: 3.5em;
+    /* Maintain toggle width */
+    height: 2em;
+    /* Maintain toggle height */
+    transform-style: preserve-3d;
+    perspective: 500px;
+    animation: toggle__animation 3s infinite;
+    margin-left: 10px;
+    margin-top: 30px;
+}
+
+/* Before styling for the switch */
+.switch::before {
+    content: "";
+    position: absolute;
+    width: 100%;
+    height: 100%;
+    left: 0;
+    top: 0;
+    filter: blur(20px);
+    z-index: -1;
+    border-radius: 50px;
+    background-color: #d8ff99;
+    background-image: radial-gradient(at 21% 46%, hsla(183, 65%, 60%, 1) 0px, transparent 50%),
+        radial-gradient(at 23% 25%, hsla(359, 74%, 70%, 1) 0px, transparent 50%),
+        radial-gradient(at 20% 1%, hsla(267, 83%, 75%, 1) 0px, transparent 50%),
+        radial-gradient(at 86% 87%, hsla(204, 69%, 68%, 1) 0px, transparent 50%),
+        radial-gradient(at 99% 41%, hsla(171, 72%, 77%, 1) 0px, transparent 50%),
+        radial-gradient(at 55% 24%, hsla(138, 60%, 62%, 1) 0px, transparent 50%);
+}
+
+/* Hide default HTML checkbox */
+.switch input {
+    opacity: 0;
+    width: 0;
+    height: 0;
+}
+
+/* The slider */
+.slider {
+    position: absolute;
+    cursor: pointer;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    background-color: #fdfefedc;
+    transition: .4s;
+    border-radius: 30px;
+}
+
+.slider:before {
+    position: absolute;
+    content: "";
+    height: 1.4em;
+    width: 1.4em;
+    left: 0.3em;
+    bottom: 0.35em;
+    transition: .4s;
+    border-radius: 50%;
+    box-shadow: rgba(0, 0, 0, 0.17) 0px -10px 10px 0px inset, rgba(0, 0, 0, 0.09) 0px -1px 15px -8px;
+    background-color: #ff99fd;
+    background-image: radial-gradient(at 81% 39%, hsla(327, 79%, 79%, 1) 0px, transparent 50%),
+        radial-gradient(at 11% 72%, hsla(264, 64%, 79%, 1) 0px, transparent 50%),
+        radial-gradient(at 23% 20%, hsla(75, 98%, 71%, 1) 0px, transparent 50%);
+}
+
+.input__check:checked+.slider {
+    background-color: #17202A;
+}
+
+.input__check:checked+.slider:before {
+    transform: translateX(1.5em);
+}
+
+@keyframes toggle__animation {
+
+    0%,
+    100% {
+        transform: translateY(-10px) rotateX(15deg) rotateY(-20deg);
+    }
+
+    50% {
+        transform: translateY(0px) rotateX(15deg) rotateY(-20deg);
+    }
+}
+
+.relative h2 {
+    font-family: Impact, 'Haettenschweiler', 'Arial Narrow Bold', sans-serif;
+    font-size: 2.5rem;
+    /* Base font size */
+}
+
+/* Media queries for responsiveness */
+@media (max-width: 768px) {
+    .switch {
+        width: 2.5em;
+        /* Smaller toggle width */
+        height: 1.5em;
+        /* Smaller toggle height */
+        bottom: 6px;
+    }
+
+    .slider:before {
+        height: 1em;
+        /* Smaller circle */
+        width: 1em;
+        /* Smaller circle */
+        left: 0.3em;
+        bottom: 0.28em;
+    }
+
+    .input__check:checked+.slider:before {
+        transform: translateX(0.8em);
+    }
+
+    .relative h2 {
+        font-size: 2rem;
+        /* Adjusted font size for smaller devices */
+    }
+}
+
+@media (max-width: 480px) {
+    .switch {
+        width: 2em;
+        /* Further reduced toggle width */
+        height: 1.2em;
+        /* Further reduced toggle height */
+        bottom: 6px;
+        right: 30px;
+    }
+
+    .slider:before {
+        height: 0.8em;
+        /* Further decrease in circle size */
+        width: 0.8em;
+        /* Further decrease in circle size */
+        left: 0.2em;
+        bottom: 0.20em;
+    }
+
+    .relative h2 {
+        font-size: 1.5rem;
+        /* Smaller font size for mobile */
+    }
+}
+
+/* Horizontal Scroll Container Styling */
+.horizontal-scroll {
+    display: flex;
+    overflow-x: auto;
+    scroll-behavior: smooth;
+    height: 100vh;
+    width: 100vw;
+}
+
+/* Hide scrollbar */
+.horizontal-scroll::-webkit-scrollbar {
+    display: none;
+}
+
+/* Ensure each section takes up the full viewport width */
+.horizontal-scroll>* {
+    flex: 0 0 100vw;
+    height: 100vh;
+    scroll-snap-align: start;
+    transition: transform 0.3s ease-in-out;
+}
+
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+.arrow-container {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    /* Center align for better appearance */
+    margin: 0 auto;
+    /* Center the container */
+    margin-top: 20px;
+    /* Space from other elements */
+}
+
+.arrow {
+    width: 30px;
+    /* Default size */
+    height: 30px;
+    /* Default size */
+    border-right: 5px solid #7de6ee;
+    border-bottom: 5px solid #7de6ee;
+    transform: rotate(45deg);
+    margin: 0 5px;
+    animation: arrow-animation 1s infinite ease-in-out;
+    z-index: 2;
+}
+
+.arrow:nth-child(2) {
+    animation-delay: 0.2s;
+}
+
+.arrow:nth-child(3) {
+    animation-delay: 0.4s;
+}
+
+@keyframes arrow-animation {
+
+    0%,
+    100% {
+        opacity: 1;
+        transform: rotate(-45deg) translateX(0);
+    }
+
+    50% {
+        opacity: 0;
+        transform: rotate(-45deg) translateX(10px);
+    }
+}
+
+section p {
+    align-items: right;
+    /* Align text to the right if needed */
+    text-align: left;
+    /* Better text alignment on mobile */
+}
+
+/* Global styles */
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+#matrix {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    z-index: 1;
+    pointer-events: none;
+    /* Allow clicks through the canvas */
+}
+
+/* Matrix font and color */
+.matrix-text {
+    font-family: monospace;
+    color: rgba(58, 204, 58, 0.1);
+    font-size: 10px;
+    /* Default font size */
+}
+
+/* Responsive adjustments */
+@media (max-width: 768px) {
+    .arrow-container {
+        margin-top: 10px;
+        /* Adjust margin for smaller screens */
+    }
+
+    .arrow {
+        width: 25px;
+        /* Slightly smaller arrows */
+        height: 25px;
+        /* Slightly smaller arrows */
+    }
+
+    .matrix-text {
+        font-size: 8px;
+        /* Reduce font size for smaller devices */
+    }
+}
+
+@media (max-width: 480px) {
+    .arrow-container {
+        flex-direction: column;
+        /* Stack arrows vertically on smaller devices */
+    }
+
+    .arrow {
+        width: 20px;
+        /* Further reduce arrow size */
+        height: 20px;
+        /* Further reduce arrow size */
+    }
+
+    .matrix-text {
+        font-size: 6px;
+        /* Further reduce font size for extra small devices */
+    }
+}
+
+/* Media Queries to adjust content size for different screens */
+@media (max-width: 1024px) {
+    nav {
+        display: none;
+        /* Hide on smaller screens */
+    }
+
+    section {
+        margin-left: 0;
+        /* Remove fixed margin */
+        padding: 10px;
+        /* Reduce padding */
+    }
+
+    .about_img img {
+        margin-left: 0;
+        /* Center the image */
+        max-width: 80%;
+        /* Limit max-width for smaller screens */
+    }
+
+    .hero h1 {
+        font-size: 1.5em;
+        /* Responsive font size */
+    }
+}
+
+@media (max-width: 640px) {
+    .section h2 {
+        font-size: 1.5rem;
+    }
+}
+
+@media (min-width: 640px) {
+    .section h2 {
+        font-size: 2rem;
+    }
+}
+
+@media (min-width: 768px) {
+    .section h2 {
+        font-size: 2.5rem;
+    }
+}
+
+@media (min-width: 1024px) {
+    .section h2 {
+        font-size: 3rem;
+    }
+}
+
+@media (min-width: 1280px) {
+    .section h2 {
+        font-size: 3.5rem;
+    }
+}
