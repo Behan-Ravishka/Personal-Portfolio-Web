@@ -23,7 +23,7 @@ body {
     margin: 0;
     padding: 0;
     transition: background-color 0.3s, color 0.3s;
-    overflow-y: hidden;
+    overflow-x: hidden;
 }
 
 header {
@@ -169,7 +169,7 @@ nav a:active::before {
         z-index: 1;
         text-decoration: none;
     }
-
+    
     nav a:hover {
         color: rgb(172, 40, 0);
     }
@@ -199,9 +199,14 @@ section {
     transition: margin-left 0.3s;
 }
 
-@media (min-width: 768px) {  /* Targets desktop screens and above */
-    .content-wrapper {
-        margin-left: 150px; /* Change this value as needed */
+@media (min-width: 768px) {
+
+    /* Targets desktop screens and above */
+    .content-wrapper-about {
+        margin-left: 150px;
+        /* Change this value as needed */
+        font-family: 'Times New Roman', Times, serif;
+        font-size: 1.5rem;
     }
 }
 
@@ -498,21 +503,41 @@ body.dark-mode header {
 
 .hero img {
     width: 100%;
-    max-width: 33vw;
-    margin-top: -28.8%;
-    border-radius: 25% 0% 25% 0% / 22% 25% 25% 21%;
-    transition: transform 0.3s, box-shadow 0.3s;
-    box-shadow: 0 10px 20px rgba(0, 0, 0, 0.2);
-    position: relative;
-    opacity: 0.65;
-    background-blend-mode: overlay;
-    margin: 0 auto;
-    z-index: 2;
+    max-width: 33vw; /* Maximum width of the image */
+    border-radius: 25% 0% 25% 0% / 22% 25% 25% 21%; /* Custom border radius */
+    transition: transform 0.3s, box-shadow 0.3s; /* Animation on transform and box-shadow */
+    box-shadow: 0 10px 20px rgba(0, 0, 0, 0.2); /* Shadow around the image */
+    position: absolute; /* Allow positioning based on container */
+    top: 10px; /* Position from the top */
+    right: 130px; /* Position from the right */
+    opacity: 0.65; /* Set opacity for the image */
+    background-blend-mode: overlay; /* Background blending effect */
+    z-index: 2; /* Ensures the image is on top */
+    margin: auto; /* Margin auto for centering (but will be overridden by positioning) */
+}
+
+/* Media Query for Smaller Screens */
+@media (max-width: 768px) { /* Adjust the breakpoint as necessary */
+    .hero img {
+        position: relative; /* Revert positioning for centering */
+        top: auto; /* Reset top positioning */
+        right: auto; /* Reset right positioning */
+        width: 80%; /* Adjust width for better visibility on smaller screens */
+        max-width: none; /* Remove max-width on smaller screens */
+        margin: 0 auto; /* Center the image horizontally */
+        display: block; /* Ensure it behaves as a block element for centering */
+        opacity: 1; /* Optionally make the image fully opaque on smaller screens */
+    }
+
+    .hero img:hover {
+        transform: scale(1);
+        box-shadow: 10px 15px 25px 10px rgba(225, 226, 155, 0.8);
+    }
 }
 
 .hero img:hover {
-    transform: scale(1.1);
-    box-shadow: 0 15px 25px rgba(255, 255, 255, 0.8);
+    transform: scale(1.5);
+    box-shadow: 10px 15px 25px 30px rgba(225, 226, 155, 0.8);
 }
 
 body.dark-mode .hero {
@@ -1066,5 +1091,137 @@ section p {
 @media (min-width: 1280px) {
     .section h2 {
         font-size: 3.5rem;
+    }
+}
+
+@media (min-width: 768px) {
+    .profile-container {
+        display: flex;
+        /* Use flexbox to align items */
+        align-items: center;
+        /* Center vertically */
+        gap: 20px;
+        /* Space between image and text, adjust as needed */
+    }
+
+    .circular-frame {
+        width: 30vw;
+        /* Responsive width based on viewport width */
+        height: 30vw;
+        /* Maintain circular aspect ratio */
+        max-width: 300px;
+        /* Optional: max width for larger screens */
+        max-height: 300px;
+        /* Optional: max height for larger screens */
+        overflow: hidden;
+        border-radius: 50%;
+        /* Make it circular */
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        border: 5px solid #ccc;
+        /* Optional: border around the circular frame */
+    }
+
+    .circular-frame img {
+        width: 100%;
+        height: 100%;
+        /* Set height to fill the frame */
+        object-fit: cover;
+        /* Ensure the image covers the circular frame */
+        display: block;
+        /* Remove any default inline spacing */
+        margin: auto;
+    }
+
+    .text-container {
+        width: 70vw; /* Responsive width */
+        max-width: 900px; /* Constrain to max width */
+        height: 70vw; /* Same value as width for square shape */
+        max-height: 300px; /* Constrain the height */
+        overflow: auto; /* Enable scrolling if the content exceeds limits */
+        display: flex; /* Use flexbox */
+        flex-direction: column; /* Arrange children in a column */
+        justify-content: center; /* Center content vertically */
+        align-items: center; /* Center content horizontally */
+        text-align: center; /* Center align text */
+        background-color: #f9f9f9; /* Light mode background */
+        color: #333; /* Default text color for light mode */
+        border: 1px solid #ccc; /* Optional border for visibility */
+        padding: 20px; /* Optional: add some padding around the text */
+        border-radius: 25px; /* Optional: rounded corners */
+    }
+    
+    /* Dark Mode Styles */
+    @media (prefers-color-scheme: dark) {
+        .text-container {
+            background-color: #e6e0e0; /* Dark mode background */
+            color: black; /* Text color in dark mode */
+            border: 1px solid #444; /* Slightly darker border in dark mode */
+        }
+    }
+}
+
+/* Styles for screens smaller than 768px */
+@media (max-width: 767px) {
+    .profile-container {
+        display: flex; /* Ensure flexbox is enabled */
+        flex-direction: column; /* Stack elements vertically */
+        align-items: center; /* Center elements horizontally */
+        gap: 10px; /* Adjust spacing as needed */
+    }
+    
+    .circular-frame {
+        width: 70vw; /* Make it wider on small screens */
+        height: 70vw; /* Maintain circular aspect ratio */
+        max-width: 200px; /* Optional: max width for larger screens */
+        max-height: 200px; /* Optional: max height for larger screens */
+        border-radius: 50%; /* Ensure frame is circular */
+        overflow: hidden; /* Hide overflow to create circular effect */
+        display: flex; /* Flexbox for centering image */
+        align-items: center; /* Center image vertically */
+        justify-content: center; /* Center image horizontally */
+        border: 5px solid #ccc; /* Optional: border for visibility */
+    }
+    
+    .circular-frame img {
+        width: 100%; /* Ensure the image takes full width */
+        height: 100%; /* Ensure the image takes full height */
+        object-fit: cover; /* Ensure the image covers the circular frame */
+    }
+    
+    .text-container {
+        width: 90vw; /* Responsive width */
+        max-width: 500px; /* Constrain to max width */
+        height: 70vw; /* Same value as width for square shape */
+        max-height: 200px; /* Constrain the height */
+        overflow: auto; /* Enable scrolling if the content exceeds limits */
+        display: flex; /* Use flexbox */
+        flex-direction: column; /* Arrange children in a column */
+        justify-content: center; /* Center content vertically */
+        align-items: center; /* Center content horizontally */
+        text-align: center; /* Center align text */
+        background-color: #f9f9f9; /* Optional background */
+        border: 1px solid #ccc; /* Optional border for visibility */
+        padding: 20px; /* Optional: add some padding around the text */
+        border-radius: 25px; /* Optional: rounded corners */
+        font-size: 12px;
+    }
+
+    /* Dark Mode Styles */
+    @media (prefers-color-scheme: dark) {
+        .text-container {
+            background-color: #e6e0e0; /* Dark mode background */
+            color: black; /* Text color in dark mode */
+            border: 1px solid #444; /* Slightly darker border in dark mode */
+        }
+    }
+
+    body {
+        font-family: Arial, sans-serif;
+        margin: 0;
+        padding: 0;
+        transition: background-color 0.3s, color 0.3s;
+        overflow-y: hidden;
     }
 }
