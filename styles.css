@@ -1368,6 +1368,11 @@ section p {
 body.dark-mode #skills {
     background: linear-gradient(135deg, #121212 30%, #121212 100%);
 }
+/* Add this to ensure images are visible in dark mode */
+body.dark-mode .card {
+    background-image: none; /* Prevent background images from disappearing */
+    background-color: #2c2c2c; /* Dark card background */
+}
 
 .section-title {
     text-align: center;
@@ -1440,7 +1445,7 @@ body.dark-mode .sub-tab-button {
     width: 150px; /* Default card width */
     height: 280px;
     border-radius: 0.75rem;
-    margin: 10px 10px;
+    margin: 10px;
     cursor: pointer;
     display: flex;
     flex-direction: column;
@@ -1473,75 +1478,65 @@ body.dark-mode .sub-tab-button {
     margin-bottom: 10px;
 }
 
+/* Make images responsive */
 .card img {
     max-width: 100%; /* Make images responsive */
     height: auto; /* Auto height for aspect ratio */
     border-radius: 10px; /* Optional: add rounded corners */
 }
 
-/* Optional: Add specific background colors for cards */
-.card[for="c1"],
-body.dark-mode .card[for="c1"] {
+/* Adjust specific card backgrounds for each type */
+.card[for="c1"] {
     background-image: url('Images/python_bg.jpg');
     background-repeat: round;
 }
 
-.card[for="c2"],
-body.dark-mode .card[for="c2"] {
+.card[for="c2"] {
     background-image: url('Images/c++_bg.jpg');
     background-repeat: round;
 }
 
-.card[for="c3"],
-body.dark-mode .card[for="c3"] {
+.card[for="c3"] {
     background-image: url('Images/java_bg.jpg');
     background-repeat: round;
 }
 
-.card[for="c4"],
-body.dark-mode .card[for="c4"] {
+.card[for="c4"] {
     background-image: url('Images/html_bg.jpg');
     background-repeat: round;
 }
 
-.card[for="gd1"],
-body.dark-mode .card[for="gd1"] {
+.card[for="gd1"] {
     background-image: url('Images/ps_bg.png');
     background-repeat: round;
 }
 
-.card[for="gd2"],
-body.dark-mode .card[for="gd2"] {
+.card[for="gd2"] {
     background-image: url('Images/ai_bg.jpg');
     background-repeat: round;
 }
 
-.card[for="gd3"],
-body.dark-mode .card[for="gd3"] {
+.card[for="gd3"] {
     background-image: url('Images/figma_bg.png');
     background-repeat: round;
 }
 
-.card[for="gd4"],
-body.dark-mode .card[for="gd4"] {
+.card[for="gd4"] {
     background-image: url('Images/canva_bg.png');
     background-repeat: round;
 }
 
-.card[for="soft1"],
-body.dark-mode .card[for="soft1"] {
+.card[for="soft1"] {
     background-image: url('Images/teamwork_bg.jpg');
     background-repeat: round;
 }
 
-.card[for="soft2"],
-body.dark-mode .card[for="soft2"] {
+.card[for="soft2"] {
     background-image: url('Images/communication_bg.jpg');
     background-repeat: round;
 }
 
-.card[for="soft3"],
-body.dark-mode .card[for="soft3"] {
+.card[for="soft3"] {
     background-image: url('Images/problem_solving_bg.png');
     background-repeat: round;
 }
@@ -1588,39 +1583,56 @@ input:checked + label .description {
     transform: translateY(0) !important; /* Move into place */
 }
 
-/* Responsive adjustments */
+/* Adjustments for small screens */
 @media (max-width: 768px) {
     .card {
-        width: 100%; /* Adjust card width on tablets and smaller */
-        max-width: none; /* Allow cards to be full width */
-        margin: 5px 0; /* Adjust margins for vertical alignment */
+        width: 100%; /* Adjust card width on tablets */
+        height: auto; /* Allow height to adjust */
     }
 
-    /* Stack cards vertically on smaller screens */
-    .wrapper {
-        flex-direction: column; /* Stack cards vertically on smaller devices */
-        margin-left: 0; /* Remove left margin for vertical layout */
+    #skills {
+        padding: 10px; /* Reduce padding for smaller screens */
     }
-    
+
+    .wrapper {
+        flex-direction: column; /* Stack cards vertically on smaller screens */
+        margin-left: 0; /* Remove left margin */
+    }
+
     .card > .description {
-        display: none; /* Hide description initially on small screens */
+        display: none; /* Hide description on smaller screens */
     }
 
     input:checked + label .description {
-        display: flex; /* Show description when the card is selected */
+        display: flex; /* Show description when card is clicked */
         opacity: 1 !important; /* Show description */
         transform: translateY(0) !important; /* Move into place */
+    }
+
+    /* List view for skills section */
+    .tabs,
+    .sub-tabs {
+        display: flex;
+        flex-direction: column; /* Stack tabs vertically */
+    }
+
+    .tab-content.active {
+        display: flex;
+        flex-direction: column; /* Stack content vertically */
+    }
+
+    .card {
+        margin: 5px 0; /* Adjust margins for vertical stacking */
     }
 }
 
 @media (max-width: 480px) {
     .card {
-        width: 100%; /* Full width on mobile devices */
+        width: 100%; /* Full width for mobile devices */
     }
 
     .wrapper {
         flex-direction: column; /* Stack cards vertically on smaller screens */
-        padding: 0;  /* Remove padding around the wrapper */
     }
 }
 
@@ -1630,23 +1642,10 @@ body.dark-mode {
 }
 
 body.dark-mode .card {
-    background: #2c2c2c; /* Dark card background */
+    background: #2c2c2c; /* Adjusted dark card background */
 }
 
 body.dark-mode .description h4,
 body.dark-mode .description p {
     color: #ecf0f1; /* Adjust text color for dark mode */
-}
-
-/* Optional: List view for smaller screens */
-@media (max-width: 480px) {
-    .list-view {
-        display: block; /* Change to block for list view */
-    }
-
-    .list-view .card {
-        display: flex;
-        justify-content: center; /* Center cards in list view */
-        margin: 5px 0; /* Vertical margin for list items */
-    }
 }
