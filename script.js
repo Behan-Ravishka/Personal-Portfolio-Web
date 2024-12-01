@@ -226,3 +226,56 @@ function navigateSections(direction) {
 
 // Add initial active class to first section
 document.querySelector('.section').classList.add('active');
+
+// skills section
+
+// Function to open the main skill tabs (Hard Skills and Soft Skills)
+function openTab(event, tabName) {
+    const tabContents = document.querySelectorAll(".tab-content");
+    tabContents.forEach(content => {
+        content.classList.remove("active");
+    });
+
+    const tabButtons = document.querySelectorAll(".tab-button");
+    tabButtons.forEach(btn => {
+        btn.classList.remove("active");
+    });
+
+    document.getElementById(tabName).classList.add("active");
+    event.currentTarget.classList.add("active");
+}
+
+// Function to open the sub-tabs for Hard Skills (Programming and Graphic Design)
+function openSubTab(event, subTabName) {
+    const subTabContents = document.querySelectorAll(".sub-tab-content");
+    subTabContents.forEach(content => {
+        content.classList.remove("active");
+    });
+
+    const subTabButtons = document.querySelectorAll(".sub-tab-button");
+    subTabButtons.forEach(btn => {
+        btn.classList.remove("active");
+    });
+
+    document.getElementById(subTabName).classList.add("active");
+    event.currentTarget.classList.add("active");
+}
+
+// Initialize dark mode setting
+if (document.body.classList.contains('dark-mode')) {
+    const darkModeSkillCardBackground = "#1c1c1c"; // Dark skill card background
+    document.querySelectorAll('.card').forEach(card => {
+        card.style.backgroundColor = darkModeSkillCardBackground;
+    });
+}
+
+// Enable scrolling with mouse wheel on card containers
+document.querySelectorAll('.wrapper').forEach(container => {
+    container.addEventListener('wheel', (event) => {
+        event.preventDefault(); // Prevent default wheel behavior
+        container.scrollBy({
+            left: event.deltaY, // Scroll horizontally
+            behavior: 'smooth' // Optional: smooth scrolling
+        });
+    });
+});

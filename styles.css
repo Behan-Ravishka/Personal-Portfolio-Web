@@ -169,7 +169,7 @@ nav a:active::before {
         z-index: 1;
         text-decoration: none;
     }
-    
+
     nav a:hover {
         color: rgb(172, 40, 0);
     }
@@ -503,30 +503,51 @@ body.dark-mode header {
 
 .hero img {
     width: 100%;
-    max-width: 33vw; /* Maximum width of the image */
-    border-radius: 25% 0% 25% 0% / 22% 25% 25% 21%; /* Custom border radius */
-    transition: transform 0.3s, box-shadow 0.3s; /* Animation on transform and box-shadow */
-    box-shadow: 0 10px 20px rgba(0, 0, 0, 0.2); /* Shadow around the image */
-    position: absolute; /* Allow positioning based on container */
-    top: 10px; /* Position from the top */
-    right: 130px; /* Position from the right */
-    opacity: 0.65; /* Set opacity for the image */
-    background-blend-mode: overlay; /* Background blending effect */
-    z-index: 2; /* Ensures the image is on top */
-    margin: auto; /* Margin auto for centering (but will be overridden by positioning) */
+    max-width: 33vw;
+    /* Maximum width of the image */
+    border-radius: 25% 0% 25% 0% / 22% 25% 25% 21%;
+    /* Custom border radius */
+    transition: transform 0.3s, box-shadow 0.3s;
+    /* Animation on transform and box-shadow */
+    box-shadow: 0 10px 20px rgba(0, 0, 0, 0.2);
+    /* Shadow around the image */
+    position: absolute;
+    /* Allow positioning based on container */
+    top: 10px;
+    /* Position from the top */
+    right: 130px;
+    /* Position from the right */
+    opacity: 0.65;
+    /* Set opacity for the image */
+    background-blend-mode: overlay;
+    /* Background blending effect */
+    z-index: 2;
+    /* Ensures the image is on top */
+    margin: auto;
+    /* Margin auto for centering (but will be overridden by positioning) */
 }
 
 /* Media Query for Smaller Screens */
-@media (max-width: 768px) { /* Adjust the breakpoint as necessary */
+@media (max-width: 768px) {
+
+    /* Adjust the breakpoint as necessary */
     .hero img {
-        position: relative; /* Revert positioning for centering */
-        top: auto; /* Reset top positioning */
-        right: auto; /* Reset right positioning */
-        width: 80%; /* Adjust width for better visibility on smaller screens */
-        max-width: none; /* Remove max-width on smaller screens */
-        margin: 0 auto; /* Center the image horizontally */
-        display: block; /* Ensure it behaves as a block element for centering */
-        opacity: 1; /* Optionally make the image fully opaque on smaller screens */
+        position: relative;
+        /* Revert positioning for centering */
+        top: auto;
+        /* Reset top positioning */
+        right: auto;
+        /* Reset right positioning */
+        width: 80%;
+        /* Adjust width for better visibility on smaller screens */
+        max-width: none;
+        /* Remove max-width on smaller screens */
+        margin: 0 auto;
+        /* Center the image horizontally */
+        display: block;
+        /* Ensure it behaves as a block element for centering */
+        opacity: 1;
+        /* Optionally make the image fully opaque on smaller screens */
     }
 
     .hero img:hover {
@@ -1135,29 +1156,47 @@ section p {
     }
 
     .text-container {
-        width: 70vw; /* Responsive width */
-        max-width: 900px; /* Constrain to max width */
-        height: 70vw; /* Same value as width for square shape */
-        max-height: 300px; /* Constrain the height */
-        overflow: auto; /* Enable scrolling if the content exceeds limits */
-        display: flex; /* Use flexbox */
-        flex-direction: column; /* Arrange children in a column */
-        justify-content: center; /* Center content vertically */
-        align-items: center; /* Center content horizontally */
-        text-align: center; /* Center align text */
-        background-color: #f9f9f9; /* Light mode background */
-        color: #333; /* Default text color for light mode */
-        border: 1px solid #ccc; /* Optional border for visibility */
-        padding: 20px; /* Optional: add some padding around the text */
-        border-radius: 25px; /* Optional: rounded corners */
+        width: 70vw;
+        /* Responsive width */
+        max-width: 900px;
+        /* Constrain to max width */
+        height: 70vw;
+        /* Same value as width for square shape */
+        max-height: 300px;
+        /* Constrain the height */
+        overflow: auto;
+        /* Enable scrolling if the content exceeds limits */
+        display: flex;
+        /* Use flexbox */
+        flex-direction: column;
+        /* Arrange children in a column */
+        justify-content: center;
+        /* Center content vertically */
+        align-items: center;
+        /* Center content horizontally */
+        text-align: center;
+        /* Center align text */
+        background-color: #f9f9f9;
+        /* Light mode background */
+        color: #333;
+        /* Default text color for light mode */
+        border: 1px solid #ccc;
+        /* Optional border for visibility */
+        padding: 20px;
+        /* Optional: add some padding around the text */
+        border-radius: 25px;
+        /* Optional: rounded corners */
     }
-    
+
     /* Dark Mode Styles */
     @media (prefers-color-scheme: dark) {
         .text-container {
-            background-color: #e6e0e0; /* Dark mode background */
-            color: black; /* Text color in dark mode */
-            border: 1px solid #444; /* Slightly darker border in dark mode */
+            background-color: #e6e0e0;
+            /* Dark mode background */
+            color: black;
+            /* Text color in dark mode */
+            border: 1px solid #444;
+            /* Slightly darker border in dark mode */
         }
     }
 }
@@ -1165,55 +1204,89 @@ section p {
 /* Styles for screens smaller than 768px */
 @media (max-width: 767px) {
     .profile-container {
-        display: flex; /* Ensure flexbox is enabled */
-        flex-direction: column; /* Stack elements vertically */
-        align-items: center; /* Center elements horizontally */
-        gap: 10px; /* Adjust spacing as needed */
+        display: flex;
+        /* Ensure flexbox is enabled */
+        flex-direction: column;
+        /* Stack elements vertically */
+        align-items: center;
+        /* Center elements horizontally */
+        gap: 10px;
+        /* Adjust spacing as needed */
     }
-    
+
     .circular-frame {
-        width: 70vw; /* Make it wider on small screens */
-        height: 70vw; /* Maintain circular aspect ratio */
-        max-width: 200px; /* Optional: max width for larger screens */
-        max-height: 200px; /* Optional: max height for larger screens */
-        border-radius: 50%; /* Ensure frame is circular */
-        overflow: hidden; /* Hide overflow to create circular effect */
-        display: flex; /* Flexbox for centering image */
-        align-items: center; /* Center image vertically */
-        justify-content: center; /* Center image horizontally */
-        border: 5px solid #ccc; /* Optional: border for visibility */
+        width: 70vw;
+        /* Make it wider on small screens */
+        height: 70vw;
+        /* Maintain circular aspect ratio */
+        max-width: 200px;
+        /* Optional: max width for larger screens */
+        max-height: 200px;
+        /* Optional: max height for larger screens */
+        border-radius: 50%;
+        /* Ensure frame is circular */
+        overflow: hidden;
+        /* Hide overflow to create circular effect */
+        display: flex;
+        /* Flexbox for centering image */
+        align-items: center;
+        /* Center image vertically */
+        justify-content: center;
+        /* Center image horizontally */
+        border: 5px solid #ccc;
+        /* Optional: border for visibility */
     }
-    
+
     .circular-frame img {
-        width: 100%; /* Ensure the image takes full width */
-        height: 100%; /* Ensure the image takes full height */
-        object-fit: cover; /* Ensure the image covers the circular frame */
+        width: 100%;
+        /* Ensure the image takes full width */
+        height: 100%;
+        /* Ensure the image takes full height */
+        object-fit: cover;
+        /* Ensure the image covers the circular frame */
     }
-    
+
     .text-container {
-        width: 90vw; /* Responsive width */
-        max-width: 500px; /* Constrain to max width */
-        height: 70vw; /* Same value as width for square shape */
-        max-height: 200px; /* Constrain the height */
-        overflow: auto; /* Enable scrolling if the content exceeds limits */
-        display: flex; /* Use flexbox */
-        flex-direction: column; /* Arrange children in a column */
-        justify-content: center; /* Center content vertically */
-        align-items: center; /* Center content horizontally */
-        text-align: center; /* Center align text */
-        background-color: #f9f9f9; /* Optional background */
-        border: 1px solid #ccc; /* Optional border for visibility */
-        padding: 20px; /* Optional: add some padding around the text */
-        border-radius: 25px; /* Optional: rounded corners */
+        width: 90vw;
+        /* Responsive width */
+        max-width: 500px;
+        /* Constrain to max width */
+        height: 70vw;
+        /* Same value as width for square shape */
+        max-height: 200px;
+        /* Constrain the height */
+        overflow: auto;
+        /* Enable scrolling if the content exceeds limits */
+        display: flex;
+        /* Use flexbox */
+        flex-direction: column;
+        /* Arrange children in a column */
+        justify-content: center;
+        /* Center content vertically */
+        align-items: center;
+        /* Center content horizontally */
+        text-align: center;
+        /* Center align text */
+        background-color: #f9f9f9;
+        /* Optional background */
+        border: 1px solid #ccc;
+        /* Optional border for visibility */
+        padding: 20px;
+        /* Optional: add some padding around the text */
+        border-radius: 25px;
+        /* Optional: rounded corners */
         font-size: 12px;
     }
 
     /* Dark Mode Styles */
     @media (prefers-color-scheme: dark) {
         .text-container {
-            background-color: #e6e0e0; /* Dark mode background */
-            color: black; /* Text color in dark mode */
-            border: 1px solid #444; /* Slightly darker border in dark mode */
+            background-color: #e6e0e0;
+            /* Dark mode background */
+            color: black;
+            /* Text color in dark mode */
+            border: 1px solid #444;
+            /* Slightly darker border in dark mode */
         }
     }
 
@@ -1224,4 +1297,224 @@ section p {
         transition: background-color 0.3s, color 0.3s;
         overflow-y: hidden;
     }
+}
+
+/* projects Section Styles */
+#projects {
+    margin-left: 50px;
+    /* Adjust this value to move cards to the left */
+}
+
+.projects-grid {
+    display: grid;
+    grid-template-columns: repeat(2, 1fr);
+    gap: 20px;
+    /* Space between cards */
+    margin-top: 20px;
+    /* Space above the grid */
+}
+
+.card-3d {
+    background: white;
+    /* Background color */
+    border-radius: 10px;
+    /* Rounded corners */
+    box-shadow: 0 4px 20px rgba(0, 0, 0, 0.1);
+    /* Box shadow */
+    overflow: hidden;
+    /* Round corners on images as well */
+    transition: transform 0.3s;
+    /* Transition for hover effect */
+}
+
+.card-3d:hover {
+    transform: scale(1.05);
+    /* Grow effect on hover */
+}
+
+.card-3d img {
+    width: 100%;
+    /* Ensure the image covers the card */
+    height: auto;
+    /* Maintain aspect ratio */
+}
+
+.card-3d p {
+    padding: 10px;
+    /* Padding for project description */
+    text-align: center;
+    /* Centered text */
+    color: #333;
+    /* Text color */
+}
+
+/* skills section */
+
+/* Skills Section Styles */
+#skills {
+    background: linear-gradient(135deg, #fffefe 30%, #f7f6f6 100%);
+    border-radius: 10px;
+    padding: 20px;
+    transition: background-color 0.3s, box-shadow 0.3s;
+}
+
+body.dark-mode #skills {
+    background: linear-gradient(135deg, #121212 30%, #121212 100%);
+}
+
+.section-title {
+    text-align: center;
+    font-size: 2rem;
+    margin-bottom: 20px;
+    color: #000000; /* Light mode text color */
+}
+
+body.dark-mode .section-title {
+    color: #fff; /* Dark mode text color */
+}
+
+.tabs,
+.sub-tabs {
+    text-align: center;
+    margin-bottom: 20px;
+}
+
+.tab-button,
+.sub-tab-button {
+    cursor: pointer;
+    padding: 10px 20px;
+    margin: 0 5px;
+    border: none;
+    border-radius: 5px;
+    background: #007BFF;
+    color: white;
+    transition: background 0.3s, color 0.3s;
+}
+
+body.dark-mode .tab-button,
+body.dark-mode .sub-tab-button {
+    background: #0056b3;
+}
+
+body.dark-mode .tab-button:hover,
+body.dark-mode .sub-tab-button:hover {
+    background: #004494;
+}
+
+.tab-button.active,
+.sub-tab-button.active {
+    background: #0056b3;
+}
+
+.tab-content,
+.sub-tab-content {
+    display: none;
+    animation: fadeIn 0.5s ease-in-out forwards;
+}
+
+.tab-content.active,
+.sub-tab-content.active {
+    display: block;
+}
+
+/* Card Carousel Styles */
+.wrapper {
+    width: 100%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+.container {
+    display: flex;
+    overflow: hidden; /* Hide overflow */
+    position: relative; /* Position context */
+}
+
+.card {
+    width: 150px; /* Card width */
+    height: 300px;
+    border-radius: 0.75rem;
+    margin: 10px 10px;
+    cursor: pointer;
+    display: flex;
+    align-items: flex-end;
+    transition: .6s cubic-bezier(.28, -0.03, 0, .99);
+    box-shadow: 0px 10px 30px -5px rgba(53, 52, 52, 0.8);
+    flex-shrink: 0; /* Prevent shrinking */
+}
+
+.card > .row {
+    display: flex;
+    color: rgb(255, 255, 255);
+}
+
+.card > .row > .icon {
+    background: #223;
+    color: white;
+    border-radius: 50%;
+    width: 50px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    margin: 15px;
+}
+
+.card > .row > .description {
+    display: flex;
+    flex-direction: column;
+    overflow: hidden;
+    height: 80px;
+    width: 150px; /* Adjust width */
+    opacity: 0;
+    transform: translateY(30px);
+    transition: all .3s ease;
+}
+
+.description p {
+    color: #000000;
+    padding-top: 5px;
+}
+
+.description h4 {
+    text-transform: uppercase;
+    color: #000000;
+}
+
+input {
+    display: none; /* Hide radio buttons */
+}
+
+input:checked + label {
+    width: 230px; /* Expand width of selected card */
+}
+
+input:checked + label .description {
+    opacity: 1 !important;
+    transform: translateY(0) !important;
+}
+
+@media (max-width: 768px) {
+    .card {
+        width: 120px; /* Adjust card width on mobile */
+    }
+}
+
+@media (max-width: 480px) {
+    .card {
+        width: 100px; /* Adjust card width on very small screens */
+    }
+}
+
+/* Dark Mode Styles */
+body.dark-mode {
+    background-color: #121212;
+    
+    p, h4{
+        color: whitesmoke;
+    }
+}
+
+body.dark-mode .card {
+    background: #2c2c2c;
 }
