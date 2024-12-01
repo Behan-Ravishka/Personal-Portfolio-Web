@@ -261,14 +261,6 @@ function openSubTab(event, subTabName) {
     event.currentTarget.classList.add("active");
 }
 
-// Initialize dark mode setting
-if (document.body.classList.contains('dark-mode')) {
-    const darkModeSkillCardBackground = "#1c1c1c"; // Dark skill card background
-    document.querySelectorAll('.card').forEach(card => {
-        card.style.backgroundColor = darkModeSkillCardBackground;
-    });
-}
-
 // Enable scrolling with mouse wheel on card containers
 document.querySelectorAll('.wrapper').forEach(container => {
     container.addEventListener('wheel', (event) => {

@@ -1351,6 +1351,7 @@ section p {
 /* skills section */
 
 /* Skills Section Styles */
+/* Skills Section Styles */
 #skills {
     background: linear-gradient(135deg, #fffefe 30%, #f7f6f6 100%);
     border-radius: 10px;
@@ -1366,7 +1367,7 @@ body.dark-mode #skills {
     text-align: center;
     font-size: 2rem;
     margin-bottom: 20px;
-    color: #000000; /* Light mode text color */
+    color: #333; /* Light mode text color */
 }
 
 body.dark-mode .section-title {
@@ -1433,52 +1434,56 @@ body.dark-mode .sub-tab-button:hover {
 
 .card {
     width: 150px; /* Card width */
-    height: 300px;
     border-radius: 0.75rem;
-    margin: 10px 10px;
+    margin: 0 10px;
     cursor: pointer;
     display: flex;
-    align-items: flex-end;
+    align-items: flex-end; /* Align items at the bottom */
     transition: .6s cubic-bezier(.28, -0.03, 0, .99);
-    box-shadow: 0px 10px 30px -5px rgba(53, 52, 52, 0.8);
+    box-shadow: 0px 10px 30px -5px rgba(0, 0, 0, 0.8);
     flex-shrink: 0; /* Prevent shrinking */
+    position: relative; /* Make it positioned for absolute children */
 }
 
 .card > .row {
     display: flex;
-    color: rgb(255, 255, 255);
+    flex-direction: column; /* Align items vertically */
+    color: white;
+    height: 100%; /* Fill height of the card */
 }
 
-.card > .row > .icon {
+.card > .icon {
     background: #223;
     color: white;
     border-radius: 50%;
     width: 50px;
+    height: 50px; /* Ensure it maintains a circular shape */
     display: flex;
     justify-content: center;
     align-items: center;
-    margin: 15px;
+    margin: 0; /* Reset margin */
 }
 
-.card > .row > .description {
+.card > .description {
     display: flex;
     flex-direction: column;
-    overflow: hidden;
+    align-items: center; /* Center the text */
+    justify-content: center; /* Center the text */
+    text-align: center; /* Center the text */
     height: 80px;
     width: 150px; /* Adjust width */
-    opacity: 0;
-    transform: translateY(30px);
-    transition: all .3s ease;
+    opacity: 0; /* Hide description initially */
+    transform: translateY(30px); /* Move up initially */
+    transition: opacity 0.3s ease, transform 0.3s ease; /* Smooth transition */
 }
 
 .description p {
-    color: #000000;
-    padding-top: 5px;
+    color: #b0b0ba;
+    padding-top: 10px;
 }
 
 .description h4 {
     text-transform: uppercase;
-    color: #000000;
 }
 
 input {
@@ -1490,10 +1495,53 @@ input:checked + label {
 }
 
 input:checked + label .description {
-    opacity: 1 !important;
-    transform: translateY(0) !important;
+    opacity: 1 !important; /* Show description */
+    transform: translateY(0) !important; /* Move into place */
 }
 
+/* Optional: Add specific background colors for cards */
+.card[for="c1"] {
+    background-image: url('Images/ps_bg.png');
+    background-repeat: round;
+    opacity: 85%;;
+}
+
+.card[for="c2"] {
+    background-image: url('Images/figma_bg.png');
+    background-repeat: round;
+    opacity: 85%;;
+}
+
+.card[for="c3"] {
+    background-image: url('Images/ai_bg.jpg');
+    background-repeat: round;
+    opacity: 85%;
+}
+
+.card[for="c4"] {
+    background-image: url('Images/canva_bg.png');
+    background-repeat: round;
+    opacity: 85%;
+}
+
+.card[for="gd1"] {
+    background-image: url('./img/invision-bg.jpg');
+}
+
+.card[for="gd2"] {
+    background-image: url('./img/canva-bg.jpg');
+}
+
+/* Styles for dark mode if needed */
+body.dark-mode {
+    background-color: #121212;
+}
+
+body.dark-mode .card {
+    background: #2c2c2c; /* Dark card background */
+}
+
+/* Responsive adjustments */
 @media (max-width: 768px) {
     .card {
         width: 120px; /* Adjust card width on mobile */
@@ -1504,17 +1552,4 @@ input:checked + label .description {
     .card {
         width: 100px; /* Adjust card width on very small screens */
     }
-}
-
-/* Dark Mode Styles */
-body.dark-mode {
-    background-color: #121212;
-    
-    p, h4{
-        color: whitesmoke;
-    }
-}
-
-body.dark-mode .card {
-    background: #2c2c2c;
 }
