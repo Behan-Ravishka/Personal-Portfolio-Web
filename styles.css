@@ -1351,6 +1351,7 @@ section p {
 /* skills section */
 
 /* Skills Section Styles */
+
 #skills {
     background: linear-gradient(135deg, #fffefe 30%, #f7f6f6 100%);
     border-radius: 10px;
@@ -1480,61 +1481,69 @@ body.dark-mode .sub-tab-button {
 
 /* Optional: Add specific background colors for cards */
 .card[for="c1"],
-.card[for="c2"],
-.card[for="c3"],
-.card[for="c4"],
-.card[for="gd1"],
-.card[for="gd2"],
-.card[for="gd3"],
-.card[for="gd4"],
-.card[for="soft1"],
-.card[for="soft2"],
-.card[for="soft3"] {
+body.dark-mode .card[for="c1"] {
+    background-image: url('Images/python_bg.jpg');
     background-repeat: round;
 }
 
-.card[for="c1"] {
-    background-image: url('Images/python_bg.jpg');
-}
-
-.card[for="c2"] {
+.card[for="c2"],
+body.dark-mode .card[for="c2"] {
     background-image: url('Images/c++_bg.jpg');
+    background-repeat: round;
 }
 
-.card[for="c3"] {
+.card[for="c3"],
+body.dark-mode .card[for="c3"] {
     background-image: url('Images/java_bg.jpg');
+    background-repeat: round;
 }
 
-.card[for="c4"] {
+.card[for="c4"],
+body.dark-mode .card[for="c4"] {
     background-image: url('Images/html_bg.jpg');
+    background-repeat: round;
 }
 
-.card[for="gd1"] {
+.card[for="gd1"],
+body.dark-mode .card[for="gd1"] {
     background-image: url('Images/ps_bg.png');
+    background-repeat: round;
 }
 
-.card[for="gd2"] {
+.card[for="gd2"],
+body.dark-mode .card[for="gd2"] {
     background-image: url('Images/ai_bg.jpg');
+    background-repeat: round;
 }
 
-.card[for="gd3"] {
+.card[for="gd3"],
+body.dark-mode .card[for="gd3"] {
     background-image: url('Images/figma_bg.png');
+    background-repeat: round;
 }
 
-.card[for="gd4"] {
+.card[for="gd4"],
+body.dark-mode .card[for="gd4"] {
     background-image: url('Images/canva_bg.png');
+    background-repeat: round;
 }
 
-.card[for="soft1"] {
+.card[for="soft1"],
+body.dark-mode .card[for="soft1"] {
     background-image: url('Images/teamwork_bg.jpg');
+    background-repeat: round;
 }
 
-.card[for="soft2"] {
+.card[for="soft2"],
+body.dark-mode .card[for="soft2"] {
     background-image: url('Images/communication_bg.jpg');
+    background-repeat: round;
 }
 
-.card[for="soft3"] {
+.card[for="soft3"],
+body.dark-mode .card[for="soft3"] {
     background-image: url('Images/problem_solving_bg.png');
+    background-repeat: round;
 }
 
 .card > .description {
@@ -1555,7 +1564,7 @@ body.dark-mode .sub-tab-button {
     color: #ffffff; /* Change to desired color */
     padding: -10%;
     font-weight: bolder;
-    font-family:'Lucida Sans', 'Lucida Sans Regular', 'Lucida Grande', 'Lucida Sans Unicode', Geneva, Verdana, sans-serif;
+    font-family: 'Lucida Sans', 'Lucida Sans Regular', 'Lucida Grande', 'Lucida Sans Unicode', Geneva, Verdana, sans-serif;
 }
 
 .description p {
@@ -1582,21 +1591,25 @@ input:checked + label .description {
 /* Responsive adjustments */
 @media (max-width: 768px) {
     .card {
-        width: 100%; /* Full width on smaller tablets */
-        margin: 5px 0; /* Vertical margin for spacing */
-    }
-    
-    .wrapper {
-      margin-left: 0; /* Remove left margin for smaller screens */
-      flex-direction: column; /* Stack cards vertically */
+        width: 100%; /* Adjust card width on tablets and smaller */
+        max-width: none; /* Allow cards to be full width */
+        margin: 5px 0; /* Adjust margins for vertical alignment */
     }
 
+    /* Stack cards vertically on smaller screens */
+    .wrapper {
+        flex-direction: column; /* Stack cards vertically on smaller devices */
+        margin-left: 0; /* Remove left margin for vertical layout */
+    }
+    
     .card > .description {
-        display: none; /* Hide description by default */
+        display: none; /* Hide description initially on small screens */
     }
 
     input:checked + label .description {
-        display: flex; /* Show description when card is active */
+        display: flex; /* Show description when the card is selected */
+        opacity: 1 !important; /* Show description */
+        transform: translateY(0) !important; /* Move into place */
     }
 }
 
@@ -1607,26 +1620,7 @@ input:checked + label .description {
 
     .wrapper {
         flex-direction: column; /* Stack cards vertically on smaller screens */
-    }
-
-    /* Adding a list view for smaller screens */
-    .skills-list {
-        display: none; /* Hide the skills list by default */
-    }
-
-    @media (max-width: 480px) {
-        .skills-list {
-            display: block; /* Show skills list on small screens */
-            padding: 10px;
-            list-style-type: none; /* Remove bullets */
-        }
-        
-        .skills-list li {
-            background: rgba(255, 255, 255, 0.8); /* Background for list items */
-            margin: 5px 0; /* Spacing between items */
-            padding: 10px; /* Padding for items */
-            border-radius: 5px; /* Rounded corners */
-        }
+        padding: 0;  /* Remove padding around the wrapper */
     }
 }
 
@@ -1644,6 +1638,15 @@ body.dark-mode .description p {
     color: #ecf0f1; /* Adjust text color for dark mode */
 }
 
-body.dark-mode img {
-    filter: brightness(0.8); /* Make images slightly darker in dark mode */
+/* Optional: List view for smaller screens */
+@media (max-width: 480px) {
+    .list-view {
+        display: block; /* Change to block for list view */
+    }
+
+    .list-view .card {
+        display: flex;
+        justify-content: center; /* Center cards in list view */
+        margin: 5px 0; /* Vertical margin for list items */
+    }
 }
