@@ -2070,10 +2070,14 @@ body.dark-mode .percentage-value {
 .social-icon {
     margin: 0 15px;
     transition: transform 0.3s;
+    background-color: #d1d1d1; /* Dark background */
+    border-radius: 5px; /* Rounded corners */
+    padding: 5px; /* Space around the icon */
 }
 
 .social-icon img {
     width: 40px; /* Set the size of icons */
+    display: block;
 }
 
 .social-icon:hover {
