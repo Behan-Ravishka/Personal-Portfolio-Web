@@ -1351,9 +1351,6 @@ section p {
 /* skills section */
 
 /* Skills Section Styles */
-
-/* Skills Section Styles */
-
 #skills {
     background: linear-gradient(135deg, #fffefe 30%, #f7f6f6 100%);
     border-radius: 10px;
@@ -1685,4 +1682,116 @@ body.dark-mode .card[for="soft2"] {
 body.dark-mode .card[for="soft3"] {
     background-image: url('Images/problem_solving_bg.png'); /* Ensure background image shown in dark mode */
     background-repeat: round;
+}
+
+/* Responsive adjustments */
+@media (max-width: 768px) {
+    .tabs,
+    .sub-tabs {
+        flex-direction: row; /* Arrange tabs horizontally */
+        flex-wrap: wrap; /* Allow wrapping for smaller screens */
+        overflow-x: auto; /* Enable horizontal scrolling if there are too many tabs */
+        margin-bottom: 10px;
+    }
+
+    .tab-button,
+    .sub-tab-button {
+        width: auto; /* Let buttons take automatic width */
+        padding: 6px 10px; /* Adjust padding for buttons */
+        margin: 5px; /* Margin between buttons */
+        font-size: 0.85rem; /* Decrease font size for smaller buttons */
+    }
+
+    .wrapper {
+        margin-left: 0; /* Remove left margin */
+        padding: 0 10px; /* Add padding for smaller screens */
+        overflow-x: auto; /* Enable horizontal scrolling */
+        display: flex; /* Change to flex to arrange cards horizontally */
+        flex-wrap: nowrap; /* Prevent wrapping */
+    }
+
+    .card {
+        width: 60%; /* Adjust card width */
+        max-width: 140px; /* Set max width for cards */
+        height: 160px; /* Adjust card height */
+        margin: 5px; /* Reduce margin for smaller layout */
+        flex: 0 0 auto; /* Do not grow or shrink */
+        display: flex; /* Allow flex properties in card */
+        flex-direction: column; /* Arrange content in a column inside the card */
+        justify-content: space-between; /* Space out children elements */
+    }
+
+    .description {
+        height: auto; /* Allow description height to adjust */
+        padding: -5px; /* Add padding around descriptions */
+    }
+
+    .description h4 {
+        font-size: 0.9rem; /* Set a responsive font size for headings */
+        margin: 0; /* Remove default margin */
+    }
+
+    .description p {
+        font-size: 0.78rem; /* Set a responsive font size for paragraph text */
+        margin: 0; /* Remove default margin */
+    }
+}
+
+@media (max-width: 480px) {
+    .tabs,
+    .sub-tabs {
+        flex-direction: row; /* Keep tabs horizontal */
+        flex-wrap: wrap; /* Allow wrapping */
+        overflow-x: auto; /* Enable horizontal scrolling */
+        margin-bottom: 10px; /* Margin at the bottom */
+    }
+
+    .tab-button,
+    .sub-tab-button {
+        width: auto; /* Let buttons take automatic width */
+        padding: 5px 8px; /* Smaller padding for buttons on mobile */
+        margin: 4px; /* Smaller margin between buttons */
+        font-size: 0.75rem; /* Further decrease font size */
+    }
+
+    .wrapper {
+        flex-direction: row; /* Cards remain in a row */
+        overflow-x: auto; /* Horizontal scrolling enabled */
+    }
+
+    .card {
+        width: 55%; /* Make cards narrower */
+        max-width: 120px; /* Reduce max width for better fit */
+        height: 140px; /* Decrease height of cards */
+        margin: 4px; /* Margins to give a little space */
+        flex: 0 0 auto; /* Prevent growing or shrinking */
+        display: flex; /* Allow flex properties in card */
+        flex-direction: column; /* Arrange content in a column inside the card */
+        justify-content: space-between; /* Space out children elements */
+    }
+
+    .description {
+        height: auto; /* Allow description height to adjust */
+        padding: 5px; /* Add padding around descriptions */
+    }
+
+    .description h4 {
+        font-size: 0.8rem; /* Adjust heading size for mobile */
+        margin: 0; /* Remove default margin */
+    }
+
+    .description p {
+        font-size: 0.75rem; /* Adjust paragraph size for mobile */
+        margin: -10px; /* Remove default margin */
+    }
+
+    .icon {
+        width: 30px; /* Smaller icons for mobile */
+        height: 30px; /* Update icon height */
+    }
+
+    .icon img {
+        max-width: 100%; /* Ensure images fit within the icon */
+        height: auto; /* Maintain aspect ratio */
+    }
 }
