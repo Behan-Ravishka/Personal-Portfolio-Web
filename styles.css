@@ -146,6 +146,19 @@ nav a:active::before {
         transform: rotate(0deg);
     }
 
+    nav ul {
+        flex-direction: row; /* Horizontally align nav items */
+        gap: 20px; /* Adjust this value for smaller spacing between links */
+        margin: 0; /* Remove default margin */
+        padding: 0; /* Remove default padding */
+        width: 100%; /* Full width for ul */
+        justify-content: center; /* Center items */
+    }
+
+    nav li {
+        list-style: none; /* Remove bullets */
+    }
+
 }
 
 /* Responsive adjustments */
@@ -164,7 +177,6 @@ nav a:active::before {
         position: relative;
         text-align: center;
         transition: color 0.1s;
-        /* Transition example for link color */
         z-index: 1;
         text-decoration: none;
     }
@@ -182,6 +194,19 @@ nav a:active::before {
         border-radius: 3px;
         background-color: rgb(255, 83, 53);
         transform: rotate(0deg);
+    }
+
+    nav ul {
+        flex-direction: row; /* Horizontally align nav items */
+        gap: 14px; /* Adjust this value for smaller spacing between links */
+        margin: 0; /* Remove default margin */
+        padding: 0; /* Remove default padding */
+        width: 100%; /* Full width for ul */
+        justify-content: center; /* Center items */
+    }
+
+    nav li {
+        list-style: none; /* Remove bullets */
     }
 
 }
@@ -1795,74 +1820,3 @@ body.dark-mode .card[for="soft3"] {
     }
 }
 
-/* Responsive styles - Header for small screens */
-@media (max-width: 768px) {
-    header {
-        position: fixed;
-        /* Fix the header at the bottom */
-        bottom: 0;
-        left: 0;
-        right: 0;
-        top: auto;
-        transform: none;
-        justify-content: space-around; /* Evenly distribute items */
-        flex-direction: row; /* Horizontal layout for mobile */
-        padding: 10px 0; /* Top and bottom padding */
-        border-radius: 0; /* Remove rounded corners */
-        box-shadow: 0 -4px 8px rgba(0, 0, 0, 0.2); /* Optional shadow */
-        max-height: 60px; /* Maximum height for header */
-    }
-
-    nav ul {
-        flex-direction: row; /* Horizontally align nav items */
-        gap: 10px; /* Add space between navigation items */
-        margin: 0; /* Remove default margin */
-        padding: 0; /* Remove default padding */
-        width: 100%; /* Full width for ul */
-        justify-content: center; /* Center items */
-    }
-
-    nav li {
-        list-style: none; /* Remove bullets */
-    }
-
-    nav a {
-        font-size: 14px; /* Adjust font size for readability */
-        padding: 8px 12px; /* Adjust padding for better touch targets */
-        transition: background 0.3s, color 0.3s; /* Smooth transitions */
-    }
-
-    nav a:hover {
-        color: rgb(172, 40, 0); /* Change color on hover */
-    }
-
-    nav .imgandbtn {
-        margin-left: 0; /* Center image/button */
-        max-width: 20%; /* Set a max width for responsive image/button */
-    }
-
-    nav .imgandbtn img {
-        width: 80%; /* Reduce image size */
-        height: auto; /* Maintain aspect ratio */
-        max-height: 40px; /* Set max height for small screens */
-    }
-
-    nav .imgandbtn button {
-        padding: 3px 5px; /* Smaller padding for buttons */
-        font-size: 0.7rem; /* Smaller font size for buttons */
-    }
-}
-
-@media (max-width: 480px) {
-    nav a {
-        font-size: 12px; /* Further reduce font size */
-    }
-
-    nav .imgandbtn img {
-        width: 50%; /* Adjust image size for extra small screens */
-    }
-
-    nav .imgandbtn button {
-        font-size: 0.6rem; /* Even smaller font size on extra small screens */
-    }
-}
