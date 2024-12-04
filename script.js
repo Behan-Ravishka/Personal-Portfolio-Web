@@ -261,3 +261,22 @@ function openSubTab(event, subTabName) {
     event.currentTarget.classList.add("active");
 }
 
+// contact section
+
+document.getElementById('contactForm').addEventListener('submit', function(event) {
+    event.preventDefault();
+
+    const formData = new FormData(this);
+    
+    fetch('contact.php', {
+        method: 'POST',
+        body: formData
+    })
+    .then(response => response.json())
+    .then(data => {
+        document.getElementById('formMessage').innerText = data.message;
+        document.getElementById('contactForm').reset();
+    })
+    .catch(error => console.error('Error:', error));
+});
+

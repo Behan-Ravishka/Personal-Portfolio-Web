@@ -325,7 +325,7 @@
             </div>
         </section>
 
-        <section id="contact" style="display: inline-block; width: 100vw;">
+        <section id="contact" style="display: inline-block; width: 100vw; margin-left: 50px;">
             <span class="relative flex justify-center">
                 <div
                     class="absolute inset-x-0 top-1/2 h-px -translate-y-1/2 bg-transparent bg-gradient-to-r from-transparent via-gray-500 to-transparent opacity-75">
@@ -334,13 +334,43 @@
                     <h2>Contact Me</h2>
                 </span>
             </span>
-            <p>If you would like to get in touch, feel free to reach out via email or through my social
-                media channels.
-            </p>
+
+            <p class="contact_p" style="text-align: center;">If you would like to get in touch, feel free to reach out
+                via email or through my social media channels.</p>
+
+            <!-- Social Media Links -->
+            <div class="social-media-links">
+                <a href="https://twitter.com" target="_blank" class="social-icon" aria-label="Twitter">
+                    <img src="Images/icons/twitter.svg" alt="Twitter Icon">
+                </a>
+                <a href="https://linkedin.com" target="_blank" class="social-icon" aria-label="LinkedIn">
+                    <img src="Images/icons/linkedin.svg" alt="LinkedIn Icon">
+                </a>
+                <a href="https://github.com" target="_blank" class="social-icon" aria-label="GitHub">
+                    <img src="Images/icons/github.svg" alt="GitHub Icon">
+                </a>
+            </div>
+
+            <!-- Contact Form -->
+            <form id="contactForm" action="contact.php" method="POST" class="contact-form">
+                <label for="name">Name:</label>
+                <input type="text" id="name" name="name" required>
+
+                <label for="email">Email:</label>
+                <input type="email" id="email" name="email" required>
+
+                <label for="message">Message:</label>
+                <textarea id="message" name="message" rows="4" required></textarea>
+
+                <button type="submit">Send Message</button>
+            </form>
         </section>
+
     </div>
     <div id="chatbot">
-        <span class="chatbot-icon">💬 Chat with me!</span>
+        <span class="chatbot-icon">
+            <img src="Images/chatbot.gif" alt="Chatbot Icon">
+        </span>
     </div>
     <script src="script.js"></script>
 </body>

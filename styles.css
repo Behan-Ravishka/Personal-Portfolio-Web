@@ -147,16 +147,23 @@ nav a:active::before {
     }
 
     nav ul {
-        flex-direction: row; /* Horizontally align nav items */
-        gap: 15px; /* Adjust this value for smaller spacing between links */
-        margin: 0; /* Remove default margin */
-        padding: 0; /* Remove default padding */
-        width: 100%; /* Full width for ul */
-        justify-content: center; /* Center items */
+        flex-direction: row;
+        /* Horizontally align nav items */
+        gap: 15px;
+        /* Adjust this value for smaller spacing between links */
+        margin: 0;
+        /* Remove default margin */
+        padding: 0;
+        /* Remove default padding */
+        width: 100%;
+        /* Full width for ul */
+        justify-content: center;
+        /* Center items */
     }
 
     nav li {
-        list-style: none; /* Remove bullets */
+        list-style: none;
+        /* Remove bullets */
     }
 
 }
@@ -197,16 +204,23 @@ nav a:active::before {
     }
 
     nav ul {
-        flex-direction: row; /* Horizontally align nav items */
-        gap: 14px; /* Adjust this value for smaller spacing between links */
-        margin: 0; /* Remove default margin */
-        padding: 0; /* Remove default padding */
-        width: 100%; /* Full width for ul */
-        justify-content: center; /* Center items */
+        flex-direction: row;
+        /* Horizontally align nav items */
+        gap: 14px;
+        /* Adjust this value for smaller spacing between links */
+        margin: 0;
+        /* Remove default margin */
+        padding: 0;
+        /* Remove default padding */
+        width: 100%;
+        /* Full width for ul */
+        justify-content: center;
+        /* Center items */
     }
 
     nav li {
-        list-style: none; /* Remove bullets */
+        list-style: none;
+        /* Remove bullets */
     }
 
 }
@@ -693,10 +707,6 @@ body.dark-mode .meteor {
     /* Distance from the bottom */
     right: 20px;
     /* Distance from the right */
-    background: #25D366;
-    /* WhatsApp green */
-    color: #fff;
-    /* Text color */
     padding: 10px 20px;
     /* Padding around the button */
     border-radius: 50px;
@@ -739,8 +749,6 @@ body.dark-mode .meteor {
     #chatbot {
         padding: 8px 16px;
         /* Smaller padding on mobile */
-        font-size: 0.9rem;
-        /* Smaller font size for mobile */
         bottom: 60px;
         /* Adjust position if needed */
         right: 5px;
@@ -757,10 +765,6 @@ body.dark-mode .meteor {
     #chatbot {
         padding: 5px 10px;
         /* Even smaller padding on extra small screens */
-        font-size: 0.8rem;
-        /* Further reduce font size */
-        bottom: 60px;
-        /* Adjust position if needed */
         right: 5px;
         /* Adjust position if needed */
     }
@@ -1384,7 +1388,8 @@ section p {
 
 /* Ensuring proper responsiveness */
 .content-wrapper-about {
-    max-width: 1200px; /* Restrict max width for larger screens */
+    max-width: 1200px;
+    /* Restrict max width for larger screens */
 }
 
 /* Dark mode styles */
@@ -1396,11 +1401,13 @@ body.dark-mode #skills {
     text-align: center;
     font-size: 2rem;
     margin-bottom: 20px;
-    color: #333; /* Light mode text color */
+    color: #333;
+    /* Light mode text color */
 }
 
 body.dark-mode .section-title {
-    color: #fff; /* Dark mode text color */
+    color: #fff;
+    /* Dark mode text color */
 }
 
 .tabs,
@@ -1429,26 +1436,33 @@ body.dark-mode .section-title {
     margin: 0 5px;
     border: none;
     border-radius: 5px;
-    background: #007BFF; /* Default light mode background */
-    color: white; /* Light mode text color */
+    background: #007BFF;
+    /* Default light mode background */
+    color: white;
+    /* Light mode text color */
     transition: background 0.3s, color 0.3s;
 }
 
 body.dark-mode .tab-button,
 body.dark-mode .sub-tab-button {
-    background: #1E1E1E; /* Dark mode background for tabs */
-    color: #ffffff; /* Text color for dark mode */
+    background: #1E1E1E;
+    /* Dark mode background for tabs */
+    color: #ffffff;
+    /* Text color for dark mode */
 }
 
 .tab-button.active,
 .sub-tab-button.active {
-    background: #023266; /* Active tab background for light mode */
+    background: #023266;
+    /* Active tab background for light mode */
 }
 
 body.dark-mode .tab-button.active,
 body.dark-mode .sub-tab-button.active {
-    background: #37474F; /* Active tab background for dark mode */
-    color: #ffffff; /* Active text color for dark mode */
+    background: #37474F;
+    /* Active tab background for dark mode */
+    color: #ffffff;
+    /* Active text color for dark mode */
 }
 
 .tab-content,
@@ -1468,7 +1482,8 @@ body.dark-mode .sub-tab-button.active {
     display: flex;
     align-items: center;
     justify-content: center;
-    overflow-x: auto; /* Allow horizontal scroll */
+    overflow-x: auto;
+    /* Allow horizontal scroll */
     margin-left: 80px;
     -webkit-backdrop-filter: blur(10px);
     backdrop-filter: blur(10px);
@@ -1476,40 +1491,53 @@ body.dark-mode .sub-tab-button.active {
 
 .container {
     display: flex;
-    position: relative; /* Position context */
+    position: relative;
+    /* Position context */
 }
 
 .card {
-    width: 150px; /* Default card width */
+    width: 150px;
+    /* Default card width */
     height: 300px;
     border-radius: 0.75rem;
     margin: 10px 10px;
     cursor: pointer;
     display: flex;
     flex-direction: column;
-    align-items: center; /* Center elements */
-    justify-content: center; /* Center elements */
-    background: rgba(255, 255, 255, 0.9); /* Optional: slightly white background for the card */
+    align-items: center;
+    /* Center elements */
+    justify-content: center;
+    /* Center elements */
+    background: rgba(255, 255, 255, 0.9);
+    /* Optional: slightly white background for the card */
     transition: .6s cubic-bezier(.28, -0.03, 0, .99);
     box-shadow: 0px 10px 30px -5px rgba(109, 109, 109, 0.8);
-    flex-shrink: 0; /* Prevent shrinking */
+    flex-shrink: 0;
+    /* Prevent shrinking */
 }
 
-.card > .row {
+.card>.row {
     display: flex;
-    flex-direction: column; /* Align items vertically */
-    align-items: center; /* Center items horizontally */
+    flex-direction: column;
+    /* Align items vertically */
+    align-items: center;
+    /* Center items horizontally */
     color: white;
-    text-align: center; /* Center the text */
-    justify-content: flex-start; /* Align items to the top */
-    height: 100%; /* Ensure it takes full height if needed for layout */
+    text-align: center;
+    /* Center the text */
+    justify-content: flex-start;
+    /* Align items to the top */
+    height: 100%;
+    /* Ensure it takes full height if needed for layout */
     margin-top: 5px;
 }
 
-.card > .icon {
-    background: transparent; /* No background */
+.card>.icon {
+    background: transparent;
+    /* No background */
     width: 50px;
-    height: 50px; /* Ensure it maintains a circular shape */
+    height: 50px;
+    /* Ensure it maintains a circular shape */
     display: flex;
     justify-content: center;
     align-items: center;
@@ -1517,9 +1545,12 @@ body.dark-mode .sub-tab-button.active {
 }
 
 .card img {
-    max-width: 100%; /* Make images responsive */
-    height: auto; /* Auto height for aspect ratio */
-    border-radius: 10px; /* Optional: add rounded corners */
+    max-width: 100%;
+    /* Make images responsive */
+    height: auto;
+    /* Auto height for aspect ratio */
+    border-radius: 10px;
+    /* Optional: add rounded corners */
 }
 
 /* Optional: Add specific background colors for cards */
@@ -1578,29 +1609,39 @@ body.dark-mode .sub-tab-button.active {
     background-repeat: round;
 }
 
-.card > .description {
+.card>.description {
     display: flex;
     flex-direction: column;
-    align-items: center; /* Center the text */
-    justify-content: center; /* Center the text */
+    align-items: center;
+    /* Center the text */
+    justify-content: center;
+    /* Center the text */
     height: 80px;
-    width: 150px; /* Adjust width */
-    opacity: 0; /* Hide description initially */
-    transform: translateY(30px); /* Move up initially */
-    transition: opacity 0.3s ease, transform 0.3s ease; /* Smooth transition */
-    color: #ffffff; /* Change to desired color */
+    width: 150px;
+    /* Adjust width */
+    opacity: 0;
+    /* Hide description initially */
+    transform: translateY(30px);
+    /* Move up initially */
+    transition: opacity 0.3s ease, transform 0.3s ease;
+    /* Smooth transition */
+    color: #ffffff;
+    /* Change to desired color */
 }
 
 .description h4 {
-    font-size: 1.1rem; /* Adjust heading size */
-    color: #ffffff; /* Change to desired color */
+    font-size: 1.1rem;
+    /* Adjust heading size */
+    color: #ffffff;
+    /* Change to desired color */
     padding: -10%;
     font-weight: bolder;
-    font-family:'Lucida Sans', 'Lucida Sans Regular', 'Lucida Grande', 'Lucida Sans Unicode', Geneva, Verdana, sans-serif;
+    font-family: 'Lucida Sans', 'Lucida Sans Regular', 'Lucida Grande', 'Lucida Sans Unicode', Geneva, Verdana, sans-serif;
 }
 
 .description p {
-    color: #ffffff; /* Change to desired description color */
+    color: #ffffff;
+    /* Change to desired description color */
     padding-top: 5px;
     padding: -10%;
     font-size: 20px;
@@ -1608,32 +1649,39 @@ body.dark-mode .sub-tab-button.active {
 }
 
 input {
-    display: none; /* Hide radio buttons */
+    display: none;
+    /* Hide radio buttons */
 }
 
-input:checked + label {
-    width: 230px; /* Expand width of selected card */
+input:checked+label {
+    width: 230px;
+    /* Expand width of selected card */
 }
 
-input:checked + label .description {
-    opacity: 1 !important; /* Show description */
-    transform: translateY(0) !important; /* Move into place */
+input:checked+label .description {
+    opacity: 1 !important;
+    /* Show description */
+    transform: translateY(0) !important;
+    /* Move into place */
 }
 
 /* Responsive adjustments */
 @media (max-width: 768px) {
     .card {
-        width: 120px; /* Adjust card width on tablets */
+        width: 120px;
+        /* Adjust card width on tablets */
     }
 }
 
 @media (max-width: 480px) {
     .card {
-        width: 100px; /* Adjust card width on mobile devices */
+        width: 100px;
+        /* Adjust card width on mobile devices */
     }
 
     .wrapper {
-        flex-direction: column; /* Stack cards vertically on smaller screens */
+        flex-direction: column;
+        /* Stack cards vertically on smaller screens */
     }
 }
 
@@ -1643,234 +1691,433 @@ body.dark-mode {
 }
 
 body.dark-mode .card {
-    background: #2c2c2c; /* Dark card background */
-    background-image: url('Images/python_bg.jpg'); /* Ensure background images show in dark mode */
+    background: #2c2c2c;
+    /* Dark card background */
+    background-image: url('Images/python_bg.jpg');
+    /* Ensure background images show in dark mode */
     /* Add other background images as required for dark mode coexistence */
 }
 
 body.dark-mode .description h4,
 body.dark-mode .description p {
-    color: #ecf0f1; /* Adjust text color for dark mode */
+    color: #ecf0f1;
+    /* Adjust text color for dark mode */
 }
 
 body.dark-mode .card[for="c1"] {
-    background-image: url('Images/python_bg.jpg'); /* Ensure background image shown in dark mode */
+    background-image: url('Images/python_bg.jpg');
+    /* Ensure background image shown in dark mode */
     background-repeat: round;
 }
 
 body.dark-mode .card[for="c2"] {
-    background-image: url('Images/c++_bg.jpg'); /* Ensure background image shown in dark mode */
+    background-image: url('Images/c++_bg.jpg');
+    /* Ensure background image shown in dark mode */
     background-repeat: round;
 }
 
 body.dark-mode .card[for="c3"] {
-    background-image: url('Images/java_bg.jpg'); /* Ensure background image shown in dark mode */
+    background-image: url('Images/java_bg.jpg');
+    /* Ensure background image shown in dark mode */
     background-repeat: round;
 }
 
 body.dark-mode .card[for="c4"] {
-    background-image: url('Images/html_bg.jpg'); /* Ensure background image shown in dark mode */
+    background-image: url('Images/html_bg.jpg');
+    /* Ensure background image shown in dark mode */
     background-repeat: round;
 }
 
 body.dark-mode .card[for="gd1"] {
-    background-image: url('Images/ps_bg.png'); /* Ensure background image shown in dark mode */
+    background-image: url('Images/ps_bg.png');
+    /* Ensure background image shown in dark mode */
     background-repeat: round;
 }
 
 body.dark-mode .card[for="gd2"] {
-    background-image: url('Images/ai_bg.jpg'); /* Ensure background image shown in dark mode */
+    background-image: url('Images/ai_bg.jpg');
+    /* Ensure background image shown in dark mode */
     background-repeat: round;
 }
 
 body.dark-mode .card[for="gd3"] {
-    background-image: url('Images/figma_bg.png'); /* Ensure background image shown in dark mode */
+    background-image: url('Images/figma_bg.png');
+    /* Ensure background image shown in dark mode */
     background-repeat: round;
 }
 
 body.dark-mode .card[for="gd4"] {
-    background-image: url('Images/canva_bg.png'); /* Ensure background image shown in dark mode */
+    background-image: url('Images/canva_bg.png');
+    /* Ensure background image shown in dark mode */
     background-repeat: round;
 }
 
 body.dark-mode .card[for="soft1"] {
-    background-image: url('Images/teamwork_bg.jpg'); /* Ensure background image shown in dark mode */
+    background-image: url('Images/teamwork_bg.jpg');
+    /* Ensure background image shown in dark mode */
     background-repeat: round;
 }
 
 body.dark-mode .card[for="soft2"] {
-    background-image: url('Images/communication_bg.jpg'); /* Ensure background image shown in dark mode */
+    background-image: url('Images/communication_bg.jpg');
+    /* Ensure background image shown in dark mode */
     background-repeat: round;
 }
 
 body.dark-mode .card[for="soft3"] {
-    background-image: url('Images/problem_solving_bg.png'); /* Ensure background image shown in dark mode */
+    background-image: url('Images/problem_solving_bg.png');
+    /* Ensure background image shown in dark mode */
     background-repeat: round;
 }
 
 /* Responsive adjustments */
 @media (max-width: 768px) {
+
     .tabs,
     .sub-tabs {
-        flex-direction: row; /* Arrange tabs horizontally */
-        flex-wrap: wrap; /* Allow wrapping for smaller screens */
-        overflow-x: auto; /* Enable horizontal scrolling if there are too many tabs */
+        flex-direction: row;
+        /* Arrange tabs horizontally */
+        flex-wrap: wrap;
+        /* Allow wrapping for smaller screens */
+        overflow-x: auto;
+        /* Enable horizontal scrolling if there are too many tabs */
         margin-bottom: 10px;
     }
 
     .tab-button,
     .sub-tab-button {
-        width: auto; /* Let buttons take automatic width */
-        padding: 6px 10px; /* Adjust padding for buttons */
-        margin: 5px; /* Margin between buttons */
-        font-size: 0.85rem; /* Decrease font size for smaller buttons */
+        width: auto;
+        /* Let buttons take automatic width */
+        padding: 6px 10px;
+        /* Adjust padding for buttons */
+        margin: 5px;
+        /* Margin between buttons */
+        font-size: 0.85rem;
+        /* Decrease font size for smaller buttons */
     }
 
     .wrapper {
-        margin-left: 0; /* Remove left margin */
-        padding: 0 10px; /* Add padding for smaller screens */
-        overflow-x: auto; /* Enable horizontal scrolling */
-        display: flex; /* Change to flex to arrange cards horizontally */
-        flex-wrap: nowrap; /* Prevent wrapping */
+        margin-left: 0;
+        /* Remove left margin */
+        padding: 0 10px;
+        /* Add padding for smaller screens */
+        overflow-x: auto;
+        /* Enable horizontal scrolling */
+        display: flex;
+        /* Change to flex to arrange cards horizontally */
+        flex-wrap: nowrap;
+        /* Prevent wrapping */
     }
 
     .card {
-        width: 60%; /* Adjust card width */
-        max-width: 140px; /* Set max width for cards */
-        height: 190px; /* Adjust card height */
-        margin: 5px; /* Reduce margin for smaller layout */
-        flex: 0 0 auto; /* Do not grow or shrink */
-        display: flex; /* Allow flex properties in card */
-        flex-direction: column; /* Arrange content in a column inside the card */
-        justify-content: space-between; /* Space out children elements */
+        width: 60%;
+        /* Adjust card width */
+        max-width: 140px;
+        /* Set max width for cards */
+        height: 190px;
+        /* Adjust card height */
+        margin: 5px;
+        /* Reduce margin for smaller layout */
+        flex: 0 0 auto;
+        /* Do not grow or shrink */
+        display: flex;
+        /* Allow flex properties in card */
+        flex-direction: column;
+        /* Arrange content in a column inside the card */
+        justify-content: space-between;
+        /* Space out children elements */
     }
 
     .description {
-        height: auto; /* Allow description height to adjust */
-        padding: -5px; /* Add padding around descriptions */
+        height: auto;
+        /* Allow description height to adjust */
+        padding: -5px;
+        /* Add padding around descriptions */
     }
 
     .description h4 {
-        font-size: 0.9rem; /* Set a responsive font size for headings */
-        margin: 0; /* Remove default margin */
+        font-size: 0.9rem;
+        /* Set a responsive font size for headings */
+        margin: 0;
+        /* Remove default margin */
     }
 
     .description p {
-        font-size: 0.75rem; /* Set a responsive font size for paragraph text */
-        margin: 0; /* Remove default margin */
+        font-size: 0.75rem;
+        /* Set a responsive font size for paragraph text */
+        margin: 0;
+        /* Remove default margin */
     }
 }
 
 @media (max-width: 480px) {
+
     .tabs,
     .sub-tabs {
-        flex-direction: row; /* Keep tabs horizontal */
-        flex-wrap: wrap; /* Allow wrapping */
-        overflow-x: auto; /* Enable horizontal scrolling */
-        margin-bottom: 10px; /* Margin at the bottom */
+        flex-direction: row;
+        /* Keep tabs horizontal */
+        flex-wrap: wrap;
+        /* Allow wrapping */
+        overflow-x: auto;
+        /* Enable horizontal scrolling */
+        margin-bottom: 10px;
+        /* Margin at the bottom */
     }
 
     .tab-button,
     .sub-tab-button {
-        width: auto; /* Let buttons take automatic width */
-        padding: 5px 8px; /* Smaller padding for buttons on mobile */
-        margin: 4px; /* Smaller margin between buttons */
-        font-size: 0.75rem; /* Further decrease font size */
+        width: auto;
+        /* Let buttons take automatic width */
+        padding: 5px 8px;
+        /* Smaller padding for buttons on mobile */
+        margin: 4px;
+        /* Smaller margin between buttons */
+        font-size: 0.75rem;
+        /* Further decrease font size */
     }
 
     .wrapper {
-        flex-direction: row; /* Cards remain in a row */
-        overflow-x: auto; /* Horizontal scrolling enabled */
+        flex-direction: row;
+        /* Cards remain in a row */
+        overflow-x: auto;
+        /* Horizontal scrolling enabled */
     }
 
     .card {
-        width: 55%; /* Make cards narrower */
-        max-width: 120px; /* Reduce max width for better fit */
-        height: 160px; /* Decrease height of cards */
-        margin: 4px; /* Margins to give a little space */
-        flex: 0 0 auto; /* Prevent growing or shrinking */
-        display: flex; /* Allow flex properties in card */
-        flex-direction: column; /* Arrange content in a column inside the card */
-        justify-content: space-between; /* Space out children elements */
+        width: 55%;
+        /* Make cards narrower */
+        max-width: 120px;
+        /* Reduce max width for better fit */
+        height: 160px;
+        /* Decrease height of cards */
+        margin: 4px;
+        /* Margins to give a little space */
+        flex: 0 0 auto;
+        /* Prevent growing or shrinking */
+        display: flex;
+        /* Allow flex properties in card */
+        flex-direction: column;
+        /* Arrange content in a column inside the card */
+        justify-content: space-between;
+        /* Space out children elements */
     }
 
     .description {
-        height: auto; /* Allow description height to adjust */
-        padding: 5px; /* Add padding around descriptions */
+        height: auto;
+        /* Allow description height to adjust */
+        padding: 5px;
+        /* Add padding around descriptions */
     }
 
     .description h4 {
-        font-size: 0.8rem; /* Adjust heading size for mobile */
-        margin: 0; /* Remove default margin */
+        font-size: 0.8rem;
+        /* Adjust heading size for mobile */
+        margin: 0;
+        /* Remove default margin */
     }
 
     .description p {
-        font-size: 0.75rem; /* Adjust paragraph size for mobile */
-        margin: -10px; /* Remove default margin */
+        font-size: 0.75rem;
+        /* Adjust paragraph size for mobile */
+        margin: -10px;
+        /* Remove default margin */
     }
 
     .icon {
-        width: 30px; /* Smaller icons for mobile */
-        height: 30px; /* Update icon height */
+        width: 30px;
+        /* Smaller icons for mobile */
+        height: 30px;
+        /* Update icon height */
     }
 
     .icon img {
-        max-width: 100%; /* Ensure images fit within the icon */
-        height: auto; /* Maintain aspect ratio */
+        max-width: 100%;
+        /* Ensure images fit within the icon */
+        height: auto;
+        /* Maintain aspect ratio */
     }
 }
 
 
 .progress-container {
-    position: relative; /* Relative positioning for absolute children */
-    width: 100%; /* Full width of the card */
-    height: 10px; /* Set a height for the container */
-    margin-top: 10px; /* Space above the progress bar */
+    position: relative;
+    /* Relative positioning for absolute children */
+    width: 100%;
+    /* Full width of the card */
+    height: 10px;
+    /* Set a height for the container */
+    margin-top: 10px;
+    /* Space above the progress bar */
 }
 
 .progress-bar {
-    height: 100%; /* Full height of the container */
-    background-color: #007BFF; /* Set the color of the progress bar */
-    transition: width 0.5s ease; /* Smooth transition for width change */
-    border-radius: 5px; /* Rounded corners for the bar */
+    height: 100%;
+    /* Full height of the container */
+    background-color: #007BFF;
+    /* Set the color of the progress bar */
+    transition: width 0.5s ease;
+    /* Smooth transition for width change */
+    border-radius: 5px;
+    /* Rounded corners for the bar */
 }
 
 .percentage-value {
-    position: absolute; /* Position the value absolutely within the container */
-    left: 50%; /* Center it horizontally */
-    transform: translateX(-50%); /* Offset to truly center */
-    top: -20px; /* Position it above the progress bar */
-    font-weight: bold; /* Make the font bold */
-    font-size: 0.9rem; /* Slightly smaller font size */
-    color: #ffffff; /* Text color for light mode */
+    position: absolute;
+    /* Position the value absolutely within the container */
+    left: 50%;
+    /* Center it horizontally */
+    transform: translateX(-50%);
+    /* Offset to truly center */
+    top: -20px;
+    /* Position it above the progress bar */
+    font-weight: bold;
+    /* Make the font bold */
+    font-size: 0.9rem;
+    /* Slightly smaller font size */
+    color: #ffffff;
+    /* Text color for light mode */
 }
 
 /* Dark mode styles */
 body.dark-mode .percentage-value {
-    color: #ffffff; /* Change text color for dark mode */
+    color: #ffffff;
+    /* Change text color for dark mode */
 }
 
 /* Media Queries for Responsive Design */
 @media (max-width: 768px) {
     .progress-container {
-        height: 8px; /* Adjust height for smaller devices */
-        margin-top: 8px; /* Reduced space above the progress bar */
+        height: 8px;
+        /* Adjust height for smaller devices */
+        margin-top: 8px;
+        /* Reduced space above the progress bar */
     }
 
     .percentage-value {
-        font-size: 0.8rem; /* Slightly smaller font size */
-        top: -15px; /* Adjust position relative to the bar */
+        font-size: 0.8rem;
+        /* Slightly smaller font size */
+        top: -15px;
+        /* Adjust position relative to the bar */
     }
 }
 
 @media (max-width: 480px) {
     .progress-container {
-        height: 6px; /* Further reduce height for mobile devices */
-        margin-top: 5px; /* Reduce space above the progress bar */
+        height: 6px;
+        /* Further reduce height for mobile devices */
+        margin-top: 5px;
+        /* Reduce space above the progress bar */
     }
 
     .percentage-value {
-        font-size: 0.7rem; /* Further reduce font size for mobile */
-        top: -12px; /* Position value closer to the bar */
+        font-size: 0.7rem;
+        /* Further reduce font size for mobile */
+        top: -12px;
+        /* Position value closer to the bar */
     }
 }
+
+/* Contact section styling */
+.contact-form {
+    display: flex;
+    flex-direction: column;
+    margin: 20px 30px;
+    margin-left: 150px;
+}
+
+.contact-form label {
+    margin-bottom: 5px;
+    font-weight: bold;
+}
+
+.contact-form input,
+.contact-form textarea {
+    padding: 10px;
+    border: 2px dotted #007BFF; /* Dotted border */
+    border-radius: 5px;
+    margin-bottom: 15px;
+    transition: border-color 0.3s;
+}
+
+.contact-form input:focus,
+.contact-form textarea:focus {
+    border-color: #0056b3; /* Darker blue on focus */
+    outline: none;
+}
+
+.contact-form button {
+    padding: 10px;
+    background-color: #007BFF;
+    color: white;
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+    transition: background-color 0.3s, transform 0.3s;
+}
+
+.contact-form button:hover {
+    background-color: #0056b3; /* Darken on hover */
+    transform: translateY(-2px); /* Move up slightly on hover */
+}
+
+/* Social media links styling */
+.social-media-links {
+    display: flex;
+    justify-content: center;
+    margin: 20px 0;
+}
+
+.social-icon {
+    margin: 0 15px;
+    transition: transform 0.3s;
+}
+
+.social-icon img {
+    width: 40px; /* Set the size of icons */
+}
+
+.social-icon:hover {
+    transform: scale(1.2); /* Scale effect on hover */
+}
+
+/* Responsive Styles */
+@media (max-width: 768px) {
+    .contact-form {
+        width: 90%; /* Adjust width for mobile */
+        margin: 0 auto; /* Center the form */
+    }
+    
+    .social-media-links {
+        flex-direction: row; /* Stack icons vertically on smaller screens */
+    }
+    
+    .social-icon {
+        margin: -5px 0; /* Adjust margin for vertical layout */
+    }
+
+    .contact_p {
+        font-size: small;
+        font-family: Verdana, Geneva, Tahoma, sans-serif;
+    }
+}
+
+@media (max-width: 480px) {
+    .contact-form {
+        width: 90%; /* Adjust width for mobile */
+        margin: 0 auto; /* Center the form */
+    }
+    
+    .social-media-links {
+        flex-direction: row; /* Stack icons vertically on smaller screens */
+    }
+    
+    .social-icon {
+        margin: -5px 0; /* Adjust margin for vertical layout */
+    }
+
+    .contact_p {
+        font-size: small;
+        font-family: Verdana, Geneva, Tahoma, sans-serif;
+    }
+}
+
