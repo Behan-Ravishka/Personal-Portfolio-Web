@@ -116,7 +116,7 @@ nav a:active::before {
     nav a {
         background-color: transparent;
         font-family: 'Franklin Gothic Medium', 'Arial Narrow', Arial, sans-serif;
-        color: rgb(153, 151, 151);
+        color: rgb(70, 67, 67);
         border: none;
         font-size: 18px;
         /* Default font size */
@@ -148,7 +148,7 @@ nav a:active::before {
 
     nav ul {
         flex-direction: row; /* Horizontally align nav items */
-        gap: 20px; /* Adjust this value for smaller spacing between links */
+        gap: 15px; /* Adjust this value for smaller spacing between links */
         margin: 0; /* Remove default margin */
         padding: 0; /* Remove default padding */
         width: 100%; /* Full width for ul */
@@ -168,7 +168,7 @@ nav a:active::before {
     nav a {
         background-color: transparent;
         font-family: 'Franklin Gothic Medium', 'Arial Narrow', Arial, sans-serif;
-        color: rgb(153, 151, 151);
+        color: rgb(70, 67, 67);
         border: none;
         font-size: 10px;
         font-weight: 700;
@@ -1481,7 +1481,7 @@ body.dark-mode .sub-tab-button.active {
 
 .card {
     width: 150px; /* Default card width */
-    height: 280px;
+    height: 300px;
     border-radius: 0.75rem;
     margin: 10px 10px;
     cursor: pointer;
@@ -1737,7 +1737,7 @@ body.dark-mode .card[for="soft3"] {
     .card {
         width: 60%; /* Adjust card width */
         max-width: 140px; /* Set max width for cards */
-        height: 160px; /* Adjust card height */
+        height: 190px; /* Adjust card height */
         margin: 5px; /* Reduce margin for smaller layout */
         flex: 0 0 auto; /* Do not grow or shrink */
         display: flex; /* Allow flex properties in card */
@@ -1756,7 +1756,7 @@ body.dark-mode .card[for="soft3"] {
     }
 
     .description p {
-        font-size: 0.78rem; /* Set a responsive font size for paragraph text */
+        font-size: 0.75rem; /* Set a responsive font size for paragraph text */
         margin: 0; /* Remove default margin */
     }
 }
@@ -1786,7 +1786,7 @@ body.dark-mode .card[for="soft3"] {
     .card {
         width: 55%; /* Make cards narrower */
         max-width: 120px; /* Reduce max width for better fit */
-        height: 140px; /* Decrease height of cards */
+        height: 160px; /* Decrease height of cards */
         margin: 4px; /* Margins to give a little space */
         flex: 0 0 auto; /* Prevent growing or shrinking */
         display: flex; /* Allow flex properties in card */
@@ -1820,3 +1820,57 @@ body.dark-mode .card[for="soft3"] {
     }
 }
 
+
+.progress-container {
+    position: relative; /* Relative positioning for absolute children */
+    width: 100%; /* Full width of the card */
+    height: 10px; /* Set a height for the container */
+    margin-top: 10px; /* Space above the progress bar */
+}
+
+.progress-bar {
+    height: 100%; /* Full height of the container */
+    background-color: #007BFF; /* Set the color of the progress bar */
+    transition: width 0.5s ease; /* Smooth transition for width change */
+    border-radius: 5px; /* Rounded corners for the bar */
+}
+
+.percentage-value {
+    position: absolute; /* Position the value absolutely within the container */
+    left: 50%; /* Center it horizontally */
+    transform: translateX(-50%); /* Offset to truly center */
+    top: -20px; /* Position it above the progress bar */
+    font-weight: bold; /* Make the font bold */
+    font-size: 0.9rem; /* Slightly smaller font size */
+    color: #ffffff; /* Text color for light mode */
+}
+
+/* Dark mode styles */
+body.dark-mode .percentage-value {
+    color: #ffffff; /* Change text color for dark mode */
+}
+
+/* Media Queries for Responsive Design */
+@media (max-width: 768px) {
+    .progress-container {
+        height: 8px; /* Adjust height for smaller devices */
+        margin-top: 8px; /* Reduced space above the progress bar */
+    }
+
+    .percentage-value {
+        font-size: 0.8rem; /* Slightly smaller font size */
+        top: -15px; /* Adjust position relative to the bar */
+    }
+}
+
+@media (max-width: 480px) {
+    .progress-container {
+        height: 6px; /* Further reduce height for mobile devices */
+        margin-top: 5px; /* Reduce space above the progress bar */
+    }
+
+    .percentage-value {
+        font-size: 0.7rem; /* Further reduce font size for mobile */
+        top: -12px; /* Position value closer to the bar */
+    }
+}

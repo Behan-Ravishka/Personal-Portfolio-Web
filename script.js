@@ -261,13 +261,3 @@ function openSubTab(event, subTabName) {
     event.currentTarget.classList.add("active");
 }
 
-// Enable scrolling with mouse wheel on card containers
-document.querySelectorAll('.wrapper').forEach(container => {
-    container.addEventListener('wheel', (event) => {
-        event.preventDefault(); // Prevent default wheel behavior
-        container.scrollBy({
-            left: event.deltaY, // Scroll horizontally
-            behavior: 'smooth' // Optional: smooth scrolling
-        });
-    });
-});

@@ -118,22 +118,26 @@
         <section id="skills" style="padding: 20px;">
             <div class="content-wrapper-about">
                 <span class="relative flex justify-center">
-                    <div class="absolute inset-x-0 top-1/2 h-px -translate-y-1/2 bg-transparent bg-gradient-to-r from-transparent via-gray-500 to-transparent opacity-75"></div>
+                    <div
+                        class="absolute inset-x-0 top-1/2 h-px -translate-y-1/2 bg-transparent bg-gradient-to-r from-transparent via-gray-500 to-transparent opacity-75">
+                    </div>
                     <span class="relative z-10 glass px-6">
                         <h2>Skills</h2>
                     </span>
                 </span>
-                <div class="tabs" >
+                <div class="tabs">
                     <button class="tab-button active" onclick="openTab(event, 'hard-skills')">Hard Skills</button>
                     <button class="tab-button" onclick="openTab(event, 'soft-skills')">Soft Skills</button>
                 </div>
-        
+
                 <div id="hard-skills" class="tab-content active">
                     <div class="sub-tabs">
-                        <button class="sub-tab-button active" onclick="openSubTab(event, 'programming')">Programming</button>
-                        <button class="sub-tab-button" onclick="openSubTab(event, 'graphic-design')">Graphic Design</button>
+                        <button class="sub-tab-button active"
+                            onclick="openSubTab(event, 'programming')">Programming</button>
+                        <button class="sub-tab-button" onclick="openSubTab(event, 'graphic-design')">Graphic
+                            Design</button>
                     </div>
-        
+
                     <div id="programming" class="sub-tab-content active">
                         <div class="wrapper">
                             <div class="container">
@@ -147,6 +151,10 @@
                                             <p></p>
                                         </div>
                                     </div>
+                                    <div class="progress-container">
+                                        <div class="progress-bar" style="width: 70%;" data-tooltip="70%"></div>
+                                        <div class="percentage-value">70%</div>
+                                    </div>
                                 </label>
 
                                 <input type="radio" name="slide" id="c2">
@@ -158,8 +166,12 @@
                                             <p></p>
                                         </div>
                                     </div>
+                                    <div class="progress-container">
+                                        <div class="progress-bar" style="width: 75%;" data-tooltip="75%"></div>
+                                        <div class="percentage-value">75%</div>
+                                    </div>
                                 </label>
-        
+
                                 <input type="radio" name="slide" id="c3">
                                 <label for="c3" class="card">
                                     <div class="row">
@@ -169,8 +181,12 @@
                                             <p></p>
                                         </div>
                                     </div>
+                                    <div class="progress-container">
+                                        <div class="progress-bar" style="width: 65%;" data-tooltip="65%"></div>
+                                        <div class="percentage-value">65%</div>
+                                    </div>
                                 </label>
-        
+
                                 <input type="radio" name="slide" id="c4">
                                 <label for="c4" class="card">
                                     <div class="row">
@@ -180,11 +196,15 @@
                                             <p></p>
                                         </div>
                                     </div>
+                                    <div class="progress-container">
+                                        <div class="progress-bar" style="width: 85%;" data-tooltip="85%"></div>
+                                        <div class="percentage-value">85%</div>
+                                    </div>
                                 </label>
                             </div>
                         </div>
                     </div>
-        
+
                     <div id="graphic-design" class="sub-tab-content">
                         <div class="wrapper">
                             <div class="container">
@@ -197,8 +217,12 @@
                                             <p>Image editing software for creatives.</p>
                                         </div>
                                     </div>
+                                    <div class="progress-container">
+                                        <div class="progress-bar" style="width: 85%;" data-tooltip="85%"></div>
+                                        <div class="percentage-value">85%</div>
+                                    </div>
                                 </label>
-        
+
                                 <input type="radio" name="slide-gd" id="gd2">
                                 <label for="gd2" class="card">
                                     <div class="row">
@@ -207,6 +231,10 @@
                                             <h4>Adobe Illustrator</h4>
                                             <p>Vector graphics software for creation.</p>
                                         </div>
+                                    </div>
+                                    <div class="progress-container">
+                                        <div class="progress-bar" style="width: 70%;" data-tooltip="70%"></div>
+                                        <div class="percentage-value">70%</div>
                                     </div>
                                 </label>
 
@@ -219,6 +247,10 @@
                                             <p>The modern interface design tool for UI/UX projects.</p>
                                         </div>
                                     </div>
+                                    <div class="progress-container">
+                                        <div class="progress-bar" style="width: 60%;" data-tooltip="60%"></div>
+                                        <div class="percentage-value">60%</div>
+                                    </div>
                                 </label>
 
                                 <input type="radio" name="slide-gd" id="gd4">
@@ -227,15 +259,19 @@
                                         <div class="icon"><img src="Images/canva.png" alt="Canva"></div>
                                         <div class="description">
                                             <h4>Canva</h4>
-                                            <p>The design tool for create various visual content.</p>
+                                            <p>The design tool for creating various visual content.</p>
                                         </div>
+                                    </div>
+                                    <div class="progress-container">
+                                        <div class="progress-bar" style="width: 90%;" data-tooltip="90%"></div>
+                                        <div class="percentage-value">90%</div>
                                     </div>
                                 </label>
                             </div>
                         </div>
                     </div>
                 </div>
-        
+
                 <div id="soft-skills" class="tab-content">
                     <div class="wrapper">
                         <div class="container">
@@ -248,8 +284,12 @@
                                         <p>Collaborate effectively to achieve goals.</p>
                                     </div>
                                 </div>
+                                <div class="progress-container">
+                                    <div class="progress-bar" style="width: 90%;" data-tooltip="90%"></div>
+                                    <div class="percentage-value">90%</div>
+                                </div>
                             </label>
-        
+
                             <input type="radio" name="slide-soft" id="soft2">
                             <label for="soft2" class="card">
                                 <div class="row">
@@ -259,8 +299,12 @@
                                         <p>Clearly convey ideas and actively listen.</p>
                                     </div>
                                 </div>
+                                <div class="progress-container">
+                                    <div class="progress-bar" style="width: 85%;" data-tooltip="85%"></div>
+                                    <div class="percentage-value">85%</div>
+                                </div>
                             </label>
-        
+
                             <input type="radio" name="slide-soft" id="soft3">
                             <label for="soft3" class="card">
                                 <div class="row">
@@ -270,13 +314,17 @@
                                         <p>Analyze and resolve issues efficiently.</p>
                                     </div>
                                 </div>
+                                <div class="progress-container">
+                                    <div class="progress-bar" style="width: 80%;" data-tooltip="80%"></div>
+                                    <div class="percentage-value">80%</div>
+                                </div>
                             </label>
                         </div>
                     </div>
                 </div>
             </div>
-        </section> 
-        
+        </section>
+
         <section id="contact" style="display: inline-block; width: 100vw;">
             <span class="relative flex justify-center">
                 <div
