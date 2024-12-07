@@ -8,7 +8,7 @@
 }
 
 body.dark-mode .glass {
-    background: rgba(77, 75, 75, 0.5);
+    background: rgba(109, 108, 108, 0.5);
     border: 1px solid rgba(255, 255, 255, 0.3);
 }
 
@@ -63,7 +63,7 @@ nav ul {
 nav a {
     background-color: transparent;
     font-family: 'Franklin Gothic Medium', 'Arial Narrow', Arial, sans-serif;
-    color: rgb(153, 151, 151);
+    color: rgb(105, 101, 101);
     border: none;
     font-size: 18px;
     font-weight: 700;
@@ -74,6 +74,10 @@ nav a {
     transition: 0.1s;
     z-index: 1;
     text-decoration: none;
+}
+
+body.dark-mode nav a {
+    color: #e7e7e7;
 }
 
 nav a:hover {
@@ -2018,46 +2022,164 @@ body.dark-mode .percentage-value {
 }
 
 /* Contact section styling */
+/* General form wrapper styles */
+.form-wrapper {
+    background-image: url('Images/form_bg.png');
+    /* Replace with actual background tile image */
+    background-color: #868686;
+    /* Fallback background color in case image doesn't load */
+    background-size: cover;
+    /* Ensure the background covers the entire form */
+    background-repeat: no-repeat;
+    /* Prevent background image from repeating */
+    padding: 15px;
+    /* Reduced padding around the form for less height */
+    border-radius: 10px;
+    /* Rounded corners for the form wrapper */
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
+    /* Shadow for better visibility */
+    margin: 15px auto;
+    /* Center the form wrapper and reduce vertical spacing */
+    max-width: 1000px;
+    /* Restrict maximum width for better readability */
+    height: auto;
+    /* Set height to auto for flexible content */
+}
+
+.form-wrapper input {
+    /* Reset default styles */
+    margin: 0;
+    padding: 0;
+    border: none;
+    display: block;
+    width: 100%;
+    box-sizing: border-box;
+}
+
+/* Contact section styling */
 .contact-form {
     display: flex;
     flex-direction: column;
-    margin: 20px 30px;
-    margin-left: 150px;
+    /* Arrange children in a column */
+    margin: 0;
+    /* Remove default margins for consistent styling */
 }
 
 .contact-form label {
-    margin-bottom: 5px;
     font-weight: bold;
+    /* Bold labels for emphasis */
+    color: white;
+    /* Label color */
 }
 
 .contact-form input,
 .contact-form textarea {
     padding: 10px;
-    border: 2px dotted #007BFF; /* Dotted border */
+    /* Inner padding for better usability */
+    border: 2px dotted #007BFF;
+    /* Dotted border for input fields */
     border-radius: 5px;
-    margin-bottom: 15px;
+    /* Rounded corners for input fields */
+    margin-bottom: 10px;
+    /* Reduced space between inputs */
     transition: border-color 0.3s;
+    /* Smooth border color transition on focus */
+    background-color: #252525;
+    /* Dark background for input fields */
+    color: white;
+    /* Text color for input fields */
+    opacity: 80%;
 }
 
+/* Focus effect for input fields */
 .contact-form input:focus,
 .contact-form textarea:focus {
-    border-color: #0056b3; /* Darker blue on focus */
+    border-color: #0056b3;
+    /* Change border color when focused */
     outline: none;
+    /* Remove default outline */
 }
 
+/* Submit button styling */
 .contact-form button {
     padding: 10px;
+    /* Button padding */
     background-color: #007BFF;
+    /* Primary button color */
     color: white;
+    /* Button text color */
     border: none;
+    /* No border */
     border-radius: 5px;
+    /* Rounded corners for button */
     cursor: pointer;
+    /* Pointer cursor on hover */
     transition: background-color 0.3s, transform 0.3s;
+    /* Smooth transition effects */
 }
 
+/* Hover effect for button */
 .contact-form button:hover {
-    background-color: #0056b3; /* Darken on hover */
-    transform: translateY(-2px); /* Move up slightly on hover */
+    background-color: #0056b3;
+    /* Darken button color on hover */
+    transform: translateY(-2px);
+    /* Lift button slightly on hover */
+}
+
+/* Responsive Styles */
+@media (max-width: 768px) {
+
+    .contact-form label {
+        font-size: small;
+    }
+
+    .contact-form input,
+    .contact-form textarea {
+        padding: 5px;
+        /* Inner padding for better usability */
+    }
+
+    .form-wrapper {
+        padding: 10px;
+        /* Adjust padding for medium screens */
+        margin: 10px;
+        /* Slightly reduce margin for medium screens */
+    }
+
+    .contact-form input,
+    .contact-form textarea {
+        margin-bottom: 2px;
+        /* Adjust space between inputs */
+    }
+}
+
+@media (max-width: 480px) {
+    .contact-form label {
+        font-size: smaller;
+    }
+
+    .contact-form input,
+    .contact-form textarea {
+        padding: 3px;
+        /* Inner padding for better usability */
+    }
+
+    .form-wrapper {
+        padding: 10px;
+        /* Further adjust padding for very small screens */
+    }
+
+    .contact-form {
+        width: 100%;
+        /* Full width on smaller screens */
+    }
+
+    .contact_p {
+        font-size: small;
+        /* Decrease font size for smaller devices */
+        font-family: Verdana, Geneva, Tahoma, sans-serif;
+        /* Specific font family for this paragraph */
+    }
 }
 
 /* Social media links styling */
@@ -2070,33 +2192,49 @@ body.dark-mode .percentage-value {
 .social-icon {
     margin: 0 15px;
     transition: transform 0.3s;
-    background-color: #d1d1d1; /* Dark background */
-    border-radius: 5px; /* Rounded corners */
-    padding: 5px; /* Space around the icon */
+    background-color: #d1d1d1;
+    /* Dark background */
+    border-radius: 5px;
+    /* Rounded corners */
+    padding: 5px;
+    /* Space around the icon */
 }
 
 .social-icon img {
-    width: 40px; /* Set the size of icons */
+    width: 40px;
+    /* Set the size of icons */
     display: block;
 }
 
 .social-icon:hover {
-    transform: scale(1.2); /* Scale effect on hover */
+    transform: scale(1.2);
+    /* Scale effect on hover */
 }
 
 /* Responsive Styles */
 @media (max-width: 768px) {
     .contact-form {
-        width: 90%; /* Adjust width for mobile */
-        margin: 0 auto; /* Center the form */
+        width: 90%;
+        /* Adjust width for mobile */
+        margin: 0 auto;
+        /* Center the form */
     }
-    
+
     .social-media-links {
-        flex-direction: row; /* Stack icons vertically on smaller screens */
+        flex-direction: row;
+        /* Stack icons vertically on smaller screens */
+        gap: 10px;
     }
-    
+
     .social-icon {
-        margin: -5px 0; /* Adjust margin for vertical layout */
+        margin: -5px 0;
+        /* Adjust margin for vertical layout */
+    }
+
+    .social-icon img {
+        width: 25px;
+        /* Set the size of icons */
+        display: block;
     }
 
     .contact_p {
@@ -2107,16 +2245,27 @@ body.dark-mode .percentage-value {
 
 @media (max-width: 480px) {
     .contact-form {
-        width: 90%; /* Adjust width for mobile */
-        margin: 0 auto; /* Center the form */
+        width: 90%;
+        /* Adjust width for mobile */
+        margin: 0 auto;
+        /* Center the form */
     }
-    
+
     .social-media-links {
-        flex-direction: row; /* Stack icons vertically on smaller screens */
+        flex-direction: row;
+        /* Stack icons vertically on smaller screens */
+        gap: 10px;
     }
-    
+
     .social-icon {
-        margin: -5px 0; /* Adjust margin for vertical layout */
+        margin: -5px 0;
+        /* Adjust margin for vertical layout */
+    }
+
+    .social-icon img {
+        width: 20px;
+        /* Set the size of icons */
+        display: block;
     }
 
     .contact_p {
@@ -2124,4 +2273,3 @@ body.dark-mode .percentage-value {
         font-family: Verdana, Geneva, Tahoma, sans-serif;
     }
 }
-
