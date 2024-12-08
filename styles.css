@@ -113,128 +113,75 @@ nav a:active::before {
     background-color: rgb(255, 38, 0);
 }
 
-/* Responsive adjustments */
-@media (max-width: 768px) {
-
-    /* Base styles for navigation links */
-    nav a {
-        background-color: transparent;
-        font-family: 'Franklin Gothic Medium', 'Arial Narrow', Arial, sans-serif;
-        color: rgb(70, 67, 67);
-        border: none;
-        font-size: 18px;
-        /* Default font size */
-        font-weight: 700;
-        padding: 10px 25px;
-        cursor: pointer;
-        position: relative;
-        text-align: center;
-        transition: color 0.1s;
-        /* Transition example for link color */
-        z-index: 1;
-        text-decoration: none;
-    }
-
-    nav a:hover {
-        color: rgb(172, 40, 0);
-    }
-
-    nav a:hover::before {
-        transform: rotate(0deg);
-        width: 100%;
-        height: 30px;
-        margin-top: 16px;
-        top: -2px;
-        border-radius: 3px;
-        background-color: rgb(255, 83, 53);
-        transform: rotate(0deg);
-    }
-
-    nav a:active::before {
-        background-color: rgb(255, 38, 0);
-    }
-
-    nav ul {
-        flex-direction: row;
-        /* Horizontally align nav items */
-        gap: 15px;
-        /* Adjust this value for smaller spacing between links */
-        margin: 0;
-        /* Remove default margin */
-        padding: 0;
-        /* Remove default padding */
-        width: 100%;
-        /* Full width for ul */
-        justify-content: center;
-        /* Center items */
-    }
-
-    nav li {
-        list-style: none;
-        /* Remove bullets */
-    }
-
+/* Base styles for navigation links */
+nav a {
+    background-color: transparent;
+    font-family: 'Franklin Gothic Medium', 'Arial Narrow', Arial, sans-serif;
+    color: rgb(70, 67, 67); /* Default color */
+    border: none;
+    font-size: 18px; /* Default font size for larger screens */
+    font-weight: 700;
+    padding: 10px 25px;
+    cursor: pointer;
+    position: relative;
+    text-align: center;
+    transition: color 0.1s; /* Transition for link color */
+    z-index: 1;
+    text-decoration: none;
 }
 
-/* Responsive adjustments */
-@media (max-width: 480px) {
+nav a::before {
+    content: "";
+    border-radius: 2px;
+    position: absolute;
+    width: 8px;
+    height: 8px;
+    background-color: tomato;
+    left: 10px; /* Positioned to the right */
+    top: 19px;
+    cursor: pointer;
+    transform: rotate(225deg);
+    transition: background-color 0.3s; /* Transition for background color */
+    z-index: -1; /* Make sure it's behind the link */
+}
 
-    /* Base styles for navigation links */
+nav a:active::before {
+    background-color: rgb(255, 38, 0); /* Color change on active */
+}
+
+/* Styles for navigation list */
+nav ul {
+    display: flex; /* Use flexbox for layout */
+    flex-direction: row; /* Horizontally align nav items */
+    gap: 15px; /* Space between links */
+    margin: 0; /* Remove default margin */
+    padding: 0; /* Remove default padding */
+    width: 100%; /* Full width for ul */
+    justify-content: center; /* Center items */
+}
+
+nav li {
+    list-style: none; /* Remove bullets */
+}
+
+/* Responsive adjustments for medium screens */
+@media (max-width: 768px) {
     nav a {
-        background-color: transparent;
-        font-family: 'Franklin Gothic Medium', 'Arial Narrow', Arial, sans-serif;
-        color: #007BFF;
-        border: none;
-        font-size: 12px;
-        font-weight: 700;
-        padding: 10px 25px;
-        cursor: pointer;
-        position: relative;
-        text-align: center;
-        transition: color 0.1s;
-        z-index: 1;
-        text-decoration: none;
+        font-size: 18px; /* Font size for medium screens */
+        color: rgb(70, 67, 67); /* Keep the same style */
     }
+}
 
-    nav a:hover {
-        color: rgb(172, 40, 0);
-    }
-
-    nav a:hover::before {
-        transform: rotate(0deg);
-        width: 100%;
-        height: 20px;
-        margin-top: 14px;
-        top: -2px;
-        border-radius: 3px;
-        background-color: rgb(255, 83, 53);
-        transform: rotate(0deg);
-    }
-
-    nav a:active::before {
-        background-color: rgb(255, 38, 0);
+/* Responsive adjustments for small screens */
+@media (max-width: 480px) {
+    nav a {
+        font-size: 12px; /* Smaller font size for mobile */
+        color: #007BFF; /* Color for mobile */
     }
 
     nav ul {
-        flex-direction: row;
-        /* Horizontally align nav items */
-        gap: 14px;
-        /* Adjust this value for smaller spacing between links */
-        margin: 0;
-        /* Remove default margin */
-        padding: 0;
-        /* Remove default padding */
-        width: 100%;
-        /* Full width for ul */
-        justify-content: center;
-        /* Center items */
+        gap: 14px; /* Adjust the gap for smaller screens */
     }
-
-    nav li {
-        list-style: none;
-        /* Remove bullets */
-    }
-
 }
 
 nav .imgandbtn {
