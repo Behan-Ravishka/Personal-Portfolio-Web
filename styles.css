@@ -617,7 +617,7 @@ body.dark-mode header {
         /* Ensure it behaves as a block element for centering */
         opacity: 1;
         /* Optionally make the image fully opaque on smaller screens */
-        margin-top: 60px;
+        margin-top: 70px;
     }
 }
 
