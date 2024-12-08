@@ -179,9 +179,9 @@ nav a:active::before {
     nav a {
         background-color: transparent;
         font-family: 'Franklin Gothic Medium', 'Arial Narrow', Arial, sans-serif;
-        color: rgb(168, 164, 164);
+        color: rgb(180, 180, 180);
         border: none;
-        font-size: 10px;
+        font-size: 5px;
         font-weight: 700;
         padding: 10px 25px;
         cursor: pointer;
@@ -580,7 +580,7 @@ body.dark-mode header {
         /* Reset top positioning */
         right: auto;
         /* Reset right positioning */
-        width: 80%;
+        width: 50%;
         /* Adjust width for better visibility on smaller screens */
         max-width: none;
         /* Remove max-width on smaller screens */
@@ -595,6 +595,28 @@ body.dark-mode header {
     .hero img:hover {
         transform: scale(0.5);
         box-shadow: 10px 15px 25px 10px rgba(225, 226, 155, 0.8);
+    }
+}
+
+@media (max-width: 480px) {
+    /* Adjust the breakpoint as necessary */
+    .hero img {
+        position: relative;
+        /* Revert positioning for centering */
+        top: auto;
+        /* Reset top positioning */
+        right: auto;
+        /* Reset right positioning */
+        width: 50%;
+        /* Adjust width for better visibility on smaller screens */
+        max-width: none;
+        /* Remove max-width on smaller screens */
+        margin: 0 auto;
+        /* Center the image horizontally */
+        display: block;
+        /* Ensure it behaves as a block element for centering */
+        opacity: 1;
+        /* Optionally make the image fully opaque on smaller screens */
     }
 }
 
