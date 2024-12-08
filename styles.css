@@ -1364,6 +1364,10 @@ section p {
         transition: background-color 0.3s, color 0.3s;
         overflow-y: hidden;
     }
+
+    .cv-download-container{
+        height: 10%;
+    }
 }
 
 /* projects Section Styles */
