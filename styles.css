@@ -150,6 +150,10 @@ nav a:active::before {
         transform: rotate(0deg);
     }
 
+    nav a:active::before {
+        background-color: rgb(255, 38, 0);
+    }
+
     nav ul {
         flex-direction: row;
         /* Horizontally align nav items */
@@ -205,6 +209,10 @@ nav a:active::before {
         border-radius: 3px;
         background-color: rgb(255, 83, 53);
         transform: rotate(0deg);
+    }
+
+    nav a:active::before {
+        background-color: rgb(255, 38, 0);
     }
 
     nav ul {
