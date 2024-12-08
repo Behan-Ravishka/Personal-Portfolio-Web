@@ -580,7 +580,7 @@ body.dark-mode header {
         /* Reset top positioning */
         right: auto;
         /* Reset right positioning */
-        width: 50%;
+        width: 80%;
         /* Adjust width for better visibility on smaller screens */
         max-width: none;
         /* Remove max-width on smaller screens */
@@ -607,7 +607,7 @@ body.dark-mode header {
         /* Reset top positioning */
         right: auto;
         /* Reset right positioning */
-        width: 50%;
+        width: 70%;
         /* Adjust width for better visibility on smaller screens */
         max-width: none;
         /* Remove max-width on smaller screens */
