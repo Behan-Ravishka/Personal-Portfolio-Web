@@ -607,7 +607,7 @@ body.dark-mode header {
         /* Reset top positioning */
         right: auto;
         /* Reset right positioning */
-        width: 70%;
+        width: 80%;
         /* Adjust width for better visibility on smaller screens */
         max-width: none;
         /* Remove max-width on smaller screens */
@@ -617,6 +617,7 @@ body.dark-mode header {
         /* Ensure it behaves as a block element for centering */
         opacity: 1;
         /* Optionally make the image fully opaque on smaller screens */
+        margin-top: 30px;
     }
 }
 
@@ -1088,14 +1089,13 @@ section p {
     }
 
     .matrix-text {
-        font-size: 8px;
+        font-size: 5px;
         /* Reduce font size for smaller devices */
     }
 }
 
 @media (max-width: 480px) {
     .arrow-container {
-        margin-top: 50px;
         flex-direction: column;
         /* Stack arrows vertically on smaller devices */
     }
@@ -1108,7 +1108,7 @@ section p {
     }
 
     .matrix-text {
-        font-size: 6px;
+        font-size: 3px;
         /* Further reduce font size for extra small devices */
     }
 }
