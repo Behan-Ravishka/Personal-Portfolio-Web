@@ -1095,6 +1095,7 @@ section p {
 
 @media (max-width: 480px) {
     .arrow-container {
+        margin-top: 50px;
         flex-direction: column;
         /* Stack arrows vertically on smaller devices */
     }
