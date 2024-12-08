@@ -237,6 +237,31 @@ nav a:active::before {
 
 }
 
+/* Existing CSS... */
+
+/* Add this class to manage active state */
+.nav-active {
+    color: rgb(255, 38, 0); /* Change to the desired active color */
+}
+
+/* Hide the pseudo-element appearance after clicking */
+.nav-active::before {
+    background-color: rgb(255, 38, 0);
+    animation: fadeOut 1s forwards; /* Animation to fade out */
+}
+
+@keyframes fadeOut {
+    0% {
+        opacity: 1;
+    }
+    100% {
+        opacity: 0; /* Make it invisible */
+        left: 20px; /* Optionally move it to create a sliding effect */
+    }
+}
+
+/* Responsive adjustments... */
+
 nav .imgandbtn {
     margin-left: 0px;
 }
