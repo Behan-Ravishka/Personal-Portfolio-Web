@@ -179,7 +179,7 @@ nav a:active::before {
     nav a {
         background-color: transparent;
         font-family: 'Franklin Gothic Medium', 'Arial Narrow', Arial, sans-serif;
-        color: rgb(70, 67, 67);
+        color: rgb(155, 155, 155);
         border: none;
         font-size: 10px;
         font-weight: 700;
