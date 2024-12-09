@@ -1,10 +1,10 @@
 <?php
 session_start();
 // Database connection details
-$servername = "localhost";
-$username = "root";
-$password = ""; // Replace with your MySQL root password
-$dbname = "portfolio_contact_form";
+$servername = "sql312.infinityfree.com";
+$username = "if0_37881167";
+$password = "vof7JzXPrbsjPE "; 
+$dbname = "if0_37881167_portfolio_contact_form";
 
 // Create connection
 $conn = new mysqli($servername, $username, $password, $dbname);
