@@ -3,7 +3,7 @@ session_start();
 // Database connection details
 $servername = "sql312.infinityfree.com";
 $username = "if0_37881167";
-$password = "vof7JzXPrbsjPE "; 
+$password = "vof7JzXPrbsjPE"; 
 $dbname = "if0_37881167_portfolio_contact_form";
 
 // Create connection
