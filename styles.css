@@ -1370,54 +1370,160 @@ section p {
     }
 }
 
-/* projects Section Styles */
-#projects {
-    margin-left: 50px;
-    /* Adjust this value to move cards to the left */
+/* projects section */
+/* Base styles */
+:root {
+    --background-color: #ffffff;
+    --text-color: #333333;
+    --primary-color: #007BFF;
+    --secondary-color: #0056b3;
+    --card-bg-color: #ffffff;
+    --card-shadow: rgba(0, 0, 0, 0.1);
 }
 
+.dark-mode {
+    --background-color: #1c1c1c;
+    --text-color: #ffffff;
+    --primary-color: #007BFF;
+    --secondary-color: #0056b3;
+    --card-bg-color: #2f2f2f;
+    --card-shadow: rgba(0, 0, 0, 0.5);
+}
+
+.projects-section {
+    padding: 20px;
+}
+
+/* Projects Grid */
 .projects-grid {
     display: grid;
-    grid-template-columns: repeat(2, 1fr);
+    grid-template-columns: repeat(auto-fill, minmax(250px, 1fr)); /* Responsive grid */
     gap: 20px;
-    /* Space between cards */
     margin-top: 20px;
-    /* Space above the grid */
 }
 
+/* Card Styles */
 .card-3d {
-    background: white;
-    /* Background color */
+    background-color: var(--card-bg-color);
     border-radius: 10px;
-    /* Rounded corners */
-    box-shadow: 0 4px 20px rgba(0, 0, 0, 0.1);
-    /* Box shadow */
+    box-shadow: 0 4px 20px var(--card-shadow);
     overflow: hidden;
-    /* Round corners on images as well */
-    transition: transform 0.3s;
-    /* Transition for hover effect */
+    transition: transform 0.3s, box-shadow 0.3s; /* Include shadow transition */
 }
 
 .card-3d:hover {
     transform: scale(1.05);
-    /* Grow effect on hover */
+    box-shadow: 0 8px 30px var(--card-shadow); /* Increase shadow on hover */
 }
 
 .card-3d img {
-    width: 100%;
-    /* Ensure the image covers the card */
+    width: 80%; /* Cover the width of the card */
     height: auto;
-    /* Maintain aspect ratio */
+    transition: scale 0.3s; /* Smooth scaling effect for images */
+    margin: 10px 30px;
+    margin-top: 20px;
+    border-radius: 20px;
+}
+
+.card-3d:hover img {
+    transform: scale(1.1); /* Scale image on hover */
+}
+
+.card-3d h3 {
+    text-align: center;
+    margin: 10px 0;
+    font-size: 2rem;
+    font-weight: 800;
+    color: var(--text-color);
 }
 
 .card-3d p {
+    font-size: large;
     padding: 10px;
-    /* Padding for project description */
     text-align: center;
-    /* Centered text */
-    color: #333;
-    /* Text color */
+    color: var(--text-color);
 }
+
+/* Project Link Styles */
+.project-link {
+    display: inline-block;
+    margin: 10px 10px;
+    padding: 8px 12px;
+    font-size: 0.875rem;
+    color: white;
+    background-color: var(--primary-color);
+    border-radius: 5px;
+    text-decoration: none;
+    transition: background-color 0.3s; /* Smooth transition on hover */
+}
+
+.project-link:hover {
+    background-color: var(--secondary-color);
+}
+
+/* Existing styles... */
+
+/* Media Queries for Responsiveness */
+@media (max-width: 900px) {
+    .projects-grid {
+        grid-template-columns: repeat(auto-fill, minmax(200px, 1fr)); /* Adjusts to smaller screens */
+        gap: 15px; /* Reduce gap for smaller screens */
+    }
+
+    .card-3d h3 {
+        font-size: 1.5rem; /* Smaller font size for headings on smaller devices */
+    }
+
+    .card-3d p {
+        font-size: larger; /* Maintain readability */
+    }
+
+    .card-3d img {
+        width: 80%; /* Cover the width of the card */
+        height: auto;
+        transition: scale 0.3s; /* Smooth scaling effect for images */
+        margin: 10px 25px;
+        margin-top: 20px;
+        border-radius: 20px;
+    }
+
+    .project-link {
+        margin-left: 50px;
+        padding: 6px 10px; /* Adjust padding for buttons */
+        font-size: 0.75rem; /* Smaller font size for project link */
+    }
+}
+
+@media (max-width: 600px) {
+    .projects-grid {
+        grid-template-columns: repeat(auto-fill, minmax(150px, 1fr)); /* Stacks cards on small screens */
+        gap: 10px; /* Further reduce gap */
+        height: 350px;
+    }
+
+    .card-3d h3 {
+        font-size: 1rem; /* Smaller font size for headings on mobile */
+    }
+
+    .card-3d p {
+        font-size: smaller; /* Adjust font size */
+        margin: -8px;
+    }
+
+    .card-3d img {
+        margin: 10px 15px;
+        margin-top: 20px;
+        border-radius: 20px;
+    }
+
+    .project-link {
+        margin-left: 30px;
+        padding: 5px 10px; /* Adjust padding for buttons */
+        font-size: 0.75rem; /* Smaller font size for project link */
+    }
+}
+
+/* Any further media queries can go here... */
 
 /* skills section */
 
@@ -2113,7 +2219,7 @@ body.dark-mode .percentage-value {
 
 .contact-form input,
 .contact-form textarea {
-    padding: 10px;
+    padding: 5px;
     /* Inner padding for better usability */
     border: 2px dotted #007BFF;
     /* Dotted border for input fields */
@@ -2311,4 +2417,33 @@ body.dark-mode .percentage-value {
         font-size: small;
         font-family: Verdana, Geneva, Tahoma, sans-serif;
     }
+}
+
+.notification {
+    padding: 5px;
+    margin: 20px 0;
+    border: 2px solid transparent;
+    border-radius: 5px;
+    position: relative;
+    transition: opacity 0.3s ease;
+    margin-top: 0%;
+}
+
+.success {
+    color: #ffffff;
+    background-color: #38be57;
+    border-color: #c3e6cb;
+}
+
+.error {
+    color: #ffffff;
+    background-color: #81232b;
+    border-color: #f5c6cb;
+}
+
+.notification {
+    opacity: 1; /* Start visible */
+}
+.notification.hide {
+    opacity: 0; /* Hide with transition */
 }
