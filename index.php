@@ -27,7 +27,7 @@ session_start(); // Start the session
         if (notification) {
             setTimeout(() => {
                 notification.style.display = 'none';
-            }, 5000); // 5000 milliseconds = 5 seconds
+            }, 5000);
         }
         </script>
 </head>
