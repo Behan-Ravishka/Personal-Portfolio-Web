@@ -779,6 +779,7 @@ body.dark-mode .meteor {
 .chatbot-icon {
     margin-right: 10px;
     /* Space between icon and text */
+    z-index: 1000;
 }
 
 /* Responsive adjustments */

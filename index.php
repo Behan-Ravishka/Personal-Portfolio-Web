@@ -417,9 +417,7 @@ session_start(); // Start the session
     </div>
     <div id="chatbot">
     <span class="chatbot-icon">
-        <a href="https://wa.me/+94763354538" target="_blank">
-            <img src="Images/chatbot.gif" alt="Chatbot Icon">
-        </a>
+        <img href="https://wa.me/+94763354538" src="Images/chatbot.gif" alt="Chatbot Icon">
     </span>
 </div>
     <script src="script.js"></script>

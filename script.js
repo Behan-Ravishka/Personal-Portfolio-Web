@@ -16,8 +16,9 @@ document.getElementById('theme').addEventListener('change', () => {
     }
 });
 
+//chatbot
 document.getElementById('chatbot').addEventListener('click', () => {
-    window.open('https://wa.me/yourwhatsapplink', '_blank'); // Replace with your WhatsApp link
+    window.open('https://wa.me/+94763354538', '_blank'); // Replace with your WhatsApp link
 });
 
 document.addEventListener('mousemove', (e) => {
